@@ -30,6 +30,18 @@ public class Transcript {
 				grade = 'D';
 				break;
 		}
+		System.out.println(grade);
+
+		if(average > 90)
+			grade = 'A';
+		else if(average > 80)
+			grade = 'B';
+		else if(average > 70)
+			grade = 'C';
+		else if(average > 60)
+			grade = 'D';
+
+		System.out.println(grade);
 
         System.out.println("이름: " + name);
         System.out.println("국어: " + korean + "\t영어: " + english + "\t수학: " + math);
