@@ -17,7 +17,20 @@ class DoubleFor01 {
 
 			for (int j = 1; j <= 10 ; j++){
 
-				System.out.print(String.format("%02d ",i*10 + j));
+				System.out.print(String.format("%3d ",i * 10 + j));
+			}
+
+			System.out.println();
+		}
+		System.out.println();
+
+		int result = 0;
+		
+		for (int i = 0 ; i < 10 ; i++) {
+
+			for (int j = 1; j <= 10 ; j++){
+				//result++;
+				System.out.print(String.format("%3d ",++result));
 			}
 
 			System.out.println();

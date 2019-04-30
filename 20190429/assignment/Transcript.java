@@ -14,7 +14,7 @@ public class Transcript {
         int math = 89;
         
         int total = korean + english + math;
-        double average = (total * 100 / 3) / 100.0
+        double average = (total * 100 / 3) / 100.0;
         char grade = (average>=90) ? 'A' : 'F';
 
         System.out.println("Name: " + name);
