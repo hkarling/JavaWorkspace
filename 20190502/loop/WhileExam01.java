@@ -5,7 +5,7 @@ class WhileExam01 {
 
 		int i = 1;
 
-		while(i <=100) {
+		while (i <=100) {
 			System.out.print(i+ " ");
 			i++;
 		}
@@ -15,7 +15,7 @@ class WhileExam01 {
 
 		i = 1;
 
-		while(i<=100) {
+		while (i <= 100) {
 
 			System.out.print(i+ " ");
 			
@@ -27,7 +27,7 @@ class WhileExam01 {
 		// 1~100까지 10x10 출력 (while 안에 while)
 
 		i = 1;
-		while(i<=100) {
+		while (i <= 100) {
 			int j = 0;
 			while(j < 10){
 				System.out.print(i+ " ");
