@@ -48,15 +48,17 @@ class Transcript {
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.print("국어 점수: ");
-		//int korean = sc.nextInt();
+		int korean = sc.nextInt();
 		System.out.print("수학 점수: ");
-		//int math = sc.nextInt();
+		int math = sc.nextInt();
 		System.out.print("영어 점수: ");
-		//int english = sc.nextInt();
+		int english = sc.nextInt();
+		
+		sc.close();
 
 		Transcript obj = new Transcript();
 
-		//obj.display(korean, english, math);
+		obj.display(korean, english, math);
 
 	}
 }
