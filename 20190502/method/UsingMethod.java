@@ -12,8 +12,8 @@ class UsingMethodExam{
 				정수*2 리턴. 
 	*/
 	private int methodExam03_01(int i) {
-		System.out.println("methodExam03_01 호출:");
-		System.out.println(i);
+		System.out.println("methodExam03_01 호출: " + i);
+		
 		return i*2;
 	}
 	/*	Method이름 :  methodExam03_02
@@ -26,10 +26,12 @@ class UsingMethodExam{
 				두번째인수로 들어온 값을 methodExam03_01로 넣어 주며 methodExam03_01을 호출하고 리턴하는 값을 출력
 				인수로 받은 String 에 바보를 붙여서 리턴
 	*/	
-	public String methodExam03_02(String str, int i) {
-		System.out.println("methodExam03_02 호출:");
+	public String methodExam03_02(String str, int a) {
+		System.out.println("methodExam03_02 호출: " + str + ", " + a);
 		System.out.println(str + "바보");
-		this.methodExam03_01(i);
+		int res = this.methodExam03_01(a);
+		System.out.println("methodExam03_01 리턴값: " + res);
+		
 		return str + "바보";
 	}
 	/*	Method이름 :  methodExam03_03
@@ -42,7 +44,7 @@ class UsingMethodExam{
 				methodExam03_02호출
 	*/
 	void methodExam03_03(int i, String str) {
-		System.out.println("methodExam03_03 호출:");
+		System.out.println("methodExam03_03 호출: " + str + ", " + i);
 		this.methodExam03_02(str, i);
 	}
 	/*	Method이름 :  methodExam03_04
@@ -55,10 +57,10 @@ class UsingMethodExam{
 				method02_04가 리턴하는 값을 리턴
 	*/
 	protected double methodExam03_04(int i, double d, int j) {
-		System.out.println("methodExam03_04 호출:");
+		System.out.println("methodExam03_04 호출: " + i + ", " + d + ", " + j);
 		MakeMethodExam02 obj = new MakeMethodExam02();
-		return obj.methodExam02_04(i, d, j);
 
+		return obj.methodExam02_04(i, d, j);
 	}
 } // UsingMethodExam 끝
 

@@ -53,7 +53,7 @@
 	*/
 	protected double methodExam02_04(int i, double d, int j) {
 		double result = i * d - j;
-		System.out.println("methodExam02_04:\n" + result);
+		System.out.println("methodExam02_04 »£√‚: " + result);
 		
 		return result;
 	}
