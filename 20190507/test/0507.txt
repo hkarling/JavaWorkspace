@@ -1,0 +1,156 @@
+1. primitive Type 8가지?(크기도 작성)
+  정수형 : byte-1 short-2   int-4 long -8   기본형 int
+  실수형 : float-4   double-8 기본형 double
+  논리형 : boolean - 1bit ( true, false)
+  문자형 : char - 2byte    반드시 한문자를 'A' 묶는다.
+
+            "A" -> String 문자열 : ObjectType
+                    class String{
+                          속성;
+                          메소드(){}
+                    }
+
+     byte < short, char < int < long < float < double 
+
+2. 메소드 작성법?
+    : 기능을 작성할때 반드시 메소드 안에서 작성한다.
+    : 반드시 클래스 내부에 선언한다.
+
+   modifiers 리턴타입 메소드이름(parameter , .....){
+
+   }
+
+   *  modifiers  :  제한자
+      1) access modifier 
+         public - 어디서나 아무나 접근
+         protected - package가 다르면 접근안되지만 상속관계라면 접근가능
+         생략 - 같은 package(폴더) 내에서 아무나 접근가능
+         private  - 하나의 객체(class)내에서만 접근가능
+
+     2) 이외의 modifier종류
+         static , final , abstract , synchronized 
+
+   * 리턴타입  : 메소드를 다 실행하고 난후 원래의 위치로 돌아갈때
+                   가지고갈 값을 설정하는 것.
+       1) void  : 가지고갈값이 없다.
+       2) primitive type
+       3) Object type
+          * 2),3)인경우는 반드시 구현부 마지막줄에 return 가지고갈값;
+
+   * 메소드이름(parameter, ...){   }
+      : 이름첫글자 소문자시작 권장, 숫자 2번째부터 작성가능
+        _, $ 이외의 특수문자사용안됨
+
+     :  parameter 괄호안의 작성
+       (데이터타입 변수이름, 데이터타입 변수이름,.....){
+
+      }
+
+3. 메소드 호출 방법 3가지중에 2가지 작성?
+   1) 객체를 생성해서 접근하는 방법
+       -호출하려는 메소들 감싸고 있는 객체를 생성한다. 
+         *객체생성방법
+          class이름 변수이름 = new class이름();
+
+        *메소드호출
+          변수이름.메소드이름(값,.....);
+
+   2)  static메소드 호출방법
+         -굳이 객체생성하지 않고 바로 호출가능
+          class이름.메소드이름(값,.....);
+
+   3)  같은클래스내부의 메소드 호출방법
+           this.메소드이름(값,....);
+            - this키워드는 생략도 가능  - 메소드이름(값,....);
+
+           *this키워드는 현재객체라는 뜻이면 현재객체가 생성되었다는
+            것을 보장받는다.
+
+     * 2) -> 3) -> 1) 의 순서대로 호출
+
+4. casting이란?
+   : 형변환 - 큰타입의 값을 작은타입의 변수에 담으려고 할때 필요하다.
+          ex)  int no = (int)4.5; - casting
+               double d = 5; - promotion
+
+               double avg = 200/(double)3;
+
+
+5. 조건문 2가지 구조?
+   if(조건식){
+
+   }else if(조건식){
+
+   }else if(조건식){
+
+   }...
+   else{
+
+   }
+ -----------------------
+  switch(조건대상){ // byte, short, int , char    version1.7 되면서 String허용
+     case 값 : 문장; break;
+    case 값 : 문장; break;
+    case 값 : 문장; break;
+    ..
+    default: 문장;
+   }
+
+------------------------------------------------------------
+6. 반복문 3가지 구조?
+  for(초기화; 조건식 ;증감식){
+     문장;
+  }
+ --------------------------------
+  초기화;
+  while(조건식){
+      증감식;
+      문장;
+  } 
+---------------------------------------
+ 초기화;
+ do{
+  증감식;
+  문장;
+  }while(조건식);
+
+7. 반복문 제어할때 사용하는  키워드 2가지와 특징?
+  1) break; 
+      : break를 만나면 이하의 문장은 실행하지 않고 블럭을 빠져나간다.
+  2) continue;
+      : continue를 만나면 이하의 문장을 실행하지 않고 다음일을 하려간다.
+
+8. 난수 21 ~ 30 사이 난수 발생하는 방법?
+     Math.random() * 경우의수 + 최소값;
+
+   ex)  int no = (int)(Math.random() * 10 + 21);
+
+9.  int no = Integer.parseInt("100");
+10. String str = Integer.toString(100);
+
+     -> 호출하는 문장을 보고 어떤 클래스에 어떤 메소드
+         형태로 있는지 선언하세요.
+ //modifiers 리턴타입 메소드이름(parameter , .....){}
+
+ class Integer{
+    public static int parseInt(String s){ //문자열을 숫자로 변환
+          기능;
+          return 값;
+     }
+    public static String toString(int no){ // 숫자를 문자열로 변환
+         기능;
+        return 값;
+    }
+ }
+
+ ex)   int no =(int)"100";  -> 안됨.
+
+       int no = Integer.parseInt("100");
+------------------------------------------------------
+
+
+
+
+
+
+

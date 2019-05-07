@@ -3,7 +3,7 @@
  * 날짜: 4월 30일
  * 주제: 성적구하기
  */
-public class Transcript {
+public class Transcript02 {
     public static void main(String[] args) {
 
         String name = "윤참솔";

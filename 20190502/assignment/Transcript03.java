@@ -4,7 +4,7 @@ import java.util.Scanner;
  * 날짜: 5월 2일
  * 주제: 성적구하기
  */
-class Transcript {
+class Transcript03 {
 
 	// 1) 국어, 영어, 수학 점수를 인수받아 총점을 구하여 총점을 리턴하는 메소드 작성 (접근제한자 private)
 	private int total(int korean, int english, int math) {
@@ -56,7 +56,7 @@ class Transcript {
 		
 		sc.close();
 
-		Transcript obj = new Transcript();
+		Transcript03 obj = new Transcript03();
 
 		obj.display(korean, english, math);
 

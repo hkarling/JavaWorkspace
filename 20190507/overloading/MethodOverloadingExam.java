@@ -1,5 +1,6 @@
 //MethodOverloadingExam.java
 class OverloadedMethod{
+
 	private int i;
        
 	public void setOverload(int i){
@@ -48,6 +49,7 @@ class OverloadedMethod{
 
 class  MethodOverloadingExam{
 	public static void main(String [] agr){
+
 		//OverloadedMethod객체에서 호출가능한  메소드들을 한번씩 호출하세요.
 		OverloadedMethod obj = new OverloadedMethod();
 
