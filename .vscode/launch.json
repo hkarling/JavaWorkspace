@@ -2,6 +2,18 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - LottoNumber",
+            "request": "launch",
+            "mainClass": "LottoNumber"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SortEx",
+            "request": "launch",
+            "mainClass": "SortEx"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - ArgsExam",
             "request": "launch",
             "mainClass": "ArgsExam"
