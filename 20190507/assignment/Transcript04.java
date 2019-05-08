@@ -1,25 +1,28 @@
+
 /**
- * ÀÌ¸§: À±Âü¼Ö
- * ³¯Â¥: 5¿ù 7ÀÏ
- * ÁÖÁ¦: ¼ºÀû±¸ÇÏ±â 4ÀÏÂ÷
+ * ì´ë¦„: ìœ¤ì°¸ì†”
+ * ë‚ ì§œ: 5ì›” 7ì¼
+ * ì£¼ì œ: ì„±ì êµ¬í•˜ê¸° 4ì¼ì°¨
  */
 import java.util.Scanner;
 
-class Transcript04 {
-	
-	// 1) ±¹¾î, ¿µ¾î, ¼öÇĞ Á¡¼ö¸¦ ÀÎ¼ö¹Ş¾Æ ÃÑÁ¡À» ±¸ÇÏ¿© ÃÑÁ¡À» ¸®ÅÏÇÏ´Â ¸Ş¼Òµå ÀÛ¼º
+/*
+ * 1. ì„±ì êµ¬í•˜ëŠ” ê¸°ëŠ¥ì„ ë‹´ë‹¹í•˜ëŠ” í´ë˜ìŠ¤ 
+ */
+class Calculation {
+	// 1) êµ­ì–´, ì˜ì–´, ìˆ˜í•™ ì ìˆ˜ë¥¼ ì¸ìˆ˜ë°›ì•„ ì´ì ì„ êµ¬í•˜ì—¬ ì´ì ì„ ë¦¬í„´í•˜ëŠ” ë©”ì†Œë“œ ì‘ì„±
 	private int total(int korean, int english, int math) {
 		return korean + english + math;
 	}
-	
-	// 2) ÃÑÁ¡°ú °ú¸ñ¼ö¸¦ ÀÎ¼ö·Î¹Ş¾Æ Æò±ÕÀ» ±¸ÇÏ¿© Æò±ÕÀ» ¸®ÅÏÇÏ´Â ¸Ş¼Òµå ÀÛ¼º
+
+	// 2) ì´ì ê³¼ ê³¼ëª©ìˆ˜ë¥¼ ì¸ìˆ˜ë¡œë°›ì•„ í‰ê· ì„ êµ¬í•˜ì—¬ í‰ê· ì„ ë¦¬í„´í•˜ëŠ” ë©”ì†Œë“œ ì‘ì„±
 	private double average(int total, int subjects) {
 		return (total * 100 / subjects) / 100.0;
 	}
-	
-	// 3) Æò±ÕÀ» ÀÎ¼ö·Î ¹Ş¾Æ µî±ŞÀ» ±¸ÇÏ¿© µî±ŞÀ» ¸®ÅÏÇØÁÖ´Â ¸Ş¼Òµå ÀÛ¼º
+
+	// 3) í‰ê· ì„ ì¸ìˆ˜ë¡œ ë°›ì•„ ë“±ê¸‰ì„ êµ¬í•˜ì—¬ ë“±ê¸‰ì„ ë¦¬í„´í•´ì£¼ëŠ” ë©”ì†Œë“œ ì‘ì„±
 	private char grade(double average) {
-		
+
 		char result = 'F';
 
 		if (average >= 90)
@@ -31,30 +34,30 @@ class Transcript04 {
 		else if (average >= 60)
 			result = 'D';
 
-		return result;	
+		return result;
 	}
 
-	// 4) ÀÌ¸§, ±¹¾î, ¿µ¾î, ¼öÇĞ Á¡¼ö¸¦ ÀÎ¼ö·Î ¹Ş¾Æ ÃÑÁ¡, Æò±Õ, µî±ŞÀ» ±¸ÇÏ¿© ±× °á°ú¸¦
-	//	  È­¸é¿¡ Ãâ·ÂÇÏ´Â ¸Ş¼Òµå¸¦ ¼±¾ğÇÏ¼¼¿ä.
+	// 4) ì´ë¦„, êµ­ì–´, ì˜ì–´, ìˆ˜í•™ ì ìˆ˜ë¥¼ ì¸ìˆ˜ë¡œ ë°›ì•„ ì´ì , í‰ê· , ë“±ê¸‰ì„ êµ¬í•˜ì—¬ ê·¸ ê²°ê³¼ë¥¼
+	// í™”ë©´ì— ì¶œë ¥í•˜ëŠ” ë©”ì†Œë“œë¥¼ ì„ ì–¸í•˜ì„¸ìš”.
 	public void display(String name, int korean, int english, int math) {
 
-		int total		= this.total(korean, english, math);
-		double average	= this.average(total, 3);
-		char grade		= this.grade(average);
-		
-		System.out.println("\n----- °á°ú -----");
-		System.out.println("ÀÌ¸§: " + name);
-		System.out.println("±¹¾î: " + korean + "\t¿µ¾î: " + english + "\t¼öÇĞ: " + math);
-		System.out.println("ÃÑÁ¡: " + total + "\tÆò±Õ: " + average + "\tµî±Ş: " + grade);	
-	}
+		int total = this.total(korean, english, math);
+		double average = this.average(total, 3);
+		char grade = this.grade(average);
 
+		System.out.println("\n----- ê²°ê³¼ -----");
+		System.out.println("ì´ë¦„: " + name);
+		System.out.println("êµ­ì–´: " + korean + "\tì˜ì–´: " + english + "\tìˆ˜í•™: " + math);
+		System.out.println("ì´ì : " + total + "\tí‰ê· : " + average + "\të“±ê¸‰: " + grade);
+	}
+}
 
 /*
-	2. ¸ŞÀÎ ¸Ş¼Òµå°¡ ÀÖ´Â Å¬·¡½º¸¦ ¼±¾ğÇÑ´Ù. ¸ŞÀÎ ¸Ş¼Òµå¸¦ ÀÛ¼ºÇÏ¿© ±× ¾È¿¡¼­ À§ÀÇ 1¿¡¼­
-	   ¸¸µç ¸Ş¼Òµå Áß ¼ºÀûÀ» Ãâ·ÂÇÏ´Â ¸Ş¼Òµå¸¦ È£ÃâÇÏ¿© ¼ºÀû°á°ú¸¦ È®ÀÎÇÑ´Ù.
-	   Á¶°Ç) ±¹¾î, ¿µ¾î, ¼öÇĞ, ÀÌ¸§Àº Å°º¸µå ÀÔ·ÂÀ» ¹Ş´Â´Ù.
-*/
-	public static void main(String[] args){
+ * 2. ë©”ì¸ ë©”ì†Œë“œê°€ ìˆëŠ” í´ë˜ìŠ¤ë¥¼ ì„ ì–¸í•œë‹¤. ë©”ì¸ ë©”ì†Œë“œë¥¼ ì‘ì„±í•˜ì—¬ ê·¸ ì•ˆì—ì„œ ìœ„ì˜ 1ì—ì„œ ë§Œë“  ë©”ì†Œë“œ ì¤‘ ì„±ì ì„ ì¶œë ¥í•˜ëŠ” ë©”ì†Œë“œë¥¼
+ * í˜¸ì¶œí•˜ì—¬ ì„±ì ê²°ê³¼ë¥¼ í™•ì¸í•œë‹¤. ì¡°ê±´) êµ­ì–´, ì˜ì–´, ìˆ˜í•™, ì´ë¦„ì€ í‚¤ë³´ë“œ ì…ë ¥ì„ ë°›ëŠ”ë‹¤.
+ */
+class Transcript04 {
+	public static void main(String[] args) {
 
 		int korean;
 		int english;
@@ -63,18 +66,18 @@ class Transcript04 {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.print("ÀÌ¸§: ");
+		System.out.print("ì´ë¦„: ");
 		name = sc.next();
-		System.out.print("±¹¾î: ");
+		System.out.print("êµ­ì–´: ");
 		korean = sc.nextInt();
-		System.out.print("¿µ¾î: ");
+		System.out.print("ì˜ì–´: ");
 		english = sc.nextInt();
-		System.out.print("¼öÇĞ: ");
+		System.out.print("ìˆ˜í•™: ");
 		math = sc.nextInt();
-		
+
 		sc.close();
-		
-		Transcript04 obj = new Transcript04();
+
+		Calculation obj = new Calculation();
 		obj.display(name, korean, english, math);
 	}
 }

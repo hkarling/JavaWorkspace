@@ -4,53 +4,53 @@ class OverloadedMethod{
 	private int i;
        
 	public void setOverload(int i){
-		System.out.println("void setOverload(int i) È£Ãâ");
+		System.out.println("void setOverload(int i) í˜¸ì¶œ");
 		this.i = i;
 	}
 	
 	public int getOverload(){
-		System.out.println("int getOverload() È£Ãâ");
+		System.out.println("int getOverload() í˜¸ì¶œ");
 		return i;
 	}
 	
-	//setOverload¸¦ OverloadingÇÏ¼¼¿ä. ¸®ÅÏµµ ÇÏ¼¼¿ä.
+	//setOverloadë¥¼ Overloadingí•˜ì„¸ìš”. ë¦¬í„´ë„ í•˜ì„¸ìš”.
 	public int setOverload(){
-		System.out.println("int setOverload() È£Ãâ");
+		System.out.println("int setOverload() í˜¸ì¶œ");
 		return this.i;
 	}
 
-	//setOverload¸¦ ¶Ç Overloading ÇÏ¼¼¿ä. ¶Ç ´Ù¸¥ ³ğÀ¸·Î ¸®ÅÏ ÇÏ¼¼¿ä.
+	//setOverloadë¥¼ ë˜ Overloading í•˜ì„¸ìš”. ë˜ ë‹¤ë¥¸ ë†ˆìœ¼ë¡œ ë¦¬í„´ í•˜ì„¸ìš”.
 	public int setOverload(int i, int j){
-		System.out.println("int setOverload(int i, int j) È£Ãâ");
+		System.out.println("int setOverload(int i, int j) í˜¸ì¶œ");
 		return j;
 	}
 
-	//setOverload¸¦ ¶Ç ¶ÇOverloading ÇÏ¼¼¿ä. ¸®ÅÏ ¾ÈÇØ¿ä
+	//setOverloadë¥¼ ë˜ ë˜Overloading í•˜ì„¸ìš”. ë¦¬í„´ ì•ˆí•´ìš”
 	public void setOverload(String str) {
-		System.out.println("void setOverload(String str) È£Ãâ");
+		System.out.println("void setOverload(String str) í˜¸ì¶œ");
 	}
 
-	//getOverload¸¦ OverloadingÇÏ¼¼¿ä. ¸®ÅÏµµ ÇÏ¼¼¿ä.
+	//getOverloadë¥¼ Overloadingí•˜ì„¸ìš”. ë¦¬í„´ë„ í•˜ì„¸ìš”.
 	public int getOverload(OverloadedMethod obj){
-		System.out.println("int getOverload(OverloadedMethod obj) È£Ãâ");
+		System.out.println("int getOverload(OverloadedMethod obj) í˜¸ì¶œ");
 		return i;
 	}
 
-	//getOverload¸¦ ¶Ç Overloading ÇÏ¼¼¿ä. ¶Ç ´Ù¸¥ ³ğÀ¸·Î ¸®ÅÏ ÇÏ¼¼¿ä.
+	//getOverloadë¥¼ ë˜ Overloading í•˜ì„¸ìš”. ë˜ ë‹¤ë¥¸ ë†ˆìœ¼ë¡œ ë¦¬í„´ í•˜ì„¸ìš”.
 	public String getOverload(String str){
-		System.out.println("String getOverload(String str) È£Ãâ");
+		System.out.println("String getOverload(String str) í˜¸ì¶œ");
 		return str;
 	}
-	//getOverload¸¦ ¶Ç ¶ÇOverloading ÇÏ¼¼¿ä. ¸®ÅÏ ¾ÈÇØ¿ä
+	//getOverloadë¥¼ ë˜ ë˜Overloading í•˜ì„¸ìš”. ë¦¬í„´ ì•ˆí•´ìš”
 	public void getOverload(int i, int j){
-		System.out.println("void getOverload(int i, int j) È£Ãâ");
+		System.out.println("void getOverload(int i, int j) í˜¸ì¶œ");
 	}
 }
 
 class  MethodOverloadingExam{
 	public static void main(String [] agr){
 
-		//OverloadedMethod°´Ã¼¿¡¼­ È£Ãâ°¡´ÉÇÑ  ¸Ş¼ÒµåµéÀ» ÇÑ¹ø¾¿ È£ÃâÇÏ¼¼¿ä.
+		//OverloadedMethodê°ì²´ì—ì„œ í˜¸ì¶œê°€ëŠ¥í•œ  ë©”ì†Œë“œë“¤ì„ í•œë²ˆì”© í˜¸ì¶œí•˜ì„¸ìš”.
 		OverloadedMethod obj = new OverloadedMethod();
 
 		obj.setOverload(1);

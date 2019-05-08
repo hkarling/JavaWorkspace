@@ -2,14 +2,14 @@ class StaticInitExam {
 	int no;
 
 	public static void main(String[] args) {
-		System.out.println("**** Main ½ÃÀÛ ****");
+		System.out.println("**** Main ì‹¤í–‰ ****");
 	}
 
 	/**
-	 * ÃÖÃÊ µ¥ÀÌÅÍ ÃÊ±âÈ­, È¯°æ¼³Á¤Á¤º¸ ¼¼ÆÃ, DB·Îµå, µ¥ÀÌÅÍµé ·Îµå	
+	 * ìµœì´ˆì˜ ë°ì´í„° ì´ˆê¸°í™”, í™˜ê²½ì„¤ì •ì •ë³´ ì„¸íŒ…, DBë¡œë“œ, ë°ì´í„°ë“¤ ë¡œë”©
 	 */
 	static {
-		System.out.println("**** static ºí·Ï: main ¸Ş¼Òµåº¸´Ù ¸ÕÀú ½ÇÇàµÈ´Ù ****");
-		//System.out.println(no);		// non-static ¸â¹ö¿¡ Á¢±ÙºÒ°¡
+		System.out.println("**** static ë¸”ëŸ­: main ë©”ì†Œë“œë³´ë‹¤ ë¨¼ì € ì‹¤í–‰ ****");
+		//System.out.println(no);		// non-static ì ‘ê·¼ë¶ˆê°€
 	}
 }

@@ -16,7 +16,7 @@ class Test {
 		Test.dd();
 	}
 
-	// static ºí·° ¾È¿¡¼­ this Å°¿öµå »ç¿ëºÒ°¡, non-static Á¢±ÙºÒ°¡.
+	// static ë¸”ëŸ­ ì•ˆì—ì„œ this í‚¤ì›Œë“œ ì‚¬ìš©ë¶ˆê°€, non-static ì ‘ê·¼ë¶ˆê°€.
 	public static void cc() {
 //		System.out.println(a);
 		System.out.println(b);
@@ -37,29 +37,29 @@ class Test {
 public class StaticExam {
 	public static void main(String[] args) {
 		
-		// static °øÀ¯º¯¼ö
+		// static ê³µìœ ë³€ìˆ˜
 		Test t1 = new Test();
 		Test t2 = new Test();
 		Test t3 = new Test();
 
-		System.out.println("t1ÁÖ¼Ò: " + t1);
-		System.out.println("t2ÁÖ¼Ò: " + t2);
-		System.out.println("t3ÁÖ¼Ò: " + t3);
+		System.out.println("t1ì£¼ì†Œ: " + t1);
+		System.out.println("t2ì£¼ì†Œ: " + t2);
+		System.out.println("t3ì£¼ì†Œ: " + t3);
 
-		System.out.println("--- non-static º¯¼ö º¯°æÀü ---");
+		System.out.println("--- non-static ë³€ìˆ˜ ë³€ê²½ì „ ---");
 		System.out.println("t1.a = " + t1.a);
 		System.out.println("t2.a = " + t2.a);
 		System.out.println("t3.a = " + t3.a);
 
 		t2.a = 100;
 
-		System.out.println("--- non-static º¯¼ö º¯°æÈÄ ---");
+		System.out.println("--- non-static ë³€ìˆ˜ ë³€ê²½í›„ ---");
 		System.out.println("t1.a = " + t1.a);	// 5
 		System.out.println("t2.a = " + t2.a);	// 100
 		System.out.println("t3.a = " + t3.a);	// 5
 		
 		//////////////////////////////////
-		System.out.println("--- static º¯¼ö º¯°æÀü ---");
+		System.out.println("--- static ë³€ìˆ˜ ë³€ê²½ì „ ---");
 		System.out.println("t1.b = " + t1.b);
 		System.out.println("t2.b = " + t2.b);
 		System.out.println("t3.b = " + t3.b);
@@ -67,7 +67,7 @@ public class StaticExam {
 
 		t2.b = 50;
 
-		System.out.println("--- static º¯¼ö º¯°æÈÄ ---");
+		System.out.println("--- static ë³€ìˆ˜ ë³€ê²½í›„ ---");
 		System.out.println("t1.b = " + t1.b);	// 50
 		System.out.println("t2.b = " + t2.b);	// 50
 		System.out.println("t3.b = " + t3.b);	// 50
