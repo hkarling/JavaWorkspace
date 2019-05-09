@@ -2,6 +2,24 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MainApp",
+            "request": "launch",
+            "mainClass": "MainApp"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ConstructorOverloadingExam",
+            "request": "launch",
+            "mainClass": "ConstructorOverloadingExam"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ConstructorExam",
+            "request": "launch",
+            "mainClass": "ConstructorExam"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - StudentArrayExam",
             "request": "launch",
             "mainClass": "StudentArrayExam"

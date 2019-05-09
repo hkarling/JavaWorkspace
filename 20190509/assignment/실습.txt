@@ -1,0 +1,63 @@
+ - 주요기능
+1. 전자제품(Electronics) 5개를 저장 할수 있는 배열을 만들어서 저장한다.
+   
+2.  모든 전자제품 정보를 출력한다.
+  
+3. 실행할때 모델번호를 인수로 받아서 모델번호에 해당하는 
+   전자제품을 출력한다. 
+
+4. 모델번호에 해당하는 전자제품 모델이름, 가격, 설명 변경하기
+////////////////////////////////////////////////////
+
+   전자제품(Electronics)의 속성은(
+       모델번호(modelNo) - int,
+       모델이름(modelName) - String
+       가격(modelPrice) - int , 
+       설명(modelDetail) - String)
+
+
+2. 전자제품의 초기치 데이터 2차원 배열 (메인메소드에 선언한다)
+   String data [][] = {
+      {"100" , "에어컨" , "250000", "삼성 무풍에어컨"} ,
+      {"200" , "세탁기" , "350000", "LG 세탁짱"} ,
+      {"300" , "냉장고" , "500000", "냉장고입니다."} ,
+      {"400" , "전자렌지" , "640000", "전자렌즈입니다."} ,
+      {"500" , "밥통" , "450000", "쿠쿠밥솥 최고!"} , 
+   }
+
+   => 위 전자제품의 초기치 데이터를 생성자를 통해 저장한다.  
+
+
+
+힌트 : Electronics.java ( Field, 생성자, setXxx(), getXxx())
+       
+       ElectronicsService.java 
+          전역변수 : Electronics electronics [] = new Electronics[5];
+          - public void save(String [][] data){}
+          - public void printAll(){}
+          - public void searchBymodelNo(int modelNo){}
+          - public void update(Electronics electornics){}
+     
+      MainApp.java 
+         메인메소드 작성
+           - 초기치 데이터 2번항목이 메인메소드에 있다.
+           - ElectronicsService의 save를 호출한다.
+           - ElectronicsService의 printAll() 호출한다.
+           - ElectronicsService의 searchBymodelNo(int modelNo) 호출한다.
+             (modelNo는 실행할때 인수(args)로 전달된 정보를 준다)
+            - ElectronicsService의 update() 호출한다.
+ -출력 결과 
+   ****** 전자제품 LIST ************
+  모델번호 : 100  모델이름 :     가격 :    설명 :   
+  모델번호 : 200  모델이름 :     가격 :    설명 :  
+  모델번호 : 300  모델이름 :     가격 :    설명 :  
+  모델번호 : 400  모델이름 :     가격 :    설명 :  
+  모델번호 : 500  모델이름 :     가격 :    설명 :  
+
+
+ ****** 모델번호에 해당하는 레코드 검색********
+  인수 : 700인 경우
+    결과 : 모델번호 700에 해당하는 정보가 없습니다.
+
+ 인수 : 300인 경우
+    결과 : 모델번호 : 300  모델이름 :     가격 :    설명 :  
