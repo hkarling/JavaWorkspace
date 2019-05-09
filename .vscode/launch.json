@@ -2,6 +2,12 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - MultiArrayExam",
+            "request": "launch",
+            "mainClass": "MultiArrayExam"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - LottoNumber",
             "request": "launch",
             "mainClass": "LottoNumber"
