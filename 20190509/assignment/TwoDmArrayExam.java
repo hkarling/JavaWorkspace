@@ -12,7 +12,8 @@ class TwoDmArray {
 		for (int i = 0; i < 10; i++) {
 			arrStr[i] = new String[i + 1];
 			for (int j = 0; j < arrStr[i].length; j++) {
-				arrStr[i][j] = (i + 1) + "동" + (j + 1) + "호";
+				// arrStr[i][j] = (i + 1) + "동" + (j + 1) + "호";
+				arrStr[i][j] = String.format("%d동%2d호", (i + 1), (j + 1));
 			}
 		}
 	}
