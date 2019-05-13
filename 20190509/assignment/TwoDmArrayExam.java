@@ -1,7 +1,5 @@
 /**
- * 이름: 윤참솔
- * 날짜: 5월 9일
- * 주제: 동호레이아웃 출력
+ * 이름: 윤참솔 날짜: 5월 9일 주제: 동호레이아웃 출력
  */
 class TwoDmArray {
 	// String을 저장하는 twoDmArray 배열선언
@@ -12,8 +10,8 @@ class TwoDmArray {
 		for (int i = 0; i < 10; i++) {
 			arrStr[i] = new String[i + 1];
 			for (int j = 0; j < arrStr[i].length; j++) {
-				// arrStr[i][j] = (i + 1) + "동" + (j + 1) + "호";
-				arrStr[i][j] = String.format("%d동%2d호", (i + 1), (j + 1));
+				arrStr[i][j] = (i + 1) + "동" + (j + 1) + "호";
+				// arrStr[i][j] = String.format("%d동%2d호", (i + 1), (j + 1));
 			}
 		}
 	}
@@ -22,10 +20,10 @@ class TwoDmArray {
 	public void print2DmArray() {
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j < i; j++) {
-				System.out.print("\t"); // 빈 칸 출력
+				System.out.print("       "); // 빈 칸 출력
 			}
 			for (int j = i; j < 10; j++) {
-				System.out.print(arrStr[j][i] + "\t"); // 행과 열을 바꿔서 출력
+				System.out.print(arrStr[j][i] + " "); // 행과 열을 바꿔서 출력
 			}
 			System.out.println();
 		}
