@@ -1,6 +1,3 @@
-/**
- * Student class
- */
 public class Student {
     private int studentNumber;
     private String name;

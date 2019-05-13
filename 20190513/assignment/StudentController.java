@@ -1,4 +1,3 @@
-
 public class StudentController {
     StudentService service = StudentService.getInstance();
     // 등록
