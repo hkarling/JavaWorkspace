@@ -45,4 +45,11 @@ public class Electronics {
     public int getModelPrice() {
         return modelPrice;
     }
+
+    @Override
+    public String toString() {
+        String result = String.format("모델번호: %-4s모델이름: %-12s\t모델가격: %-10s모델설명: %s", this.modelNo, this.modelName, this.modelPrice, this.modelDetail);
+        // "모델번호: " + this.modelNo + "\t모델이름: " + this.modelName + "\t모델가격: " + this.modelPrice + "\t모델설명: " + this.modelDetail;
+        return result;
+    }
 }

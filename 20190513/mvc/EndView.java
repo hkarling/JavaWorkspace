@@ -8,10 +8,11 @@ public class EndView {
     public static void printAll(Electronics[] data) {
         System.out.println("\n***** Electronics LIST(" + ElectronicsService.count + ")*****");
         for (int i = 0; i < ElectronicsService.count; i++) {
-            System.out.print("모델번호: " + data[i].getModelNo() + "\t");
-            System.out.print("모델이름: " + data[i].getModelName() + "\t");
-            System.out.print("모델가격: " + data[i].getModelPrice() + "\t");
-            System.out.println("모델설명: " + data[i].getModelDetail());
+            // System.out.print("모델번호: " + data[i].getModelNo() + "\t");
+            // System.out.print("모델이름: " + data[i].getModelName() + "\t");
+            // System.out.print("모델가격: " + data[i].getModelPrice() + "\t");
+            // System.out.println("모델설명: " + data[i].getModelDetail());
+            System.out.println(data[i]);       
         }
     }
 
