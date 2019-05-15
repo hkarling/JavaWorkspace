@@ -1,4 +1,4 @@
-package test.exam;
+package interfaceEx;
 
 public class MainApp {
 

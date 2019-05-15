@@ -4,7 +4,7 @@
  */
 package assign.sample02;
 
-public class Employee {
+public abstract class Employee {
 	private int empNo;
 	private String eName;
 	private String job;
@@ -79,9 +79,7 @@ public class Employee {
 
 	////////////////////////////////////////////////////////////////////////////
 
-	public void message() {
-		System.out.print(this.eName + "사원은 ");
-	}
+	public abstract void message();
 
 	@Override
 	public String toString() {

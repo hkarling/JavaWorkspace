@@ -43,8 +43,7 @@ public class FullTime extends Employee {
 
 	@Override
 	public void message() {
-		super.message();
-		System.out.println("정규직입니다.");
+		System.out.println(this.geteName() + "사원은 정규직입니다.");
 	}
 
 	@Override

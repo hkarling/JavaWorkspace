@@ -1,0 +1,20 @@
+1.	1
+
+2.	2
+
+3.	1
+
+4.	4
+
+5.	Parent 클래스에서 기본생성자가 선언되지 않아 Child클래스 생성자에 인자를 가진 부모클래스의 생성자를 호출해야한다.
+	super(String name);
+
+6.	Parent(String nation) call
+	Parent() call
+	Child(String name) call
+	Child() call
+
+7.	스노우 타이어가 굴러갑니다.
+	스노우 타이어가 굴러갑니다.
+
+8. 2
