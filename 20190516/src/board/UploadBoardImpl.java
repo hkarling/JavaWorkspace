@@ -1,16 +1,16 @@
 package board;
 
-public class UploadBoardImpl implements BoardInteface {
+public class UploadBoardImpl implements BoardInterface {
 
 	@Override
 	public boolean insert(Board board) {
-		// TODO Auto-generated method stub
+		System.out.println("UploadBoardImpl의 insert(Board board) 호출");
 		return false;
 	}
 
 	@Override
 	public Board searchByNo(int no) {
-		// TODO Auto-generated method stub
+		System.out.println("UploadBoardImpl의 searcyByNo(int no) 호출");
 		return null;
 	}
 
