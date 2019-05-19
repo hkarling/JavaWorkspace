@@ -2,6 +2,7 @@ package overriding;
 
 class ObjectExam {
 	String str;
+
 	public ObjectExam() {
 	}
 
@@ -9,7 +10,7 @@ class ObjectExam {
 		this.str = str;
 	}
 
-	@Override	// annotation: 클래스, 멤버, 메소드 위의 표시. 컴파일러에게 편의 제공.
+	@Override // annotation: 클래스, 멤버, 메소드 위의 표시. 컴파일러에게 편의 제공.
 	public String toString() {
 		return str + super.toString();
 	}

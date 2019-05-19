@@ -1,7 +1,7 @@
 package assign;
 
 /**
- * 이름: 윤참솔 날짜: 5월 9일 주제: 동호레이아웃 출력
+ * 주제: 동호레이아웃 출력
  */
 class TwoDmArray {
 	// String을 저장하는 twoDmArray 배열선언

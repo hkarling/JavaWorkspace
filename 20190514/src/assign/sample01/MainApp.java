@@ -1,7 +1,3 @@
-/** 
- * @author 윤참솔
- * created on 2019/05/14
- */
 package assign.sample01;
 
 public class MainApp {
@@ -25,7 +21,7 @@ public class MainApp {
 		System.out.println("\n*************** Message **************");
 		for (FullTime ft : full)
 			ft.message();
-		for(PartTime pt : part)
+		for (PartTime pt : part)
 			pt.message();
 	}
 }

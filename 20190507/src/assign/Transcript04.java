@@ -1,10 +1,5 @@
 package assign;
 
-/**
- * 이름: 윤참솔
- * 날짜: 5월 7일
- * 주제: 성적구하기 4일차
- */
 import java.util.Scanner;
 
 /*

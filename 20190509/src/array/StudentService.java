@@ -34,25 +34,26 @@ public class StudentService {
             System.out.println(s.getName() + "\t" + s.getAge() + "\t" + s.getAddress());
         }
     }
+
     // 학생 이름에 해당하는 정보 검색
     public void searchByName(String name) {
-        for(Student student : arrStudent) {
-            if(student.getName().equals(name)){
+        for (Student student : arrStudent) {
+            if (student.getName().equals(name)) {
                 System.out.println(student.getName() + "\t" + student.getAge() + "\t" + student.getAddress());
                 return;
             }
         }
         System.out.println(name + " 학생의 정보가 없습니다.");
     }
+
     // 학생 이름에 해당하는 나이와 주소 변경
     public void update(Student student) {
-        for(Student st : arrStudent) {
-            if(student.getName().equals(student.getName())){
+        for (Student st : arrStudent) {
+            if (student.getName().equals(student.getName())) {
                 st.setName(student.getName());
                 st.setAge(student.getAge());
                 st.setAddress(student.getAddress());
 
-                
                 System.out.println(student.getName() + "\t" + student.getAge() + "\t" + student.getAddress());
                 return;
             }

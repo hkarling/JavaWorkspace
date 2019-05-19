@@ -1,24 +1,24 @@
 package assign;
 
 /**
- * 이름: 윤참솔 날짜: 5월 9일 주제: ElectronicsService 클래스
+ * 주제: ElectronicsService 클래스
  */
 public class ElectronicsService {
     Electronics electronics[] = new Electronics[5];
 
     public void save(String[][] data) {
-        for(int i = 0; i < 5; i++) {
+        for (int i = 0; i < 5; i++) {
             electronics[i] = new Electronics();
             electronics[i].setModelNo(Integer.parseInt(data[i][0]));
             electronics[i].setModelName(data[i][1]);
-            electronics[i].setModelPrice(Integer.parseInt(data[i][2]));;
-            electronics[i].setModelDetail(data[i][3]);;
+            electronics[i].setModelPrice(Integer.parseInt(data[i][2]));
+            electronics[i].setModelDetail(data[i][3]);
         }
     }
 
     public void printAll() {
         System.out.println("****** 전자제품 LIST ************");
-        for(Electronics obj : electronics){
+        for (Electronics obj : electronics) {
             System.out.print("모델번호: " + obj.getModelNo() + "\t");
             System.out.print("모델이름: " + obj.getModelName() + "\t");
             System.out.print("가격: " + obj.getModelPrice() + "\t");
@@ -28,8 +28,8 @@ public class ElectronicsService {
 
     public void searchBymodelNo(int modelNo) {
         System.out.println("인수" + modelNo + "인 경우");
-        for(Electronics obj : electronics) {
-            if(obj.getModelNo() == modelNo) {
+        for (Electronics obj : electronics) {
+            if (obj.getModelNo() == modelNo) {
                 System.out.print("결과 : ");
                 this.printSingle(obj);
                 return;
@@ -40,8 +40,8 @@ public class ElectronicsService {
 
     public void update(Electronics inputElectronics) {
         System.out.println("모델넘버 " + inputElectronics.getModelNo() + " 항목을 수정");
-        for(Electronics obj : electronics) {
-            if(obj.getModelNo() == inputElectronics.getModelNo()) {
+        for (Electronics obj : electronics) {
+            if (obj.getModelNo() == inputElectronics.getModelNo()) {
                 System.out.print("수정전 : ");
                 this.printSingle(obj);
 

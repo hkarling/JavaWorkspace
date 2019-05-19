@@ -1,7 +1,3 @@
-/** 
- * @author 윤참솔
- * created on 2019/05/14
- */
 package assign.sample02;
 
 public class FullTime extends Employee {
@@ -20,7 +16,7 @@ public class FullTime extends Employee {
 		this.salary = salary;
 		this.bonus = bonus;
 	}
-	
+
 	////////////////////////////////////////////////////////////////////////////
 
 	public int getSalary() {

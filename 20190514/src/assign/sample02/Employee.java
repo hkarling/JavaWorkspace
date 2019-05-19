@@ -1,7 +1,3 @@
-/** 
- * @author 윤참솔
- * created on 2019/05/14
- */
 package assign.sample02;
 
 public abstract class Employee {
@@ -83,7 +79,8 @@ public abstract class Employee {
 
 	@Override
 	public String toString() {
-		String str = this.empNo + " | " + this.eName + " | " + this.job + " | " + this.mgr + " | " + this.hiredate + " | " + this.depName;
+		String str = this.empNo + " | " + this.eName + " | " + this.job + " | " + this.mgr + " | " + this.hiredate
+				+ " | " + this.depName;
 		return str;
 	}
 }

@@ -14,7 +14,7 @@ public class ObjectInArray {
 		// 5개의 ObjectOne객체를 생성하세요.
 		for (int i = 0; i < 5; i++)
 			objectOnes[i] = new ObjectOne();
-		
+
 		// 각 객체가 갖고있는 전역변수 출력
 		System.out.println("----- 각 객체의 전역변수 -----");
 		for (ObjectOne obj : objectOnes)

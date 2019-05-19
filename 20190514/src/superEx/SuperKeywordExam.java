@@ -80,11 +80,11 @@ public class SuperKeywordExam {
         System.out.println("-------------------------------");
 
         // 부모타입 변수가 접군되지 않는 자식부분에 접근하기 위해서 ObjectDownCasting이 필요하다.
-        if (superSub instanceof Sub) {  // ClassCastException 발생을 방지한다.
-            Sub sub2 = (Sub) superSub;      
+        if (superSub instanceof Sub) { // ClassCastException 발생을 방지한다.
+            Sub sub2 = (Sub) superSub;
             System.out.println("superSub = " + superSub);
             System.out.println("sub2 =     " + sub2);
-            
+
             System.out.println(sub2.c);
             sub2.cc();
         }

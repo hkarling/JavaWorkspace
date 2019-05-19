@@ -1,7 +1,7 @@
 package assign;
 
 /**
- * 이름: 윤참솔 날짜: 5월 9일 주제: MainApp 클래스
+ * 주제: MainApp 클래스
  */
 public class MainApp {
 
@@ -19,7 +19,7 @@ public class MainApp {
         // ElectronicsService의 printAll() 호출한다.
         System.out.println();
         service.printAll();
-        
+
         // ElectronicsService의 searchBymodelNo(int modelNo) 호출한다. (modelNo는 실행할때
         // 인수(args)로 전달된 정보를 준다)
         System.out.println();
@@ -28,8 +28,8 @@ public class MainApp {
         service.searchBymodelNo(300);
 
         // ElectronicsService의 update() 호출한다.
-        service.update(new Electronics(700,"뭐를",999999,"고치라고"));
-        service.update(new Electronics(300,"뭐를",999999,"고치라고"));
-        
+        service.update(new Electronics(700, "뭐를", 999999, "고치라고"));
+        service.update(new Electronics(300, "뭐를", 999999, "고치라고"));
+
     }
 }

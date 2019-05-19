@@ -73,7 +73,7 @@ class EqualsExam2 {
 		String s5 = new String("new String Object3");
 		String s6 = "new String Object3";
 		String s7 = "new String Object3";
-		
+
 		if (s5.equals(s6)) { // 값 비교: true
 			System.out.println("s5.equals(s6) = true");
 		} else {

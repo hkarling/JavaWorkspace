@@ -12,6 +12,7 @@ public class StudentResultView {
             System.out.println("주소: " + students[i].getAddress());
         }
     }
+
     // 부분출력
     public static void printSingle(Student student) {
         System.out.println("\n***** Student #" + StudentService.count + " *****");
@@ -21,7 +22,7 @@ public class StudentResultView {
         System.out.println("주소: " + student.getAddress());
     }
     // 메시지
-    
+
     public static void printMessage(String message) {
         System.out.println(message);
     }

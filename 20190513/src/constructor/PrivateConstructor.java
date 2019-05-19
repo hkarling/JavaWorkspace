@@ -4,14 +4,16 @@ class Test {
     static Test test = new Test(); // Singletone 객체
 
     // 외부에서 객체를 직접생성하지 못하도록 막는다.
-    private Test(){}
-    
+    private Test() {
+    }
+
     // 내부적으로 직접 현재 객체를 생성해서 리턴하는 메소드를 작성.
-    public static Test getInstance(){
+    public static Test getInstance() {
         return test;
     }
 
 }
+
 /////////////////////////////////////////////////
 public class PrivateConstructor {
 

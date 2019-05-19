@@ -1,6 +1,6 @@
 package lab;
 /**
- * 쇼핑몰 클래
+ * 쇼핑몰 클래스
  */
 public class ShoppingMall {
 

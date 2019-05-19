@@ -2,12 +2,7 @@ package array;
 
 public class MultiArrayExam {
     // int[][] arr = new int[3][4];
-    int[][] arr = new int[][] { 
-        { 1, 2, 3, 4, 5 }, 
-        { 1, 2 }, 
-        { 1, 2, 3, 4, 5, 6, 7, 8 },
-        { 1, 2, 3, 4 }
-    };
+    int[][] arr = new int[][] { { 1, 2, 3, 4, 5 }, { 1, 2 }, { 1, 2, 3, 4, 5, 6, 7, 8 }, { 1, 2, 3, 4 } };
 
     String[][] strArr = new String[3][];
 
@@ -35,7 +30,7 @@ public class MultiArrayExam {
 
         // 각 행마다 열을 생성한다.
         for (int i = 0; i < 3; i++)
-            strArr[i] = new String[i+1];
+            strArr[i] = new String[i + 1];
 
         for (String[] i : strArr) {
             for (String j : i)
@@ -44,7 +39,7 @@ public class MultiArrayExam {
         }
 
     }
-        
+
     public static void main(String[] args) {
         new MultiArrayExam().test(); // 실행만
     }

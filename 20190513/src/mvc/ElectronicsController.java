@@ -11,8 +11,7 @@ public class ElectronicsController {
      * 등록
      */
     public void insert(Electronics electronics) {
-        // 서비스를 호출하고 그 결과를 받아서 결과뷰호출
-        // 등록 전에 중복체크를 하고 등록
+        // 서비스를 호출하고 그 결과를 받아서 결과뷰 호출. 등록 전에 중복체크를 하고 등록
         Electronics dbElec = service.searchByModelNo(electronics.getModelNo());
         if (dbElec == null) { // 등록가능
             if (service.insert(electronics)) {

@@ -6,7 +6,9 @@ public class Student {
     private int age;
     private String address;
 
-    public Student() { }
+    public Student() {
+    }
+
     public Student(int studentNumber, String name, int age, String address) {
         this.studentNumber = studentNumber;
         this.name = name;
@@ -17,12 +19,15 @@ public class Student {
     public int getStudentNumber() {
         return studentNumber;
     }
+
     public String getName() {
         return name;
     }
+
     public int getAge() {
         return age;
     }
+
     public String getAddress() {
         return address;
     }
@@ -30,12 +35,15 @@ public class Student {
     public void setStudentNumber(int studentNumber) {
         this.studentNumber = studentNumber;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public void setAge(int age) {
         this.age = age;
     }
+
     public void setAddress(String address) {
         this.address = address;
     }

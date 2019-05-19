@@ -3,7 +3,7 @@ package inheritance;
 class Car {
 	public String carname;
 	public int cost;
-	
+
 	protected void printAttributes() {
 		System.out.println("carname=" + carname + "\tcost=" + cost);
 	}
@@ -20,7 +20,7 @@ class EfSonata extends Car {
 }
 
 class Excel extends Car {
-	
+
 	int a = 10;
 
 	public Excel() {

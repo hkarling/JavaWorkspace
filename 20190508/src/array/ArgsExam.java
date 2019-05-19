@@ -18,15 +18,12 @@ public class ArgsExam {
             result += Integer.parseInt(str);
         }
         /*
-            - 문자열(String) -> 숫자(int)로 변환
-                int i = Integer.parseInt(String str);
-            - 숫자(int) -> 문자열(String)로 변환
-                String str = Integer.toString(int i);
+         * - 문자열(String) -> 숫자(int)로 변환 int i = Integer.parseInt(String str); - 숫자(int)
+         * -> 문자열(String)로 변환 String str = Integer.toString(int i);
          */
         System.out.println("합 = " + result);
     }
 }
 /**
- * -- 실행할때 값을 전달. 
- * java ArgsExam (전달인자)
+ * -- 실행할때 값을 전달. java ArgsExam (전달인자)
  */

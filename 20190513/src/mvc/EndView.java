@@ -14,7 +14,7 @@ public class EndView {
             // System.out.print("모델이름: " + data[i].getModelName() + "\t");
             // System.out.print("모델가격: " + data[i].getModelPrice() + "\t");
             // System.out.println("모델설명: " + data[i].getModelDetail());
-            System.out.println(data[i]);       
+            System.out.println(data[i]);
         }
     }
 

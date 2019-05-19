@@ -2,8 +2,8 @@ package exceptionEx;
 
 /**
  * Exception이란: 예기치 못한 예외가 발생하여 프로그램이 강제 종료되는것을 미리 예측하여 예방하는 것.
- * - 예외의 종류 	1) 체크Exception : 컴파일할때 반드시 예외처리를 해야한다. 
- * 			  	2) 비체크 Exception : 실행할때 발생하는 예외로 예외처리를 선택적으로 할 수 있다. (RuntimeException)
+ * - 예외의 종류	 1) 체크Exception : 컴파일할때 반드시 예외처리를 해야한다. 
+ *					2) 비체크 Exception : 실행할때 발생하는 예외로 예외처리를 선택적으로 할 수 있다. (RuntimeException)
  */
 
 public class ExceptionExam {

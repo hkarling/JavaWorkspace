@@ -1,6 +1,6 @@
 package lab;
 /**
- * 사용자 예외처리 클래
+ * 사용자 예외처리 클래스
  */
 @SuppressWarnings("serial")
 public class TooYoungException extends Exception {

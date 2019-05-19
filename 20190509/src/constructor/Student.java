@@ -1,4 +1,5 @@
 package constructor;
+
 /**
  * Student
  */
@@ -9,9 +10,10 @@ public class Student {
     private String name;
     private int age;
     private String address;
-    
+
     /////// 생성자 ////////
-    public Student() {}
+    public Student() {
+    }
 
     public Student(String name, int age, String address) {
         this.name = name;
