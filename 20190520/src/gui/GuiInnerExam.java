@@ -8,17 +8,17 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
-public class GuiExam extends JFrame implements ActionListener {
+public class GuiInnerExam extends JFrame implements ActionListener {
 
 	/** Serial Version ID */
-	private static final long serialVersionUID = -8305288678203900476L;
+	private static final long serialVersionUID = -8105288678203900476L;
 
 	/** 버튼 필드 */
 	JButton button1 = new JButton("Click 1");
 	JButton button2 = new JButton("Click 2");
 	JTextField txtField = new JTextField(20);
 
-	public GuiExam() {
+	public GuiInnerExam() {
 		super("Gui실습이오");
 
 		/** 옵션설정 */
@@ -45,12 +45,13 @@ public class GuiExam extends JFrame implements ActionListener {
 		button1.addActionListener(this);
 		button2.addActionListener(this);
 
-		this.addMouseListener(new MouseExam(this));
-
+		this.addMouseListener(new MouseExam());
+		txtField.addKeyListener(new KeyEventExam());
+		
 	}
 
 	public static void main(String[] args) {
-		new GuiExam();
+		new GuiInnerExam();
 	}
 
 	@Override
@@ -70,36 +71,38 @@ public class GuiExam extends JFrame implements ActionListener {
 			txtField.setText(e.getActionCommand() + " 클릭");
 
 	}
-}
 
 ////////////////////////////////////////////////////////////////////
+	
+	// inner 클래스의 ~.class는 outer클래스이름$inner클래스이름.class 생성.
+	
+	/** 마우스이벤트 클래스 */
+	class MouseExam extends MouseAdapter {
+		/** 필요한 메서드 재정의 */
+		@Override
+		public void mouseClicked(MouseEvent e) {
 
-/** 마우스이벤트 클래스 */
-class MouseExam extends MouseAdapter {
-
-	JTextField txtField;
-	GuiExam guiExam;
-
-	public MouseExam() {
-
+			/** 기능 구현 */
+			int x = e.getX();
+			int y = e.getY();
+			//System.out.println("x = " + x + ", y = " + y);Í
+			//txtField.setText("x = " + x + ", y = " + y);
+			txtField.setText("x = " + x + ", y = " + y);
+		}
 	}
 
-	public MouseExam(JTextField txtField) {
-		this.txtField = txtField;
-	}
+////////////////////////////////////////////////////////////////////
+	
+	/** 키 이벤트 클래스 */
+	class KeyEventExam extends KeyAdapter {
 
-	public MouseExam(GuiExam guiExam) {
-		this.guiExam = guiExam;
-	}
-	/** 필요한 메서드 재정의 */
-	@Override
-	public void mouseClicked(MouseEvent e) {
-
-		/** 기능 구현 */
-		int x = e.getX();
-		int y = e.getY();
-//		System.out.println("x = " + x + ", y = " + y);
-//		txtField.setText("x = " + x + ", y = " + y);
-		guiExam.txtField.setText("x = " + x + ", y = " + y);
+		@Override
+		public void keyPressed(java.awt.event.KeyEvent e) {
+			
+			// 키보드의 키를 구해옴
+			int code = e.getKeyCode();
+			button2.setText(e.getKeyChar() + "");
+			System.out.println("code: " + code);
+		}
 	}
 }

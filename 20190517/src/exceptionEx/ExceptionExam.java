@@ -42,7 +42,7 @@ public class ExceptionExam {
 		} finally {
 			
 			System.out.println("finally 블록: 예외발생 여부와 상관없이 무조건 실행");
-			return;
+			//return;
 
 		}
 
