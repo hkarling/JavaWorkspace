@@ -38,13 +38,14 @@ public class ExceptionExam {
 			
 			System.out.println("예외발생..");
 			ex.printStackTrace(); // 예외의 정보를 가장 디테일하게 출력. 배포시에는 제거한다.
-		
 			// finally 는 exception 블록이 없더라도 실행은 된다.
 		} finally {
 			
 			System.out.println("finally 블록: 예외발생 여부와 상관없이 무조건 실행");
+			return;
+
 		}
 
-		System.out.println("---------- 메인 끝 ----------");
+		//System.out.println("---------- 메인 끝 ----------");
 	}
 }
