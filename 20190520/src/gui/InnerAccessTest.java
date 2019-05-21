@@ -69,7 +69,7 @@ class Test {
 	public void ff() {
 		/** access modifier, static 모두 사용불가. local variable 취급, 외부에서 사용불가 */
 		class LocalInner {
-			int sum = 8;
+//			int sum = 8;
 			public void aa() {
 				System.out.println(a);	// outer의 non-static 접근가능
 				System.out.println(b);	// outer의 static 접근가능
