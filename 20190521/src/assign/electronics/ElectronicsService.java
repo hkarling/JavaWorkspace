@@ -8,7 +8,8 @@ import java.util.List;
  */
 public class ElectronicsService {
 	
-	private static ElectronicsService instance = new ElectronicsService();
+	//** 싱글턴 객체를 저장하는 곳 */
+	private static ElectronicsService instance;
 
 	// 데이터의 영속성을 유지해줄 배열 필요.
 	List<Electronics> list = new ArrayList<Electronics>();
@@ -25,6 +26,8 @@ public class ElectronicsService {
 	}
 
 	public static ElectronicsService getInstance() {
+		if(instance == null)
+			instance = new ElectronicsService();
 		return instance;
 	}
 

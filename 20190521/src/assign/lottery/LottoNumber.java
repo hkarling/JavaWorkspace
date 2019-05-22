@@ -1,6 +1,7 @@
 package assign.lottery;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -46,7 +47,7 @@ class LottoNumber {
      * @return void
      */
     private void sortNumbers() {
-    	list.sort(null);
+    	Collections.sort(list);
     }
 
     /**
