@@ -70,7 +70,7 @@ public class PropertiesExam {
 		PropertiesExam pe = new PropertiesExam();
 		System.out.println("\n1. test.properties 파일 IO 이용하기");
 		pe.ioTest();
-		System.out.println("\n2. test.properties 파일 IO 이용하기");
+		System.out.println("\n2. ResourceBundle 클래스 이용하기");
 		pe.resourceTest();
 	}
 }
