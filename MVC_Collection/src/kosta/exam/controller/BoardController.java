@@ -26,19 +26,45 @@ public class BoardController {
 	}
 	
 	public static void getBoardByKind(String kind) {
-		
+		try {
+			Map<String, Board> map = boardService.getBoardByKind(kind);
+			SuccessView.printByKind(kind, map);
+		} catch (InexistentException e) {
+			FailView.errorMessage(e.getMessage());
+		}	
 	}
 	
-	public static void getBoardByNo (String kind, int no) {
-		
+	public static void getBoardByno (String kind, int no) {
+		try {
+			Board board = boardService.getBoardByNo(kind, no);
+			SuccessView.printBoardByNo(board);
+		} catch (InexistentException e) {
+			//e.printStackTrace();
+			FailView.errorMessage(e.getMessage());
+		}
 	}
 	
 	public static void insertBoard (String kind, Board board) {
-		
+		try {
+			boardService.insertBoard(kind, board);
+			SuccessView.printMessage("등록이 성공하였습니다.");
+		} catch (DuplicateException e) {
+//			e.printStackTrace();
+			FailView.errorMessage(e.getMessage());
+		} catch (InexistentException e) {
+//			e.printStackTrace();
+			FailView.errorMessage(e.getMessage());
+		}
 	}
 	
 	public static void deleteBoard(String kind, int no) {
-		
+		try {
+			boardService.deleteBoard(kind, no);
+			SuccessView.printMessage("삭제에 성공하였습니다.");
+		} catch (InexistentException e) {
+//			e.printStackTrace();
+			FailView.errorMessage(e.getMessage());
+		}
 	}
 	
 	public static void updateBoard(Board board, String kind) {
