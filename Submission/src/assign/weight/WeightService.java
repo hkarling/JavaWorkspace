@@ -11,16 +11,12 @@ import java.nio.file.FileAlreadyExistsException;
 
 public class WeightService {
 
-	/**
-	 * Service는 하나만 있으면 되지 않을까 싶슴다.
-	 */
 	private static WeightService instance = null;
 
 	private BufferedWriter bw = null;
 	private BufferedReader br = null;
 
-	private WeightService() {
-	}
+	private WeightService() {}
 
 	public static WeightService getInstance() {
 		if (instance == null)
@@ -51,7 +47,7 @@ public class WeightService {
 	 * @return person
 	 * @throws IOException, NumberFormatException
 	 */
-	public Person selectPerson(Person person) throws IOException, NumberFormatException {
+	public void selectPerson(Person person) throws IOException, NumberFormatException {
 		br = new BufferedReader(new FileReader("weights/" + person.getName() + ".txt"));
 		String inputStr = br.readLine();
 		String data[] = inputStr.split(" : ");
@@ -59,18 +55,17 @@ public class WeightService {
 			throw new InvalidClassException("Password");
 		person.setWeight(Integer.parseInt(data[0]));
 		person.setPassword(data[1]);
-		return person;
+		//return person;
 	}
 
 	/**
-	 * 3. 몸무게 변경 항목.
+	 * 3. 정보 변경
 	 */
-	public Person updateWeight(Person person) {
-		return null;
+	public void updatePerson(Person person) throws IOException {
+		File file = new File("weights/" + person.getName() + ".txt");
+		bw = new BufferedWriter(new FileWriter(file));
+		bw.write(person.getWeight() + " : " + person.getPassword());
+		bw.flush();
+		bw.close();
 	}
-
-	/**
-	 * 4.
-	 */
-
 }

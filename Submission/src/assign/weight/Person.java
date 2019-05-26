@@ -55,4 +55,13 @@ public class Person {
 		builder.append("kg 입니다.");
 		return builder.toString();
 	}
+	
+	public String printPassword() {
+		StringBuilder builder = new StringBuilder();
+		builder.append(name);
+		builder.append("님의 비밀번호는 ");
+		builder.append(password);
+		builder.append("입니다.");
+		return builder.toString();
+	}
 }

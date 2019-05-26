@@ -1,5 +1,7 @@
 package assign.weight;
 
+import java.util.Scanner;
+
 public class ViewResult {
 
 	/**
@@ -10,7 +12,17 @@ public class ViewResult {
 	public static void printPerson(Person person) {
 		System.out.println("\n*************************************************");
 		System.out.println("\t" + person);
-		System.out.println("\n*************************************************\n\n");
+		System.out.println("*************************************************");
+	}
+	/**
+	 * 선택된 사람의 정보를 불러옵니다.
+	 * 
+	 * @param person
+	 */
+	public static void printPasswordInfo(Person person) {
+		System.out.println("\n*************************************************");
+		System.out.println("\t" + person.printPassword());
+		System.out.println("*************************************************");
 	}
 
 	/**
@@ -19,6 +31,6 @@ public class ViewResult {
 	 * @param message
 	 */
 	public static void printMessage(String message) {
-		System.out.println(message + "\n");
+		System.out.println(message);
 	}
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ViewMain {
 
 	private WeightController controller = new WeightController();
-	private Scanner scanner = new Scanner(System.in);
+	private static Scanner scanner = new Scanner(System.in);
 
 	/** 생성자 */
 	public ViewMain() {
@@ -84,7 +84,23 @@ public class ViewMain {
 		controller.insert(person);
 	}
 	
+	/** 검색 메뉴 */
 	public void printSearchMenu() {	
+		controller.selectPerson(subMenuInfoInput());
+	}
+	
+	/** 몸무게 변경 */
+	public void printWeightUpdateMenu() {
+		controller.updateWeight(subMenuInfoInput());
+	}
+	
+	/** 비밀번호 변경 */
+	public void printPasswordUpdateMenu() {
+		controller.updatePassword(subMenuInfoInput());
+	}
+	
+	/** 몇개의 서브메뉴에서 중복되는 부분을 묶는 메소드입니다. */
+	private Person subMenuInfoInput() {
 		System.out.println("\n이름을 입력하여 주십시오.");
 		System.out.print("이름: ");
 		String name = scanner.next();
@@ -93,15 +109,22 @@ public class ViewMain {
 		System.out.print("비밀번호: ");
 		String password = scanner.next();
 		
-		controller.selectPerson(new Person(name, password));
-		
+		return new Person(name, password);
 	}
 	
-	public void printWeightUpdateMenu() {
+	/** 중간에 추가적으로 입력을 받기위한 메소드입니다. : 몸무게 */
+	public static String weightInput() {
+		System.out.println("\t변경할 몸무게를 입력하시오.");
+		System.out.print("\t변경할 몸무게 : ");
 		
+		return scanner.next();
 	}
 	
-	public void printPasswordUpdateMenu() {
+	/** 중간에 추가적으로 입력을 받기위한 메소드입니다. : 몸무게 */
+	public static String passwordInput() {
+		System.out.println("\t변경할 패스워드를 입력하시오.");
+		System.out.print("\t변경할 패스워드 : ");
 		
+		return scanner.next();
 	}
 }
