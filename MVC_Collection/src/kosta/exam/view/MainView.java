@@ -58,6 +58,9 @@ public class MainView {
 		System.out.println("--4-2. 등록하기(실패!! - kind 잘못!!!!)");
 		BoardController.insertBoard("photo2" ,
 				new PhotoBoard(50, "mvc공부", "장희정", "재미있다.", "2018-08-18", "a.jpg"));
+		
+		System.out.println();
+
 		System.out.println("---검색하기 --------");
 		BoardController.getAllBoard();
 
@@ -75,6 +78,8 @@ public class MainView {
 		System.out.println("---5-3. 삭제실패하기(글번호 오류) -----------------");
 		BoardController.deleteBoard("photo", 70);
 
+		System.out.println();
+
 		System.out.println("---검색하기 --------");
 		BoardController.getAllBoard();
 		
@@ -91,7 +96,9 @@ public class MainView {
 		//BoardController.getAllBoard();
 		///////////////////////////////////////////
 
-		/*System.out.println("---6.수정하기----------------");
+		System.out.println("\n");
+
+		System.out.println("---6.수정하기----------------");
 		System.out.println("--6-1. photo수정 완료-----------------");
 		BoardController.updateBoard(new PhotoBoard(10, "점심시간", "이효리", "뭐 먹지??", null, "test.gif") , "photo");
 
@@ -105,9 +112,10 @@ public class MainView {
 		System.out.println("--6-3. 수정실패(no 잘못) -----------------");
 		BoardController.updateBoard(new ArchiveBoard(80, "점심시간", "이효리", "뭐 먹지??", null, "a.xls",300) , "archive");
 
+		System.out.println();
 
 		System.out.println("---검색하기 --------");
-		BoardController.getAllBoard();*/
+		BoardController.getAllBoard();
 	}
 }
 

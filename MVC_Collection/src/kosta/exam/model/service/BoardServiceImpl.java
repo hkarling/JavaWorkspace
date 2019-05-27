@@ -70,7 +70,10 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public Map<String, Map<String, Board>> getBoardList() throws InexistentException {
-
+		
+		if(allBoardList == null || allBoardList.isEmpty())
+			throw new InexistentException("게시물이 존재하지 않습니다.");
+		
 		return allBoardList;
 	}
 
@@ -102,7 +105,7 @@ public class BoardServiceImpl implements BoardService {
 		
 		String key = Integer.toString(board.getNo());
 		
-		if(map.containsKey(key))
+		if(duplicateByNo(kind, board.getNo()))
 			throw new DuplicateException(kind + "게시판의 " + key + "번 게시물이 존재합니다.");
 		
 		map.put(key, board);
@@ -111,7 +114,8 @@ public class BoardServiceImpl implements BoardService {
 	
 	@Override
 	public boolean duplicateByNo(String kind, int no) {
-		// TODO Auto-generated method stub
+		if(allBoardList.get(kind).containsKey(Integer.toString(no)))
+			return true;
 		return false;
 	}
 
@@ -127,8 +131,14 @@ public class BoardServiceImpl implements BoardService {
 
 	@Override
 	public void updateBoard(Board board, String kind) throws InexistentException {
-		// TODO Auto-generated method stub
 
+		Map<String, Board> map = getBoardByKind(kind);
+		String key = Integer.toString(board.getNo());
+		if(!map.containsKey(key))
+			throw new InexistentException(kind +"게시판에 " + key + "번 게시물이 존재하지 않습니다.");
+		
+		board.setDate(map.get(key).getDate());
+		map.put(key, board);
 	}
 
 	private void propertiesFileStore(String kind, Board board) {

@@ -68,6 +68,11 @@ public class BoardController {
 	}
 	
 	public static void updateBoard(Board board, String kind) {
-		
+		try {
+			boardService.updateBoard(board, kind);
+			SuccessView.printMessage("수정에 성공하였습니다.");
+		} catch (InexistentException e) {
+			FailView.errorMessage(e.getMessage());
+		}
 	}
 }

@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeMap;
 
 import kosta.exam.model.dto.*;
 
@@ -21,12 +22,14 @@ public class SuccessView {
 		while (allBoardIt.hasNext()) {
 			String key = allBoardIt.next();
 			Map<String, Board> submap = map.get(key);
+			
 			System.out.println("**********" + key + "Board 게시물 **********");
-//			Set<String> subKeys = submap.keySet();
-//			Iterator<String> it = subKeys.iterator();
+			Set<String> subKeys = submap.keySet();
+			Iterator<String> it = subKeys.iterator();
 //			while(it.hasNext()) {
 //				System.out.println(submap.get(it.next()));
 //			}
+			
 			Set<Entry<String, Board>> entry = submap.entrySet();
 			for(Entry<String, Board> ent : entry) {
 				System.out.println(ent.getValue());
