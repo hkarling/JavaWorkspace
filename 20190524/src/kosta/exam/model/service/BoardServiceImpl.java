@@ -142,6 +142,6 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	private void propertiesFileStore(String kind, Board board) {
-		
+
 	}
 }
