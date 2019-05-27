@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
+@SuppressWarnings("serial")
 public class ThreadUIExam extends JFrame implements Runnable {
 
 	JTextField text1 = new JTextField(10);
