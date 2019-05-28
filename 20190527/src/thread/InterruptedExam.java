@@ -35,7 +35,7 @@ public class InterruptedExam {
 			public void run() {
 				while (true) {
 					System.out.println("재밌늬? 응? 재밌냐고...");
-					if (Thread.interrupted())
+					if (Thread.interrupted()) 
 						break;
 				}
 			}

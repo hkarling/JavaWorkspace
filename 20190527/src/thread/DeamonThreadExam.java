@@ -1,7 +1,7 @@
 package thread;
 
 /**
- * DaemonThread란 메인스레드가 종료되면 함께 종료되는 스레
+ * DaemonThread란 메인스레드가 종료되면 함께 종료되는 스레드
  * @author hkarling
  */
 public class DeamonThreadExam {
