@@ -1,4 +1,4 @@
-----------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 ------------ 테이블 만들기 ------------
 -- 과목 SUBJECT
 CREATE TABLE SUBJECT(
@@ -83,7 +83,7 @@ INSERT INTO SUGANGTB VALUES('j1004', 904, 2, 4);
 INSERT INTO SUGANGTB VALUES('j1005', 905, 2, 5);
 INSERT INTO SUGANGTB VALUES('j1006', 906, 2, 6);
 
-----------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 /*
     Subquery
         : 메인쿼리 안에 또다른 쿼리가 존재하는 것
@@ -156,7 +156,7 @@ SELECT ROWNUM, EMPNO, ENAME, JOB, SAL FROM (SELECT * FROM EMP ORDER BY SAL);
 SELECT ROWNUM, EMPNO, ENAME, JOB, SAL FROM (SELECT * FROM EMP ORDER BY SAL) WHERE ROWNUM <= 3; -- 실행순서때문에 안된다.
 SELECT * FROM (SELECT ROWNUM, EMPNO, ENAME, JOB, SAL FROM (SELECT * FROM EMP ORDER BY SAL)) WHERE ROWNUM <= 3;
 
-----------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------
 ------ 문제
 
 -- SUBEMP 테이블 생성 / 데이터삽입
@@ -214,7 +214,7 @@ SELECT * FROM SUBEMP WHERE SAL > (SELECT MIN(SAL) FROM SUBEMP WHERE DEPT_ID = 30
 SELECT * FROM SUBEMP WHERE SAL >= (SELECT SAL FROM SUBEMP WHERE EMP_NAME = '정동길'); 
 
 -- EX7)직급이 사무직인 사원의 부서번호와 부서명 출력
-SELECT DEPT_ID, DNAME FROM SUBDEPT WHERE DEPT_ID = ANY (SELECT DISTINCT DEPT_ID FROM SUBEMP WHERE JOB = '사무직');
+SELECT DEPT_ID, DNAME FROM SUBDEPT WHERE DEPT_ID IN (SELECT DISTINCT DEPT_ID FROM SUBEMP WHERE JOB = '사무직');
 
 -- EX8) 부서가 경리부인 모든 사원의 정보출력
 SELECT * FROM SUBEMP WHERE DEPT_ID = (SELECT DEPT_ID FROM SUBDEPT WHERE DNAME = '경리부');
@@ -231,3 +231,144 @@ SELECT * FROM SUBEMP WHERE SAL > ALL (SELECT AVG(SAL) FROM SUBEMP GROUP BY DEPT_
 -- EX12)  모든 사무직 사원보다 급여가 적으면서 사무직이 아닌 모든 사원의 정보검색
 SELECT * FROM SUBEMP WHERE JOB != '사무직' AND SAL < (SELECT MIN(SAL) FROM SUBEMP WHERE JOB = '사무직');
 
+---------------------------------------------------------------------------------------------------
+/*
+    View - 가상테이블
+        : 보안 or 복잡한 쿼리를 단순화 시키기 위해서 사용한다.
+        : 뷰를 생성할 때 어떻게 생성하느냐에 따라 DML(INSERT, UPDATE, DELETE) 가능여부가 달라진다.
+        : VIEW 생성하는 방법
+            CREATE OR REPLACE VIEW 뷰이름 AS 뷰내용(원본))
+            [WITH READ ONLY] -- 읽기 전용
+            [WITH CHECK OPTION] -- 조건에 만족하지 않는 레코드는 DML되지 않는다.
+        : VIEW 삭제
+            DROP VIEW 뷰이름;
+
+            * VIEW 를 생성하려면 기본적으로 뷰를 CREATE 할 수 있는 권한이 필요하다.
+              EX) GRANT CREATE VIEW [ID]..
+*/
+
+-----------
+-- 테이블 생성
+CREATE TABLE VIEW_EMP AS SELECT * FROM EMP;
+
+-- VIEW 생성
+CREATE VIEW V_EMP AS SELECT * FROM VIEW_EMP;
+
+-- VIEW에서 INSERT를 해본다. 
+INSERT INTO V_EMP(EMPNO, ENAME, JOB, SAL) VALUES(8888,'뷰연습','잘되나',3000);
+
+-- 원본에서 INSERT를 해본다
+INSERT INTO V_EMP(EMPNO, ENAME, JOB, SAL) VALUES(8889,'뷰연습2','잘되2',3000);
+
+-- VIEW 에서 삭제
+DELETE FROM V_EMP WHERE JOB = 'MANAGER';
+
+-----------
+-- 보안적인 측면에서 VIEW 사용하기 : 권한에 따라 VIEW의 테이블만 개방한다.
+CREATE OR REPLACE VIEW V_EMP AS SELECT EMPNO, ENAME, JOB, SAL, COMM, DEPTNO FROM VIEW_EMP WHERE DEPTNO = 30;
+
+-- VIEW에 INSERT를 해본다.
+INSERT INTO V_EMP(EMPNO, ENAME, JOB, SAL, COMM, DEPTNO) VALUES (9000,'AAA','가가가',300,100,30); -- 성공.
+INSERT INTO V_EMP(EMPNO, ENAME, JOB, SAL, COMM, DEPTNO) VALUES (9001,'BBB','나나나',5000,1000,10); -- 성공하나 V_EMP테이블에서 겁색하면 검색이 되지 않는다. 그래서 VIEW를 생성할때 조건을 주었다면 WITH CHECK OPTION과 함께 사용하는 것을 권장한다.
+
+-- VIEW를 변경해보자
+CREATE OR REPLACE VIEW V_EMP AS SELECT EMPNO, ENAME, JOB, SAL, COMM, DEPTNO FROM VIEW_EMP WHERE DEPTNO = 30 WITH CHECK OPTION;
+
+-- 다시 VIEW에 INSERT를 해본다.
+INSERT INTO V_EMP(EMPNO, ENAME, JOB, SAL, COMM, DEPTNO) VALUES (9002,'CCC','다다다',300,100,30); -- 성공.
+INSERT INTO V_EMP(EMPNO, ENAME, JOB, SAL, COMM, DEPTNO) VALUES (9003,'DDD','라라라',5000,1000,10); -- view WITH CHECK OPTION where-clause violation
+
+----------
+-- VIEW를 생성할때 읽기전용(SELECT 전용)
+CREATE OR REPLACE VIEW V_EMP AS SELECT EMPNO, ENAME, JOB, SAL, COMM, DEPTNO FROM VIEW_EMP WHERE DEPTNO = 30 WITH READ ONLY;
+
+-- VIEW에 INSERT를 해본다.
+INSERT INTO V_EMP(EMPNO, ENAME, JOB, SAL, COMM, DEPTNO) VALUES (9003,'DDD','라라라',5000,1000,10); -- cannot perform a DML operation on a read-only view
+
+----------
+-- 복잡한 쿼리(join, subquery)를 단순화 시키기 위해서 뷰를 사용
+CREATE OR REPLACE VIEW V_EMP AS
+SELECT EMPNO, E.EMPNO, ENAME, JOB, SAL, DNAME, LOC, GRADE
+FROM EMP E JOIN DEPT D ON E.DEPTNO = D.DEPTNO
+    JOIN SALGRADE S ON SAL BETWEEN S.LOSAL AND S.HISAL
+WHERE EMPNO=7369;
+
+---------------------------------------------------------------------------------------------------
+/*
+    SEQUENCE
+        : 자동증가 컬럼에 값을 자동 설정!
+        : 생성방법
+            CREATE SEQUENCE 시퀀스명
+                [START WITH 시작값]
+                [INCREMENT BY 증가값]
+                [MAXVALUE 최대값]
+                [MINVALUE 최소값]
+                [CYCLE | NO CYCLE]
+                [CACHE | NO CACHE]
+        : 사용법
+            시퀀스이름.NEXTAL
+            시퀀스이름.CURRVAL
+        : 시퀀스 수정
+            ALTER SEQUENCE 시퀀스명
+        : 시퀀스 삭제
+            DROP SEQUENCE 시퀀스명
+*/
+
+-- 시퀀스 생성
+CREATE SEQUENCE SEQ_NO;
+SELECT SEQ_NO.NEXTVAL, SEQ_NO.CURRVAL FROM DUAL;
+
+-- 시퀀스 삭제
+DROP SEQUENCE SEQ_NO;
+
+-- 시퀀스 생성
+CREATE SEQUENCE SEQ_NO INCREMENT BY 5 START WITH 10 MINVALUE 5 MAXVALUE 100 CYCLE NOCACHE;
+
+-- 실제 사용 용도
+CREATE TABLE BOARD(
+    BOARD_NO NUMBER(3) PRIMARY KEY, -- 글번호
+    SUBJECT VARCHAR2(30) NOT NULL,
+    WRITER VARCHAR2(20), 
+    CONTENT VARCHAR2(100),
+    REGDATE DATE DEFAULT SYSDATE
+);
+
+-- 글번호에 사용하게될 SEQUENCE 필요
+CREATE SEQUENCE BOARD_NO_SEQ NOCACHE;
+
+-- 레코드 추가하기
+INSERT INTO BOARD VALUES(BOARD_NO_SEQ.NEXTVAL, 'SQL', 'AAA', '가가가가가가가가', SYSDATE);
+
+---------------------------------------------------------------------------------------------------
+------ 문제 ------
+-- 1. 성별이 여자인 학생의 정보 검색
+SELECT * FROM STUDENT WHERE 수_주민등록번호 LIKE '%-2%';
+
+-- 2. 생년월일이 1973년인 수강생 정보를 검색 (SUBSTR이용)
+SELECT * FROM STUDENT WHERE SUBSTR(수_주민등록번호, 1, 2) = '73';
+
+-- 3. 성이 '홍'이 아닌 강사의 정보검색
+SELECT * FROM TEACHER WHERE 강사이름 NOT LIKE '홍%';
+
+-- 4. 강남구에 거주하는 강사의 정보검색
+SELECT * FROM TEACHER WHERE 주소 LIKE '%강남구%';
+
+-- 5. Java를 강의하는 강사 정보검색
+SELECT * FROM TEACHER WHERE 수강코드 = (SELECT 수강코드 FROM SUBJECT WHERE UPPER(과목) = 'JAVA');
+
+-- 6. 주소가 NULL이 아닌 강사의 정보 검색
+SELECT * FROM TEACHER WHERE 주소 IS NOT NULL;
+
+-- 7. SQL 수업을 수강하고 있는 학생의 정보를 검색하는 뷰 작성
+CREATE VIEW SQL_STUDENT AS SELECT * FROM STUDENT WHERE 수강생번호 = (SELECT 수강생번호 FROM SUBJECT JOIN SUGANG USING(수강코드) WHERE UPPER(과목)= 'SQL');
+SELECT * FROM SQL_STUDENT;
+
+-- 8. 강사가 담당하는 과목과 그 과목이 어느 강의실에서 진행되며 총 수용 인원이 몇명인지 검색 (JOIN을 이용하여 뷰작성)
+CREATE VIEW TEACHER_INFO AS SELECT 강사번호, 강사이름, 수강코드, 과목, 강의실번호, 수용인원 FROM TEACHER T JOIN SUBJECT SB ON t.수강코드 = sb.수강코드 JOIN SUGANGTB ST USING(강사번호) JOIN ROOM R USING(강의실번호);
+SELECT * FROM TEACHER_INFO;
+
+-- 9. 아래의 그림을 보고 만드세요 (학생의 이름, 주민번호, 성별을 출력)
+SELECT 수_이름, 수_주민등록번호, (CASE WHEN 수_주민등록번호 LIKE '%-1%' THEN '남자' ELSE '여자' END) 성별 FROM STUDENT;
+
+-- 10. 아래의 그림을 보고 만드세요. 강사 이름을 기준으로 올림차순으로 정렬하여 정렬된 순서대로 ROWNUM이 출력되게 하세요.
+SELECT ROWNUM, 강사이름, 연락처, 주소 FROM (SELECT 강사이름, 연락처, 주소 FROM TEACHER ORDER BY 강사이름);
