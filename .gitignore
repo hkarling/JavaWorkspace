@@ -245,3 +245,4 @@ $RECYCLE.BIN/
 
 # User defined files
 DbProperty.java
+!ojdbc6.jar
