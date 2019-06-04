@@ -365,6 +365,9 @@ SELECT * FROM SQL_STUDENT;
 
 -- 8. 강사가 담당하는 과목과 그 과목이 어느 강의실에서 진행되며 총 수용 인원이 몇명인지 검색 (JOIN을 이용하여 뷰작성)
 CREATE VIEW TEACHER_INFO AS SELECT 강사번호, 강사이름, 수강코드, 과목, 강의실번호, 수용인원 FROM TEACHER T JOIN SUBJECT SB ON t.수강코드 = sb.수강코드 JOIN SUGANGTB ST USING(강사번호) JOIN ROOM R USING(강의실번호);
+
+SELECT 강사번호, 강사이름, 수강코드, 과목, 강의실번호, 수용인원 FROM TEACHER T JOIN SUBJECT SB USING(수강코드) JOIN SUGANGTB ST USING(강사번호, 수강코드) JOIN ROOM R USING(강의실번호);
+
 SELECT * FROM TEACHER_INFO;
 
 -- 9. 아래의 그림을 보고 만드세요 (학생의 이름, 주민번호, 성별을 출력)

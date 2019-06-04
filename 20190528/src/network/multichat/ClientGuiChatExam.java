@@ -57,6 +57,7 @@ public class ClientGuiChatExam extends JFrame {
 		// 이벤트 등록
 		text.addActionListener(new ActionListener() {
 
+			@SuppressWarnings("unlikely-arg-type")
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// textField 값을 읽어서 서버에게 보낸다.
