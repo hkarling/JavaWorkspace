@@ -9,8 +9,8 @@ public interface EmpDAO {
     * values(?,?,?,?,sysdate)
     * */
 	int empInsert(EmpDTO dto);
-	
-	/**
+
+	 /**
 	 * empno(사원번호) 중복체크기능
 	 * @return : true이면 중복, false이면 사용가능
 	 * 
