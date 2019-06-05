@@ -113,7 +113,7 @@ public class BoardDAOImpl implements BoardDAO {
 		return result;
 	}
 	
-	/** 기본값 세팅을 위한 디비 셋업 함수. */
+	/** 디비를 돌려놓기 위한 삽질 메소드 */
 	public static void rollback() {
 		String queries[] = {
 				"DROP SEQUENCE BOARD_SEQ",
@@ -135,7 +135,7 @@ public class BoardDAOImpl implements BoardDAO {
 				ps.executeUpdate();
 			}
 		} catch (SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 		} finally {
 			DbUtil.close(conn, ps, null);			
 		}

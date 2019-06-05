@@ -1,13 +1,14 @@
 package kosta.mvc.view;
 
-import kosta.mvc.controller.BoardController;
 import kosta.mvc.model.dao.BoardDAOImpl;
-import kosta.mvc.model.dto.BoardDTO;
 
 public class MainView {
 
 	public static void main(String[] args) {
-
+		
+		MenuView.menuChoice();
+		
+		/*
 		System.out.println("********** [1] 모든 게시물 검색 ******************");
 		BoardController.boardSelectByAll();		
 		
@@ -68,7 +69,7 @@ public class MainView {
 		BoardController.boardDelete(300);
 		
 		BoardController.boardSelectByAll();		
-
+		*/
 		BoardDAOImpl.rollback();
 	}
 }
