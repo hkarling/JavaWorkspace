@@ -1,9 +1,5 @@
 package dao.prepared;
 
-import oracle.sql.DATE;
-
-import java.util.List;
-
 /**
  * 
  */
@@ -86,5 +82,7 @@ public class StartView {
 
 		/** 롤백용 -_______-... */
 		EmpDAOImpl.rollback();
+		
+		System.out.println("\n** 테스크 종료 **");
 	}
 }

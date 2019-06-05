@@ -2,23 +2,26 @@ package kosta.mvc.model.dto;
 
 public class BoardDTO {
 
-	private int boardNo; // ±Û¹øÈ£
-	private String subject; // Á¦¸ñ
-	private String writer; // ÀÛ¼ºÀÚ
-	private String content; // ³»¿ë
-	private String boardDate; // µî·ÏÀÏ
+	private int boardNo; // ê¸€ë²ˆí˜¸
+	private String subject; // ì œëª©
+	private String writer; // ì‘ì„±ì
+	private String content; // ë‚´ìš©
+	private String boardDate; // ë“±ë¡ì¼
 	
 	public BoardDTO() {
 		
 	}
-
-	public BoardDTO(int boardNo, String subject, String writer, String content, String boardDate) {
-		super();
-		this.boardNo = boardNo;
+	
+	public BoardDTO(String subject, String writer, String content, String boardDate) {
 		this.subject = subject;
 		this.writer = writer;
 		this.content = content;
 		this.boardDate = boardDate;
+	}
+
+	public BoardDTO(int boardNo, String subject, String writer, String content, String boardDate) {
+		this(subject, writer, content, boardDate);
+		this.boardNo = boardNo;
 	}
 
 	public int getBoardNo() {

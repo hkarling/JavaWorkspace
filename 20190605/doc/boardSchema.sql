@@ -9,11 +9,11 @@ create table board(
 ); 
 
 
---½ÃÄö½º ¸¸µé±â Àü¿¡ ±ÇÇÑ ºÎ¿©(system°èÁ¤¿¡¼­¸¸ °¡´É)
+--ì‹œí€€ìŠ¤ ë§Œë“¤ê¸° ì „ì— ê¶Œí•œ ë¶€ì—¬(systemê³„ì •ì—ì„œë§Œ ê°€ëŠ¥)
 grant  create sequence  to scott;
 
   
---½ÃÄö½º ¸¸µé±â
+--ì‹œí€€ìŠ¤ ë§Œë“¤ê¸°
 create sequence board_seq nocache; 
 
 
@@ -22,7 +22,7 @@ select * from board;
 commit;
 
 insert into board (board_no, subject, writer, content, board_date) 
-values (board_seq.nextval, 'db¼ö¾÷', 'ÀåÈñÁ¤', 'Àë³­´Ù', sysdate)
+values (board_seq.nextval, 'dbìˆ˜ì—…', 'ì¥í¬ì •', 'ì¼ë‚œë‹¤', sysdate)
 
 
 

@@ -7,37 +7,37 @@ import kosta.mvc.model.dto.BoardDTO;
 
 public interface BoardDAO {
 	/**
-	 * ·¹ÄÚµå ÀüÃ¼°Ë»ö
+	 * ë ˆì½”ë“œ ì „ì²´ê²€ìƒ‰
 	 */
 	List<BoardDTO> boardSelectAll() throws SQLException;
 	
 	/**
-	 * Á¦¸ñ¿¡ Æ¯Á¤ ¹®ÀÚ¿­ÀÌ Æ÷ÇÔµÈ ·¹ÄÚµå °Ë»ö
+	 * ì œëª©ì— íŠ¹ì • ë¬¸ìì—´ì´ í¬í•¨ëœ ë ˆì½”ë“œ ê²€ìƒ‰
 	 * select * from board where subject like ?
 	 */
 	List<BoardDTO> boardSelectBySubject(String keyWord) throws SQLException;
 	
 	/**
-	 * ±Û¹øÈ£¿¡ ÇØ´çÇÏ´Â ·¹ÄÚµå °Ë»ö
+	 * ê¸€ë²ˆí˜¸ì— í•´ë‹¹í•˜ëŠ” ë ˆì½”ë“œ ê²€ìƒ‰
 	 * select * from board where board_no = ? 
 	 */
 	BoardDTO boardSelectByNo(int boardNo) throws SQLException;
 	
 	/**
-	 * °Ô½Ã¹° µî·ÏÇÏ±â
+	 * ê²Œì‹œë¬¼ ë“±ë¡í•˜ê¸°
 	 * insert into board (board_no, subject, writer, content, board_date) 
 	 * values (board_seq.nextval, ?, ?, ?, sysdate)
 	 */
 	int boardInsert(BoardDTO boardDTO) throws SQLException;
 	
 	/**
-	 * ±Û¹øÈ£¿¡ ÇØ´çÇÏ´Â °Ô½Ã¹° ³»¿ë ¼öÁ¤ÇÏ±â
+	 * ê¸€ë²ˆí˜¸ì— í•´ë‹¹í•˜ëŠ” ê²Œì‹œë¬¼ ë‚´ìš© ìˆ˜ì •í•˜ê¸°
 	 * update board set content = ? where board_no = ?
 	 */
 	int boardUpdate(BoardDTO boardDTO) throws SQLException;
 	
 	/**
-	 * ±Û¹øÈ£¿¡ ÇØ´çÇÏ´Â ·¹ÄÚµå »èÁ¦
+	 * ê¸€ë²ˆí˜¸ì— í•´ë‹¹í•˜ëŠ” ë ˆì½”ë“œ ì‚­ì œ
 	 * delete from board where board_no = ?
 	 */
 	int boardDelete(int boardNo) throws SQLException;
