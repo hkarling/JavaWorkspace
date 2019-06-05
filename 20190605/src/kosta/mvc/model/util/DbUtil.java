@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.Properties;
 
+import kosta.mvc.view.FailView;
+
 /**
  * DB연동을 위한 로드, 연결, 닫기 및 쿼리 구문들.
  */
@@ -15,20 +17,23 @@ public class DbUtil {
 	
 	/** 로드 */
 	static {
-		try(FileInputStream fis = new FileInputStream("src/kosta/mvc/model/util/dbInfo.properties");
-			FileInputStream fis2 = new FileInputStream("src/kosta/mvc/model/util/board.properties");) {
+		try(FileInputStream fis = new FileInputStream("properties/dbInfo.properties");
+			FileInputStream fis2 = new FileInputStream("properties/board.properties");) {
+			
 			proFile.load(fis);
 			proFile.load(fis2);
-		} catch (FileNotFoundException e1) {
-			e1.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-		try {
+
 			Class.forName(proFile.getProperty("driverName"));
+
+		} catch (FileNotFoundException e) {
+//			e.printStackTrace();
+			FailView.errMessage(e.getMessage());
+		} catch (IOException e) {
+//			e.printStackTrace();
+			FailView.errMessage(e.getMessage());
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
+			FailView.errMessage(e.getMessage());
 		}
 	}
 	
@@ -39,6 +44,7 @@ public class DbUtil {
 	}
 	/** 프로파일 로딩 */
 	public static Properties getProerties() {
+		
 		return proFile;
 	}
 	/** 닫기 (select) 문 */
@@ -52,7 +58,8 @@ public class DbUtil {
 			if (conn != null)
 				conn.close();
 		} catch (SQLException e) {
-			e.printStackTrace();
+//			e.printStackTrace();
+			FailView.errMessage(e.getMessage());
 		}
 	}
 }

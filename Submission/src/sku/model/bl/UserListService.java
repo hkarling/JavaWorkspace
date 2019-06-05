@@ -1,48 +1,48 @@
-package kosta.model.service;
+package sku.model.bl;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Vector;
 
-import kosta.model.dto.UserListDTO;
+import sku.model.dto.UserListDTO;
 
 public interface UserListService {
 	/**
-	 * ÀüÃ¼·¹ÄÚµå °Ë»öÇÏ±â
+	 * ì „ì²´ë ˆì½”ë“œ ê²€ìƒ‰í•˜ê¸°
 	 * */
 	List<Vector<Object>> getSelectAll()throws SQLException;
 	
 	/**
-	 *  Id Áßº¹Ã¼Å© ÇÏ±â
-	 *   @return : trueÀÌ¸é Áßº¹, falseÀÌ¸é Áßº¹¾Æ´Ô.
+	 *  Id ì¤‘ë³µì²´í¬ í•˜ê¸°
+	 *   @return : trueì´ë©´ ì¤‘ë³µ, falseì´ë©´ ì¤‘ë³µì•„ë‹˜.
 	 * */
 	boolean getCheckById(String id) throws SQLException;
 	
 	/**
-	 * °¡ÀÔÇÏ±â
+	 * ê°€ì…í•˜ê¸°
 	 * */
 	int userListInsert(UserListDTO userListDTO)throws SQLException;
 	
 	/**
-	 * ¼öÁ¤ÇÏ±â
-	 * (ID¿¡ ÇØ´çÇÏ´Â ÀÌ¸§,³ªÀÌ, ÁÖ¼Ò ¼öÁ¤) 
+	 * ìˆ˜ì •í•˜ê¸°
+	 * (IDì— í•´ë‹¹í•˜ëŠ” ì´ë¦„,ë‚˜ì´, ì£¼ì†Œ ìˆ˜ì •) 
 	 * */
 	int userListUpdate(UserListDTO userListDTO)throws SQLException;
 	
 	/**
-	 * »èÁ¦ÇÏ±â
-	 * (ID¿¡ ÇØ´çÇÏ´Â ·¹ÄÚµå »èÁ¦)
+	 * ì‚­ì œí•˜ê¸°
+	 * (IDì— í•´ë‹¹í•˜ëŠ” ë ˆì½”ë“œ ì‚­ì œ)
 	 * */
 	int userListDelete(String id) throws SQLException;
 	
 	/**
-	 * »èÁ¦ÇÏ±â
-	 * (ÇÑ¹ø¿¡ ¿©·¯°³ ·¹ÄÚµå »èÁ¦ÇÏ±â)
+	 * ì‚­ì œí•˜ê¸°
+	 * (í•œë²ˆì— ì—¬ëŸ¬ê°œ ë ˆì½”ë“œ ì‚­ì œí•˜ê¸°)
 	 * */
 	int userListDelete(String [] ids)throws SQLException;
 	
 	/**
-	 * keyField¿¡ keyWord°¡ Æ÷ÇÔµÈ ·¹ÄÚµå °Ë»öÇÏ±â
+	 * keyFieldì— keyWordê°€ í¬í•¨ëœ ë ˆì½”ë“œ ê²€ìƒ‰í•˜ê¸°
 	 * */
 	List<Vector<Object>> getSearchUser(String keyField, String keyWord)throws SQLException;
 }

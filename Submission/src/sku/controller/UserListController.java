@@ -1,22 +1,22 @@
-package kosta.controller;
+package sku.controller;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Vector;
 
-import kosta.model.dto.UserListDTO;
-import kosta.model.service.UserListService;
-import kosta.model.service.UserListServiceImpl;
-import kosta.view.FailView;
-import kosta.view.SuccessView;
+import sku.model.bl.UserListService;
+import sku.model.bl.UserListServiceImpl;
+import sku.model.dto.UserListDTO;
+import sku.view.FailView;
+import sku.view.SuccessView;
 
 public class UserListController {
 	private static UserListService service = new UserListServiceImpl();
     /**
-     * ÀüÃ¼·¹ÄÚµå °Ë»öÇÏ±â
+     * ì „ì²´ë ˆì½”ë“œ ê²€ìƒ‰í•˜ê¸°
      * */
 	public static List<Vector<Object>> getSelectAll() {
-		//¼­ºñ½º È£Ãâ
+		//ì„œë¹„ìŠ¤ í˜¸ì¶œ
 		List<Vector<Object>> list=null;
 		try {
 		  list = service.getSelectAll();
@@ -28,7 +28,7 @@ public class UserListController {
 	}
 	
 	/**
-	 * °Ë»ö´Ü¾î¿¡ ÇØ´çÇÏ´Â ·¹ÄÚµå °Ë»öÇÏ±â
+	 * ê²€ìƒ‰ë‹¨ì–´ì— í•´ë‹¹í•˜ëŠ” ë ˆì½”ë“œ ê²€ìƒ‰í•˜ê¸°
 	 * */
 	public static List<Vector<Object>> getSearchUser(String keyField, String keyWord) {
       List<Vector<Object>> list =null;
@@ -54,13 +54,13 @@ public class UserListController {
 	}
 
 	/**
-	 * °¡ÀÔÇÏ±â
+	 * ê°€ì…í•˜ê¸°
 	 * */
 	public static int userListInsert(UserListDTO userListDTO) {
 		int result=0;
 		try {
 			result = service.userListInsert(userListDTO);
-			SuccessView.successMessage(userListDTO.getName()+"´Ô °¡ÀÔ µÇ¾ú½À´Ï´Ù.");
+			SuccessView.successMessage(userListDTO.getName()+"ë‹˜ ê°€ì… ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}catch(Exception e) {
 			FailView.errorMessage(e.getMessage());
 		}
@@ -68,13 +68,13 @@ public class UserListController {
 	}
 
 	/**
-	 * Á¤º¸ ¼öÁ¤ÇÏ±â
+	 * ì •ë³´ ìˆ˜ì •í•˜ê¸°
 	 * */
 	public static int userListUpdate(UserListDTO userListDTO) {
 		int result=0;
 		try {
 			result = service.userListUpdate(userListDTO);
-			SuccessView.successMessage("Á¤º¸°¡ ¼öÁ¤µÇ¾ú½À´Ï´Ù.");
+			SuccessView.successMessage("ì •ë³´ê°€ ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}catch (Exception e) {
 			FailView.errorMessage(e.getMessage());
 		}
@@ -82,19 +82,18 @@ public class UserListController {
 	}
 
 	/**
-	 * id¿¡ ÇØ´çÇÏ´Â ·¹ÄÚµå »èÁ¦ÇÏ±â
+	 * idì— í•´ë‹¹í•˜ëŠ” ë ˆì½”ë“œ ì‚­ì œí•˜ê¸°
 	 * */
 	public static int userListDelete(String[] ids) {
 		int result=0;
 		try {
 			result = service.userListDelete(ids);
-			SuccessView.successMessage("»èÁ¦µÇ¾ú½À´Ï´Ù.");
+			SuccessView.successMessage("ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
 		}catch (Exception e) {
 			FailView.errorMessage(e.getMessage());
 		}
 		return result;
 	}
-
 }
 
 

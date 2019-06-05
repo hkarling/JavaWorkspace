@@ -1,4 +1,4 @@
-package test;
+package sku.view;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -17,9 +17,9 @@ public class UserJDialogView extends JDialog implements ActionListener{
 	JPanel ps=new JPanel();
 
 	JLabel lableId = new JLabel("ID");
-	JLabel lableName=new JLabel("ÀÌ¸§");
-	JLabel lableAge=new JLabel("³ªÀÌ");
-	JLabel lableAddr=new JLabel("ÁÖ¼Ò");
+	JLabel lableName=new JLabel("ì´ë¦„");
+	JLabel lableAge=new JLabel("ë‚˜ì´");
+	JLabel lableAddr=new JLabel("ì£¼ì†Œ");
 
 
 	JTextField id=new JTextField();
@@ -29,7 +29,7 @@ public class UserJDialogView extends JDialog implements ActionListener{
 	
 
 	JButton confirm;
-	JButton reset=new JButton("Ãë¼Ò");
+	JButton reset=new JButton("ì·¨ì†Œ");
 
    UserJTableView userJTableView;
 
@@ -40,36 +40,36 @@ public class UserJDialogView extends JDialog implements ActionListener{
    
 
 	public UserJDialogView(UserJTableView userJTableView, String index){
-		super(userJTableView,"´ÙÀÌ¾î·Î±×");
+		super(userJTableView,"ë‹¤ì´ì–´ë¡œê·¸");
 		
 		this.userJTableView=userJTableView;
 		
-		if(index.equals("°¡ÀÔ")){
+		if(index.equals("ê°€ì…")){
 			confirm=new JButton(index);
 		}else{
-			confirm=new JButton("¼öÁ¤");	
+			confirm=new JButton("ìˆ˜ì •");	
 			
 			
 			
-			//id text¹Ú½º ºñÈ°¼º
+			//id textë°•ìŠ¤ ë¹„í™œì„±
 			id.setEditable(false);
 	
-			//IDCheck¹öÆ° ºñÈ°¼ºÈ­
+			//IDCheckë²„íŠ¼ ë¹„í™œì„±í™”
 			idCkBtn.setEnabled(false);
 		}
 		
 		
-		//LabelÃß°¡ºÎºĞ
+		//Labelì¶”ê°€ë¶€ë¶„
 		pw.add(lableId);//ID
-		pw.add(lableName);//ÀÌ¸§
-		pw.add(lableAge);//³ªÀÌ
-		pw.add(lableAddr);//ÁÖ¼Ò
+		pw.add(lableName);//ì´ë¦„
+		pw.add(lableAge);//ë‚˜ì´
+		pw.add(lableAddr);//ì£¼ì†Œ
 	
 		
 		idCkP.add(id,"Center");
 		idCkP.add(idCkBtn,"East");
 		
-		//TextField Ãß°¡
+		//TextField ì¶”ê°€
 		pc.add(idCkP);
 		pc.add(name);
 		pc.add(age);
@@ -89,22 +89,22 @@ public class UserJDialogView extends JDialog implements ActionListener{
 
 		setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 		
-		//ÀÌº¥Æ®µî·Ï
-        confirm.addActionListener(this); //°¡ÀÔ/¼öÁ¤ ÀÌº¥Æ®µî·Ï
-        reset.addActionListener(this); //Ãë¼Ò ÀÌº¥Æ®µî·Ï
-        idCkBtn.addActionListener(this);// IDÁßº¹Ã¼Å© ÀÌº¥Æ® µî·Ï
+		//ì´ë²¤íŠ¸ë“±ë¡
+        confirm.addActionListener(this); //ê°€ì…/ìˆ˜ì • ì´ë²¤íŠ¸ë“±ë¡
+        reset.addActionListener(this); //ì·¨ì†Œ ì´ë²¤íŠ¸ë“±ë¡
+        idCkBtn.addActionListener(this);// IDì¤‘ë³µì²´í¬ ì´ë²¤íŠ¸ ë“±ë¡
 		
-	}//»ı¼ºÀÚ³¡
+	}//ìƒì„±ìë
     
 	/**
-	 * °¡ÀÔ/¼öÁ¤/Ãë¼Ò/IDCheck ±â´É¿¡ ´ëÇÑ ºÎºĞ
+	 * ê°€ì…/ìˆ˜ì •/ì·¨ì†Œ/IDCheck ê¸°ëŠ¥ì— ëŒ€í•œ ë¶€ë¶„
 	 * */
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-	}//actionPerformed³¡
+	}//actionPerformedë
 	
-}//Å¬·¡½º³¡
+}//í´ë˜ìŠ¤ë
 
 
 
