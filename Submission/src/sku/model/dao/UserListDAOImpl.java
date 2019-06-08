@@ -13,6 +13,9 @@ import sku.model.util.DbUtil;
 
 public class UserListDAOImpl implements UserListDAO {
 
+	/**
+	 * 디비에 들어있는 전체 리스트를 받아온다. 
+	 */
 	@Override
 	public List<Vector<Object>> getSelectAll() throws SQLException {
 		

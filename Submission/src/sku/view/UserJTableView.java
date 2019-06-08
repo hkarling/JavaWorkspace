@@ -3,6 +3,8 @@ package sku.view;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.List;
+import java.util.Vector;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -15,6 +17,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+
+import sku.controller.UserListController;
 
 @SuppressWarnings("serial")
 public class UserJTableView extends JFrame implements ActionListener {
@@ -66,6 +70,20 @@ public class UserJTableView extends JFrame implements ActionListener {
 		add(jsp, "Center");
 		add(p, "South");
 
+		/** 처음 프로그램이 로딩할시에 디비에서 리스트를 받아오는 부분. */
+		List<Vector<Object>> list = UserListController.getSelectAll();
+		for (Vector<Object> vec : list) {
+			dt.addRow(vec);
+		}
+
+		/** 메뉴아이템들에게 클래스에 구현된 actionlistener를 등록한다. */
+		insert.addActionListener(this);
+		update.addActionListener(this);
+		delete.addActionListener(this);
+		quit.addActionListener(this);
+
+		/** 메인 창에 대한 속성 */
+
 		setSize(500, 400);
 		setVisible(true);
 
@@ -75,9 +93,22 @@ public class UserJTableView extends JFrame implements ActionListener {
 	/**
 	 * 가입/수정/삭제/검색기능을 담당하는 메소드
 	 */
-
 	public void actionPerformed(ActionEvent e) {
 
-	}
+		if (e.getSource().equals(insert)) {
+			new UserJDialogView(this, "가입");
+		} else if (e.getSource().equals(update)) {
+			
+			// 테이블에 선택된 레코드가 있는지를 확인한다.
+			if(this.jt.getSelectedRow() != -1) {
+				new UserJDialogView(this, "수정");				
+			} else {
+				
+			}
+		} else if (e.getSource().equals(delete)) {
 
+		} else if (e.getSource().equals(quit)) {
+			System.exit(0);
+		}
+	}
 }

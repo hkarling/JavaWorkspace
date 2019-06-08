@@ -14,8 +14,11 @@ public class UserListServiceImpl implements UserListService{
 	
 	@Override
 	public List<Vector<Object>> getSelectAll() throws SQLException {
+		
+		// DAO에서 리스트를 받아온다. 
 		List<Vector<Object>> list = dao.getSelectAll();
 		
+		/** 리스트가 비어있다면 SQLException을 일으키고 메소드를 종료. */
 		if(list.isEmpty())
 			throw new SQLException("테이블이 비어있음.");
 		
