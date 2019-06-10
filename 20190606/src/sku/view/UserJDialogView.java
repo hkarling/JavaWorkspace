@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import sku.controller.UserListController;
+import sku.model.dto.UserListDTO;
 
 @SuppressWarnings("serial")
 public class UserJDialogView extends JDialog implements ActionListener {
@@ -105,10 +106,21 @@ public class UserJDialogView extends JDialog implements ActionListener {
 		
 		/** 확인버튼 */
 		if (e.getSource().equals(confirm)) {
-//			if()) {
-//				
-//			}
-//			this.userJTableView.refreshTable(UserListController.getSelectAll());
+			if(confirm.getText().equals("가입")) {
+				try {
+					UserListDTO user = new UserListDTO(id.getText(), name.getText(), Integer.parseInt(age.getText()), addr.getText());
+					int result = UserListController.userListInsert(user);
+					
+					if(result != 0)
+						this.setVisible(false);
+					
+				} catch (NumberFormatException e1) {
+					FailView.errorMessage("나이에 제대로 입력하쇼.");
+				}
+			} else {
+				
+			}
+			this.userJTableView.refreshTable(UserListController.getSelectAll());
 			
 		/** 취소버튼 */
 		} else if (e.getSource().equals(reset)) {
