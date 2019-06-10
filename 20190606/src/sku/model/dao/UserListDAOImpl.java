@@ -39,8 +39,16 @@ public class UserListDAOImpl implements UserListDAO {
 
 	@Override
 	public boolean getCheckById(String id) throws SQLException {
-		// TODO Auto-generated method stub
-		return false;
+		String sql = "SELECT ID FROM USERLIST WHERE ID = ?";
+		Connection conn = DbUtil.getConnection();
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, id);
+		ResultSet rs = ps.executeQuery();
+		
+		if(rs.next())
+			return false;
+		else
+			return true;
 	}
 
 	@Override

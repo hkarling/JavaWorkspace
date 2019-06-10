@@ -97,8 +97,11 @@ public class UserJTableView extends JFrame implements ActionListener {
 	 */
 	public void actionPerformed(ActionEvent e) {
 
+		/** 가입버튼 */
 		if (e.getSource().equals(insert)) {
 			new UserJDialogView(this, "가입");
+			
+		/** 수정버튼 */
 		} else if (e.getSource().equals(update)) {
 
 			// 테이블에 선택된 레코드가 있는지를 확인한다.
@@ -107,13 +110,14 @@ public class UserJTableView extends JFrame implements ActionListener {
 			} else {
 				FailView.errorMessage("수정할 레코드를 선택하시오.");
 			}
+
+		/** 삭제버튼 */
 		} else if (e.getSource().equals(delete)) {
 
 			int[] selected = jt.getSelectedRows();
 			
 			// 삭제할 레코드의 아이디들을 추출한다.
 			String[] ids = new String[selected.length];
-
 			for (int i = 0; i < selected.length; i++) {
 				ids[i] = (String) (jt.getValueAt(selected[i], 0));
 			}
@@ -121,16 +125,21 @@ public class UserJTableView extends JFrame implements ActionListener {
 			// 삭제 메소드 호출
 			UserListController.userListDelete(ids); // 리턴값의 의도?
 			this.refreshTable(UserListController.getSelectAll());
+		
+		/** 종료버튼 */
 		} else if (e.getSource().equals(quit)) {
 			System.exit(0);
+			
+		/** 검색버튼 */
 		} else if(e.getSource().equals(search)) {
 			List<Vector<Object>> list = UserListController.getSearchUser((String)combo.getSelectedItem(), jtf.getText());
-			if(!list.isEmpty())
+			if(list != null && !list.isEmpty())
 				refreshTable(list);
 		}
 	}
 	
-	private void refreshTable(List<Vector<Object>> list) {
+	// 테이블의 레코드를 다시 뿌려주는 메소드
+	public void refreshTable(List<Vector<Object>> list) {
 		dt.setNumRows(0);;
 		for (Vector<Object> vec : list) {
 			dt.addRow(vec);

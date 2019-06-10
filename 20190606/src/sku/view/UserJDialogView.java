@@ -11,6 +11,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import sku.controller.UserListController;
+
+@SuppressWarnings("serial")
 public class UserJDialogView extends JDialog implements ActionListener {
 	JPanel pw = new JPanel(new GridLayout(4, 1));
 	JPanel pc = new JPanel(new GridLayout(4, 1));
@@ -42,7 +45,7 @@ public class UserJDialogView extends JDialog implements ActionListener {
 		if (index.equals("가입")) {
 			confirm = new JButton(index);
 		} else {
-			confirm = new JButton("수정");
+			confirm = new JButton(index);
 
 			// 선택된 레코드의 순번을 받아온다.
 			int selected = this.userJTableView.jt.getSelectedRow();
@@ -98,15 +101,27 @@ public class UserJDialogView extends JDialog implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
+		boolean idcheck = false;
+		
+		/** 확인버튼 */
 		if (e.getSource().equals(confirm)) {
-
+//			if()) {
+//				
+//			}
+//			this.userJTableView.refreshTable(UserListController.getSelectAll());
+			
+		/** 취소버튼 */
 		} else if (e.getSource().equals(reset)) {
 
 			this.setVisible(false);
-
+			
+		/** 아이디 체크 버튼 */
 		} else if (e.getSource().equals(idCkBtn)) {
-
+			idcheck = UserListController.getCheckById(id.getText());
+			if(idcheck) {
+				idCkBtn.setEnabled(false);
+				id.setEditable(false);
+			}
 		}
 
 	}// actionPerformed끝

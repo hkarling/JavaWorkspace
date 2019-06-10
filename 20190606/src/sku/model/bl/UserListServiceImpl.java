@@ -27,8 +27,11 @@ public class UserListServiceImpl implements UserListService{
 
 	@Override
 	public boolean getCheckById(String id) throws SQLException {
-		// TODO Auto-generated method stub
-		return false;
+		boolean result = dao.getCheckById(id);
+		if(!result)
+			throw new SQLException("중복된 아이디가 존재함.");
+		
+		return result; 
 	}
 
 	@Override
@@ -63,8 +66,8 @@ public class UserListServiceImpl implements UserListService{
 		
 		List<Vector<Object>> list = dao.getSearchUser(keyField, keyWord);
 
-		//if(list.isEmpty())
-		//throw new SQLException("레코드가 존재하지 않음.");
+		if(list.isEmpty())
+			throw new SQLException("레코드가 존재하지 않음.");
 		
 		return list;
 	}

@@ -37,20 +37,21 @@ public class UserListController {
 		List<Vector<Object>> list = null;
 		try {
 			list = service.getSearchUser(keyField, keyWord);
-
 		} catch (Exception e) {
-			e.printStackTrace();
+//			e.printStackTrace();
 			FailView.errorMessage(e.getMessage());
 		}
 		return list;
 	}
 
 	public static boolean getCheckById(String id) {
-		boolean result = true;
+		boolean result = false;
 		try {
+			if(id.equals(""))
+				throw new SQLException("아이디를 입력해라.");
 			result = service.getCheckById(id);
 		} catch (SQLException e) {
-			// e.printStackTrace();
+			 e.printStackTrace();
 			FailView.errorMessage(e.getMessage());
 		}
 		return result;
