@@ -49,7 +49,7 @@ public class UserJDialogView extends JDialog implements ActionListener {
 
 			id.setText((String) (this.userJTableView.dt.getValueAt(selected, 0)));
 			name.setText((String) (this.userJTableView.dt.getValueAt(selected, 1)));
-			age.setText(Integer.toString((int)(this.userJTableView.dt.getValueAt(selected, 2))));
+			age.setText(Integer.toString((int) (this.userJTableView.dt.getValueAt(selected, 2))));
 			addr.setText((String) (this.userJTableView.dt.getValueAt(selected, 3)));
 
 			// id text박스 비활성
@@ -98,15 +98,15 @@ public class UserJDialogView extends JDialog implements ActionListener {
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		if(e.getSource().equals(confirm)) {
-			
-		} else if(e.getSource().equals(reset)) {
-			
+
+		if (e.getSource().equals(confirm)) {
+
+		} else if (e.getSource().equals(reset)) {
+
 			this.setVisible(false);
-			
-		} else if(e.getSource().equals(idCkBtn)) {
-			
+
+		} else if (e.getSource().equals(idCkBtn)) {
+
 		}
 
 	}// actionPerformed끝

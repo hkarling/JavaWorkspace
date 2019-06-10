@@ -51,14 +51,22 @@ public class UserListServiceImpl implements UserListService{
 
 	@Override
 	public int userListDelete(String[] ids) throws SQLException {
-		// TODO Auto-generated method stub
-		return 0;
+		int result = dao.userListDelete(ids);
+		
+		if(result == 0)
+			throw new SQLException("삭제할 레코드가 없습니다.");
+		return result;
 	}
 
 	@Override
 	public List<Vector<Object>> getSearchUser(String keyField, String keyWord) throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
+		
+		List<Vector<Object>> list = dao.getSearchUser(keyField, keyWord);
+
+		//if(list.isEmpty())
+		//throw new SQLException("레코드가 존재하지 않음.");
+		
+		return list;
 	}
 
 }
