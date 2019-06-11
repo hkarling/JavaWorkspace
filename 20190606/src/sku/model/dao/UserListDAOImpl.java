@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Vector;
 
 import sku.model.dto.UserListDTO;
-import sku.model.util.DbUtil;
+import project.model.util.DbUtil;
 
 public class UserListDAOImpl implements UserListDAO {
 

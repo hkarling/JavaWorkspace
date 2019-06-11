@@ -1,11 +1,11 @@
-package project.dao;
+package project.model.dao;
+
+import project.model.dto.ProductDTO;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import project.dto.ProductDTO;
-
-public interface ShopDAO {
+public interface ProductDAO {
 	/**
 	 * 재고목록 전체검색
 	 * select * from product order by product_no
@@ -13,22 +13,22 @@ public interface ShopDAO {
 	List<ProductDTO> productSelectAll() throws SQLException;
 	
 	/**
-	 * 번호에 따른 술 검색
+	 * 상품번호에 따른 상품 검색
 	 * select * from product where product_no=?
 	 */
 	ProductDTO productByName(String name) throws SQLException;
 	
 	/**
 	 * 가격에 따른 술 검색
-	 * select * from product where price<=?
+	 * select * from product where price between ? and ?
 	 */
 	List<ProductDTO> productByPrice(int price) throws SQLException;
 	
 	/**
-	 * 종류에 따른 술 검색
+	 * 카테고리에 따른 술 검색
 	 * select * from product where category like ? 
 	 */
-	List<ProductDTO> productByCategory (String category) throws SQLException;
+	List<ProductDTO> productByCategory(String category) throws SQLException;
 	
 	/**
 	 * 재고 등록하기

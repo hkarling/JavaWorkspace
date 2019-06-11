@@ -3,9 +3,9 @@ package project.controller;
 import java.sql.SQLException;
 import java.util.List;
 
-import project.dto.ProductDTO;
-import project.service.ShopService;
-import project.service.ShopServiceImpl;
+import project.model.dto.ProductDTO;
+import project.model.service.ShopService;
+import project.model.service.ShopServiceImpl;
 import project.view.ResultView;
 
 public class ShopController {

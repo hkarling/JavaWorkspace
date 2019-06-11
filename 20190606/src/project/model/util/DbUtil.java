@@ -1,4 +1,4 @@
-package sku.model.util;
+package project.model.util;
 
 import java.sql.*;
 

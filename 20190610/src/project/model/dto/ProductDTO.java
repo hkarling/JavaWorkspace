@@ -1,4 +1,4 @@
-package project.dto;
+package project.model.dto;
 
 public class ProductDTO {
 

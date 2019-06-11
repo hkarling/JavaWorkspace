@@ -1,8 +1,8 @@
 package project.view;
 
-import java.util.List;
-
 import project.model.dto.ProductDTO;
+
+import java.util.List;
 
 public class ResultView {
 

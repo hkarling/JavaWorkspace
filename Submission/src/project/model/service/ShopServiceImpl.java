@@ -1,19 +1,28 @@
-package project.service;
+package project.model.service;
+
+import project.model.dao.CustomerDAO;
+import project.model.dao.CustomerDAOImpl;
+import project.model.dao.ProductDAO;
+import project.model.dao.ProductDAOImpl;
+import project.model.dto.ProductDTO;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import project.dao.ShopDAOImpl;
-import project.dao.ShopDAO;
-import project.dto.ProductDTO;
-
 public class ShopServiceImpl implements ShopService {
 
-	ShopDAO ShopDAO = new ShopDAOImpl();
+	ProductDAO productDAO = new ProductDAOImpl();
+	CustomerDAO customerDAO = new CustomerDAOImpl();
+
+	@Override
+	public int checkCustomerID(String id) throws SQLException {
+
+		return 0;
+	}
 
 	@Override
 	public List<ProductDTO> getSelectAll() throws SQLException {
-		List<ProductDTO> list = ShopDAO.productSelectAll();
+		List<ProductDTO> list = productDAO.productSelectAll();
 		if (list.isEmpty())
 			throw new SQLException("테이블이 존재하지 않습니다.");
 		return list;
@@ -21,7 +30,7 @@ public class ShopServiceImpl implements ShopService {
 
 	@Override
 	public ProductDTO selectByName(String name) throws SQLException {
-		ProductDTO productDto = ShopDAO.productByName(name);
+		ProductDTO productDto = productDAO.productByName(name);
 		if (productDto.getProductNo() == 0)
 			throw new SQLException(name + " 제품이 없습니다.");
 		return productDto;
@@ -29,21 +38,20 @@ public class ShopServiceImpl implements ShopService {
 
 	@Override
 	public int productInsert(ProductDTO product) throws SQLException {
-		return ShopDAO.productInsert(product);
+		return productDAO.productInsert(product);
 	}
 
 	@Override
 	public int productUpdate(ProductDTO product) throws SQLException {
-		if (ShopDAO.productUpdate(product) == 0)
+		if (productDAO.productUpdate(product) == 0)
 			throw new SQLException("게시물 번호가 존재하지 않습니다.");
-		return ShopDAO.productUpdate(product);
+		return productDAO.productUpdate(product);
 	}
 
 	@Override
 	public int productDelete(int id) throws SQLException {
-		if (ShopDAO.productDelete(id) == 0)
+		if (productDAO.productDelete(id) == 0)
 			throw new SQLException("게시물 번호가 존재하지 않으므로 삭제 실패하였습니다.");
-		return ShopDAO.productDelete(id);
+		return productDAO.productDelete(id);
 	}
-
 }

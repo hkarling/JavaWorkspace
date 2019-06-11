@@ -12,7 +12,7 @@ public class MainView {
 
 	public void printMainMenu() {
 		while (true) {
-			System.out.println("/n********** 메 뉴 **********");
+			System.out.println("\n********** 메 뉴 **********");
 			System.out.println("1. 상품리스트");
 			System.out.println("2. 상품찾기 by name");
 			System.out.println("3. 수량수정 by id");

@@ -1,24 +1,25 @@
-package project.service;
+package project.model.service;
+
+import project.model.dto.ProductDTO;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Vector;
-
-import project.dto.ProductDTO;
 
 public interface ShopService {
 
-	
 	/**
-	 * 모든 목록 불러오기
-	 * @return
-	 * @throws SQLException
+	 *
+	 */
+	int checkCustomerID(String id) throws SQLException;
+
+	/**
+	 * 재고 리스트를 받아온다.
 	 */
 	List<ProductDTO> getSelectAll() throws SQLException;
 	
 	/**
 	 *  
-	 * */
+	 */
 	ProductDTO selectByName(String name) throws SQLException;
 	
 	/**
