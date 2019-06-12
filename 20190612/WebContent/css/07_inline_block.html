@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Inline block</title>
+<style type="text/css">
+/*
+	in-line요소는 width, height 속성이 적용이 안된다.
+				margin-top, margin-botton 적용 안됨.
+				
+*/
+#a {
+	background-color: red;
+	width: 300px;
+	height: 100px;
+	display: inline-block; /* block 요소로 변경 */
+}
+
+#b {
+	background-color: green;
+	margin: 50px;
+}
+
+#c {
+	background-color: blue;
+}
+
+.a {
+	background-color: red;
+	width: 300px;
+	height: 100px;
+	display: inline; /* inline 요소로 변경 */
+}
+
+.b {
+	background-color: green;
+	margin: 50px;
+}
+
+.c {
+	background-color: blue;
+}
+</style>
+</head>
+<body>
+	<span id="a">span 요소1</span>
+	<span id="b">span 요소2</span>
+	<span id="c">span 요소3</span>
+	<hr>
+	<div class="a">div요소1</div>
+	<div class="b">div요소2</div>
+	<div class="c">div요소3</div>
+</body>
+</html>
