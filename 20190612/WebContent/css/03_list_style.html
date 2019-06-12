@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>List style</title>
+<style type="text/css">
+ol {
+	list-style-image: url("img/live.jpg")
+}
+ol ul {
+	list-style-image: url("img/checkBox1.png")
+}
+ul li:first-child {
+	color:blue;
+}
+ul li:last-child {
+	color:red
+}
+ul li:nth-child(2) {
+	color:green;
+}
+ul li:nth-child(3n) {
+	color:orange
+}
+
+table {
+	width:500px;
+	height:400px;
+}
+table tr:nth-child(2n){
+	background-color:gray;
+}
+table tr:nth-child(2n-1){
+	background-color:yellow;
+}
+
+td:hover {
+	background-color:red;
+}
+</style>
+</head>
+
+<body>
+	<h2>순서있는 목차 만들기</h2>
+	<ol>
+		<li>A</li>
+		<ul>
+			<li>가</li>
+			<li>나</li>
+			<li>다</li>
+			<li>라</li>
+			<li>가</li>
+			<li>나</li>
+			<li>다</li>
+			<li>라</li>
+			<li>라</li>
+			<li>라</li>
+		</ul>
+		<li>B</li>
+		<li>C</li>
+		<li>D</li>
+	</ol>
+	<hr>
+	<h2>순서없는 목차 만들기</h2>
+	<ul>
+		<li>A</li>
+		<li>B</li>
+		<li>C</li>
+		<li>D</li>
+	</ul>
+	
+	<hr>
+	<table>
+		<tr>
+			<td>1</td><td>1</td><td>1</td><td>1</td>
+		</tr>
+		<tr>
+			<td>1</td><td>1</td><td>1</td><td>1</td>
+		</tr>
+		<tr>
+			<td>1</td><td>1</td><td>1</td><td>1</td>
+		</tr>
+		<tr>
+			<td>1</td><td>1</td><td>1</td><td>1</td>
+		</tr>
+		<tr>
+			<td>1</td><td>1</td><td>1</td><td>1</td>
+		</tr>
+		<tr>
+			<td>1</td><td>1</td><td>1</td><td>1</td>
+		</tr>
+		<tr>
+			<td>1</td><td>1</td><td>1</td><td>1</td>
+		</tr>
+	</table>
+</body>
+</html>
