@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSS internal</title>
+<style type="text/css">
+
+/* 1. 태그이름으로 찾기 */
+h1, h2 { color: red; }
+
+/* 2. 클래스로 찾기 */
+.a, h2 { background-color: pink; border: double red 5px; }
+
+.b { text-decoration: underline; }
+
+/* 3. 아이디로 찾기 */
+#a { font-family: 궁서체; font-style: italic; }
+
+#b { text-align: center; }
+
+/* 4. 특정 엘리먼트의 하위 요소 찾기 */
+div p { background-color: yellow; } /* 모든 하위요소 */
+
+div>p { color:red; } /* 직계 하위요소 */
+
+/* 5. 속성으로 찾기 */
+input {border:solid 3px red;}
+input[type="password"] { background-color: pink; }
+input[name$=e] { color: blue; }
+
+
+</style>
+</head>
+<body>
+	<h1>오늘 점심 뭐?</h1>
+	<h2>으아니챠ㅣ남러ㅣㅏ멍리ㅏㅓㅁ니아러밎다ㅓ</h2>
+	<h1 id="a" class="a b">아아니챠ㅣㄴ마ㅓ첲ㅋㄴ엎;ㅣㅓㄴ잎;ㅓㄴ이ㅏ</h1>
+
+	<hr>
+	<div>
+		<h2>My name is Donald</h2>
+		<p>I live in Duckburg.</p>
+	</div>
+
+	<div>
+		<span><p>I will not be styled.</p></span>
+	</div>
+	
+	<hr>
+	
+	<form action="#">
+		이름 <input type="text" name="name"><br>
+		비번 <input type="password" name="pwd"><br>
+		<input type="submit" name="some">
+		
+	</form>
+</body>
+</html>
