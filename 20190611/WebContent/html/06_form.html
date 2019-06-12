@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Form</title>
+</head>
+<body>
+	<h2>Form 양식</h2>
+	<form action="http://www.daum.net" method="get" name="f" novalidate>
+		이름 : <input type="text" size="25" name="name" value="이름" maxlength="5"><br>
+		비번 : <input type="password" name="pwd"><br>
+		<fieldset>
+			<legend>성별</legend>
+			<input type="radio" name="gender" value="men" checked> 남자 <input
+				type="radio" name="gender" value="women"> 여자 <br>
+		</fieldset>
+		<fieldset>
+			<legend>취미</legend>
+			<input type="checkbox" name="hobby" value="A">등산
+			<input type="checkbox" name="hobby" value="B">수영
+			<input type="checkbox" name="hobby" value="C">골프
+			<input type="checkbox" name="hobby" value="D">낚시
+		</fieldset>
+		<textarea rows="5" cols="20" name="text">
+		</textarea><br>
+		
+		<select name="selectbox" size="3" multiple style="width:300px; height:100px;">
+			<option value="AAA">AAA</option>
+			<option value="BBB">BBB</option>
+			<option value="CCC">CCC</option>
+			<option value="DDD">DDD</option>
+			<option value="EEE">EEE</option>
+			<option value="FFF">FFF</option>			
+		</select><br>
+		<input type="button" value="가">
+		<input type="file" name="file"> <!-- file을 사용할때는 반드시 method를 post로 써야함 -->
+		<input type="reset" value="취소">
+		<input type="image" src="https://ssl.pstatic.net/tveta/libs/1243/1243880/0ae864f75ac483c90f0c_20190605180443166.jpg">
+		<!-- image태그는 submit과 동일하다 -->
+		<input type="hidden" name="" value="">
+		<input type="submit" value="가랏">
+		<hr>
+		<!-- HTML5에서 추가된 input 요소 value -->
+		<input type="date" name="startDay">
+		<input type="color"><br>
+		<input type="number"><br>
+		<input type="range"><br>
+		<input type="email"><br>
+		
+		
+		<button type="button">눌러라</button>
+	</form>
+</body>
+</html>
