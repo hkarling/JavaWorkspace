@@ -1,11 +1,188 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <style>
+        body {
+            width: 680px;
+            margin: 20px auto;
+        }
+
+        h1 {
+            font-size: 20px;
+            color: white;
+            padding:10px;
+            background: DarkTurquoise ;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table th,
+        td {
+            padding: 5px;
+            width: 25%;
+            border: 1px solid black;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        table td {
+            text-align: left;
+        }
+
+        table th {
+            background: pink;
+            text-align: center;
+        }
+
+        input {
+            box-sizing: border-box;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h1>사용자 정보입력</h1>
+    <p>안녕하세요. 홈페이지를 자유롭게 이용하려면 회원가입을 하셔야 합니다.<br>아래의 사항들을 빠짐없이 기록해 주세요.</p>
+
+    <form action="./index.html" method="post">
+        <table>
+            <tr>
+                <th>사용자 ID</th>
+                <td colspan="3">
+                    <input type="text" name="id" maxlength="20" required="required">
+                    <input type="button" value="ID 중복 확인">
+                </td>
+            </tr>
+            <tr>
+                <th>비밀번호</th>
+                <td>
+                    <input type="password" name="pw" maxlength="20" required="required">
+                </td>
+                <th>비밀번호 확인</th>
+                <td>
+                    <input type="password" name="pwCheck" maxlength="20" required="required">
+                </td>
+            </tr>
+            <tr>
+                <th>사용자 이름</th>
+                <td colspan="3">
+                    <input type="text" name="name" maxlength="20" required="required">
+                </td>
+            </tr>
+            <tr>
+                <th>주민등록번호</th>
+                <td colspan="3">
+                    <input type="text" name="resident1" maxlength="6">-<input type="text" name="resident2"
+                        maxlength="7">
+                </td>
+            </tr>
+            <tr>
+                <th>생년월일</th>
+                <td colspan="3">
+                    <input type="text" name="birth" maxlength="6">년
+                    <select name="month">
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>월
+                    <select name="day">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                        <option value="32">32</option>
+                    </select>일
+                </td>
+            </tr>
+            <tr>
+                <th>우편번호</th>
+                <td colspan="3">
+                    <input type="text" name="post1">-<input type="text" name="post2">
+                    <input type="button" value="우편번호 검색">
+                </td>
+            </tr>
+            <tr>
+                <th>주 소</th>
+                <td colspan="3">
+                    <input type="text" name="adr1" style="width:100%">
+                </td>
+            </tr>
+            <tr>
+                <th>나머지주소</th>
+                <td colspan="3">
+                    <input type="text" name="adr2">
+                </td>
+            </tr>
+            <tr>
+                <th>E-Mail</th>
+                <td colspan="3">
+                    <input type="text" name="email" maxlength="20">@
+                    <select name="mail">
+                        <option value="0">선택하세요</option>
+                        <option value="naver">naver.com</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>직업</th>
+                <td colspan="3">
+                    <select name="job">
+                        <option value="it">컴퓨터/정보통신</option>
+                        <option value="cook">요리사</option>
+                        <option value="barber">이발사</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align:center">
+                    <input type="submit" value="전송">
+                    <input type="reset" value="취소">
+                </td>
+            </tr>
+        </table>
+    </form>
 </body>
+
 </html>

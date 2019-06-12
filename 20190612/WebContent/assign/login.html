@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style type="text/css">
+    <style>
+        body {
+            margin: 30px 10px;
+            width: 250px;
+        }
+
         label {
             display: inline-block;
             width: 80px;
         }
-        div div{
-            text-align:center;
+
+        div:nth-of-type(2) {
+            text-align: center;
         }
     </style>
 </head>
@@ -21,13 +27,12 @@
     <div>
         <label>아이디 : </label><input type="text" name="txtId" id="txtId"><br>
         <label>패스워드 : </label><input type="password" name="txtPass" id="txtPass"><br><br>
-
-        <div>
-            <a href="./index.html">[ 로 그 인 ]</a><br>
-            <a href="./login.html" target="ifmMain">[ 회 원 가 입 ]</a>
-        </div>
-
     </div>
+    <div>
+        <a href="./index.html">[ 로 그 인 ]</a><br>
+        <a href="./inputPage.html" target="ifmMain">[ 회 원 가 입 ]</a>
+    </div>
+
 </body>
 
 </html>
