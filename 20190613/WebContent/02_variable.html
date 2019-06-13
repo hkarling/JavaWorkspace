@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Variable</title>
+<script type="text/javascript">
+
+document.write("<h1>변수공부</h1>");
+var a = 10 , b = 7;
+c = 5;
+
+function test1() {
+	var a = 20; // 지역변수
+	var name123 = "이름" // 지역변수
+	age = 30; // var이 없으므로 test1() 호출되면 전역변수가 된다.
+	
+	document.write("<h3>test1() 함수임</h3>");
+
+	document.write("a = " + a + "<br>");
+	document.write("this.a = " + this.a + "<br>");
+	document.write("b = " + b + "<br>");
+	document.write("c = " + c + "<br>");
+	document.write("name123 = " + name123 + "<br>");
+	document.write("age = " + age + "<br>");
+}
+function test2() {
+	
+	document.write("<hr><h3>test2() 함수임</h3>");	
+
+	document.write("a = " + a + "<br>");
+	document.write("this.a = " + this.a + "<br>");
+	document.write("b = " + b + "<br>");
+	document.write("c = " + c + "<br>");
+	//document.write("name123 = " + name123 + "<br>"); // 오류
+	document.write("age = " + age + "<br>");
+}
+
+// 함수호출
+test1();
+test2();
+</script>
+</head>
+<body>
+
+</body>
+</html>
