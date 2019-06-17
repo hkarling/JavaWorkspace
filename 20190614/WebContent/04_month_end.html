@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+
+function aa() {
+		var month = parseInt(prompt("달을 입력하시오."));
+		alert(month);
+		
+		if (month < 1 || month > 12 || isNaN(month)) {
+			alert("1~12사이에서 쓰셔.")
+			confirm("다시고고?") ? aa() : alert("bye");
+		} else {
+			var endDay = 31;
+			switch (month) {
+				case 2:
+					endDay = 28;
+					break;
+				case 4:		
+				case 6:
+				case 9:
+				case 11:
+					endDay = 30;
+					break;
+				default:
+			}
+			document.getElementById("result").innerText = endDay + "일임다.";
+		}
+	}
+</script>
+
+<body>
+	<h1 id="monthend">달의 마지막 날 구하기</h1>
+	<h2 id="result"></h2>
+	
+	<script>
+		document.getElementById("monthend").onclick = function bb() {
+			aa();
+		}
+	</script>
+</body>
+
+</html>

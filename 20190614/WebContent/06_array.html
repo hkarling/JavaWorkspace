@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Array</title>
+<script type="text/javascript">
+	document.write("<h1>Array 객체</h1>")
+
+	var arr1 = new Array();
+	var arr2 = new Array(3); // 공간 3;
+	var arr3 = new Array(1, 3, 5, "이름1", "이름2");
+	var arr4 = [ "k3", "k5", "k7", "k9" ];
+
+	function printArray(obj) {
+		document.write("배열의 길이 : " + obj.length + "<br>");
+		for (var i = 0; i < obj.length; i++) {
+			document.write("[" + i + "] = " + obj[i] + "<br>");
+		}
+		document.write("<br><hr><br>");
+	}
+
+	printArray(arr1);
+	printArray(arr2);
+	printArray(arr3);
+	printArray(arr4);
+
+	document.write("<h3>배열의 값 변경</h3>");
+	arr1[0] = "졸?";
+	arr1[1] = "거";
+	arr1[2] = "냐";
+	printArray(arr1);
+	
+	arr3[8] = "어";
+	printArray(arr3);
+	
+	document.write("arr1 = " + arr1 + "<br>");
+	document.write("arr2 = " + arr2 + "<br>");
+	document.write("arr3 = " + arr3 + "<br>");
+	document.write("arr4 = " + arr4 + "<br>");
+	
+	// 난수 넣기
+	document.write("<h3>난수발생</h3>");
+	var no = Math.random()* 4;
+	document.write("no = " + no + "<br>");
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

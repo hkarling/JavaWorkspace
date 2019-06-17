@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주말과제1</title>
+</head>
+<script>
+	function load() {
+		var numStar = prompt("별의 갯수를 넣으시오.");
+		if (isNaN(numStar)) {
+			alert("숫자넣으세염");
+			load();
+		} else {
+			for (var i = 0; i < numStar; i++) {
+				for (var j = i; j < numStar; j++) {
+					document.write(" ★ ");
+				}
+				document.write("<br>")
+			}
+		}
+	}
+</script>
+
+<body onload="load()">
+
+</body>
+
+</html>

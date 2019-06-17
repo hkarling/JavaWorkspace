@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	// 문서가 로딩될때 임의의 색상으로 배경색 변경하기
+	function backColor() {
+		// 배열에 색상 5개를 준비한다.
+		var bColor = [ "red", "blue", "black", "yellow", "pink" ];
+
+		// 난수를 발생한다. 발생한 난수에 해당하는 배열의 방의 색상으로 바탕색 변경한다.
+		document.bgColor = bColor[parseInt(Math.random() * 5)];
+	}
+</script>
+</head>
+<body onload="backColor()">
+
+</body>
+</html>

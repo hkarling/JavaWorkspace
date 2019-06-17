@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function transfer() {
+		var inputbox = document.getElementById("input");
+		//var outputbox = document.getElementById("output");
+		var result = document.getElementById("result");
+		
+		var inputValue = inputbox.value;
+		outputbox.value = inputValue;
+		
+		// div영역에 데이터 누적하기
+		result.innerHTML += inputValue + "<br>";
+		
+		inputbox.value = "";
+		inputbox.focus();
+	}
+</script>
+</head>
+<body>
+	<h3>텍스트박스 데이터 읽기</h3>
+	<form name="f" action="#">
+		입력: <input type="text" id="input" name="input"><br>
+		출력: <input type="text" id="output" name="output"><br>
+		<input type="button" value="click" onclick="transfer()"><br>
+	</form>
+	<br> <hr> <br>
+	<div id="result"></div>
+</body>
+</html>

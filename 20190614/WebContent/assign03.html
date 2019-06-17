@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>주말과제3</title>
+<script>
+var today;
+function preDate() {
+	today = new Date();
+	document.getElementById("presentYear").value = today.getFullYear();
+	document.getElementById("presentMonth").value = today.getMonth()+1;
+	document.getElementById("presentDay").value = today.getDay();
+}
+function dateCalc() {
+	var year = 	parseInt(document.getElementById("startYear").value);
+	var month = parseInt(document.getElementById("startMonth").value);
+	var day = parseInt(document.getElementById("startDay").value);
+	
+	var startDay = new Date(year, month, day);
+	
+	console.log(startDay);
+	
+	var days = parseInt((today - startDay) / 1000 / 60 / 60 / 24);
+	
+		alert(days + "일이 경과하였음");
+
+}
+</script>
+</head>
+<body onload="preDate()">
+	<h1>날짜계산</h1>
+	<input type="text" name="startYear" id="startYear"> 년
+	<input type="text" name="startMonth" id="startMonth"> 월
+	<input type="text" name="startDay" id="startDay"> 일 -
+	<input type="text" name="presentYear" id="presentYear"> 년
+	<input type="text" name="presentMonth" id="presentMonth"> 월
+	<input type="text" name="presentDay" id="presentDay"> 일
+	<input type="button" name="btnCalc" id="btnCalc" value="계산"
+		onclick="dateCalc()">
+</body>
+</html>

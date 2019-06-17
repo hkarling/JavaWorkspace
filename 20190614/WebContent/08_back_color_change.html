@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Back Color Change</title>
+<script>
+	var index = 0;
+	function backChange() {
+		var bColor = [ "red", "blue", "black", "yellow", "pink" ];
+		document.bgColor = bColor[index++];
+		
+		if(index < 5) {
+			console.log("찍혀라");
+			setTimeout("backChange()", 1000);			
+		}
+	}
+</script>
+</head>
+<body onload="backChange()">
+	<h1>바탕색 계속 변경하기 - setTimeout()</h1>
+
+</body>
+</html>

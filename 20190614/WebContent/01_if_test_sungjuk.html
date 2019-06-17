@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table {
+	width: 300px;
+	border-collapse: collapse;
+}
+
+th {
+	border: 1px black solid;
+	text-align: center;
+}
+
+tr:first-child {
+	background-color: gray;
+}
+</style>
+<script>
+function aa() {}
+		// 1. javascript로 화면구성을 한다.
+		// prompt 4개 띄우기
+		var name = prompt("이름");
+		var korean = parseInt(prompt("국어"));
+		var english = parseInt(prompt("영어"));
+		var math = parseInt(prompt("수학"));
+
+		var total = korean + english + math;
+		var average = Math.round(total / 3 * 100) / 100;
+		// toFixed() : 문자열로 바꾸면서 반올림
+		// toFixed(2) : 문자열로 바꾸면서 소숫점 2자리까지 반올
+		var grade;
+		if(average >= 90){
+			grade = '수';
+		} else if(average >= 80){
+			grade = '우';
+		} else if(average >= 70){
+			grade = '미';
+		} else if(average >= 60){
+			grade = '양';
+		} else {
+			grade = '가';
+		}
+		// 화면구성
+		document.write("<table>");
+		document.write("<tr><th>이름</th><th>국어</th><th>영어</th><th>수학</th><th>총점</th><th>평균</th><th>등급</th></tr>");
+		document.write("<tr><th>" + name + "</th><th>" + korean + "</th><th>" + english + "</th><th>" + math + "</th><th>" + total + "</th><th>" + average + "</th><th>" + grade + "</th></tr>");
+		document.write("</table>");
+		
+		function aa() {
+			document.getElementById("name").innerHTML = name;
+			document.getElementById("korean").innerHTML = korean;
+			document.getElementById("english").innerHTML = english;
+			document.getElementById("math").innerHTML = math;
+			document.getElementById("total").innerHTML = total;
+			document.getElementById("average").innerHTML = average;
+			document.getElementById("grade").innerHTML = grade;
+		}
+	</script>
+</head>
+
+<body onload="aa()">
+	<!-- 1. 화면구성은 html로 하고 데이터값만 자바스크립트로 받아온다. -->
+
+	<br>
+	<hr>
+	<br>
+
+	<table>
+		<tr>
+			<th>이름</th>
+			<th>국어</th>
+			<th>영어</th>
+			<th>수학</th>
+			<th>총점</th>
+			<th>평균</th>
+			<th>등급</th>
+		</tr>
+		<tr>
+			<th><script>document.write(name)</script></th>
+			<th><script>document.write(korean)</script></th>
+			<th><script>document.write(english)</script></th>
+			<th><script>document.write(math)</script></th>
+			<th><script>document.write(total)</script></th>
+			<th><script>document.write(average)</script></th>
+			<th><script>document.write(grade)</script></th>
+		</tr>
+	</table>
+
+	<br>
+	<hr>
+	<br>
+	<table>
+		<tr>
+			<th>이름</th>
+			<th>국어</th>
+			<th>영어</th>
+			<th>수학</th>
+			<th>총점</th>
+			<th>평균</th>
+			<th>등급</th>
+		</tr>
+		<tr>
+			<th id="name"></th>
+			<th id="korean"></th>
+			<th id="english"></th>
+			<th id="math"></th>
+			<th id="total"></th>
+			<th id="average"></th>
+			<th id="grade"></th>
+		</tr>
+	</table>
+</body>
+
+</html>

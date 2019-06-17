@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function transfer() {
+		// 입력 텍스트박스의 값 가져오기
+		var inputbox = document.f.input;
+		console.log(inputbox);
+		var inputValue = inputbox.value;
+		document.f.output.value = inputValue;
+		inputbox.value = "";
+		inputbox.focus();
+	}
+</script>
+</head>
+<body>
+	<h3>텍스트박스 데이터 읽기</h3>
+	<form name="f" action="#">
+		입력: <input type="text" name="input"><br>
+		출력: <input type="text" name="output"><br>
+		<input type="button" value="click" onclick="transfer()"><br>
+	</form>
+
+</body>
+</html>

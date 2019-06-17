@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+<style>
+	table,
+	th,
+	td {
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+</style>
+<script>
+	function gugu() {
+
+		// document.write("<table><tr>");
+		// for(var i = 2; i < 10; i++) {
+		// 	document.write("<th>" + i + "단</th>");
+		// }
+		// document.write("</tr>")
+		// for (var i = 1; i < 10; i++) {
+		// 	document.write("<tr>");
+		// 	for (var j = 2; j < 10; j++) {
+		// 		var a = i + " * " + j + " = " + (i * j);
+		// 		document.write("<td>" + a + "</td>");
+		// 	}
+		// 	document.write("</tr>");
+		// }
+		// document.write("</table>");
+
+		var tblResult = document.getElementById("gugu");
+
+		for (var i = 1; i < 10; i++) {
+			var tr = document.createElement("tr");
+			for (var j = 2; j < 10; j++) {
+				var td = document.createElement("td");
+				td.innerText = j + " * " + i + " = " + (i * j);
+				tr.appendChild(td);
+			}
+			tblResult.appendChild(tr);
+		}
+
+		//////////////////// 쓰면 안된다 ////////////////////
+		// var result = "";
+		// for (var i = 1; i < 10; i++) {
+		// 	result += "<tr>";
+		// 	for (var j = 2; j < 10; j++) {
+		// 		var a = j + " * " + i + " = " + (i * j);
+		// 		result += "<td>" + a + "</td>";
+		// 	}
+		// 	result += "</tr>"
+		// }
+		// tblResult.innerHTML += result;
+	}
+</script>
+
+<body onload="gugu()">
+	<table id="gugu">
+		<thead>
+			<tr>
+				<th>2단</th>
+				<th>3단</th>
+				<th>4단</th>
+				<th>5단</th>
+				<th>6단</th>
+				<th>7단</th>
+				<th>8단</th>
+				<th>9단</th>
+			</tr>
+		</thead>
+	</table>
+</body>
+
+</html>

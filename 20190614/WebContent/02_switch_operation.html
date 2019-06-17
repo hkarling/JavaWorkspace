@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Switch Operation</title>
+</head>
+<script type="text/javascript">
+	// 연산하기를 클릭했을때 호출될 함수 작성
+	function operCheck() {
+		// prompt 3개 띄우기
+		var num1 = parseInt(prompt("숫자1?"));
+		var num2 = parseInt(prompt("숫자2?"));
+		var oper = prompt("연산기호? (+,-,*,/)");
+
+		// 연산기호에 따라 연산 결과를 출력. (switch)
+		switch (oper) {
+		case "+":
+			document.write(num1 + " + " + num2 + " = " + (num1 + num2));
+			break;
+		case "-":
+			document.write(num1 + " - " + num2 + " = " + (num1 - num2));
+			break;
+		case "*":
+			document.write(num1 + " * " + num2 + " = " + (num1 * num2));
+			break;
+		case "/":
+			document.write(num1 + " / " + num2 + " = " + (num1 / num2));
+			break;
+		default:
+			// 만약 연산기호가 (+,-,*,/)가 잘못되면 메시지 출력하고 재실행여부를 묻는다.
+			alert("연산기호가 잘못되었습니다.");
+			confirm("다시?") ? operCheck() : alert("bye~");
+		}
+	}
+</script>
+<body>
+	<button onclick="operCheck()">연산하기</button>
+</body>
+</html>

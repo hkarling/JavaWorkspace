@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Date</title>
+<script>
+	// 날짜 생성
+	var now = new Date(); // 현재 날짜, 시간.
+	//now = new Date(2018, 5, 20);
+	//now = new Date(2018, 5, 20, 14, 5, 8);
+	document.write("<h3>" + now + "</h3>");
+
+	var arrWeek = [ '일', '월', '화', '수', '목', '금', '토' ];
+
+	document.write("now.getFullYear(): " + now.getFullYear() + "<br>");
+	document.write("now.getMonth(): " + (now.getMonth() + 1) + "<br>");
+	document.write("now.getDate(): " + now.getDate() + "<br>");
+	document.write("now.getDay(): " + arrWeek[now.getDay()] + "<br>");
+
+	document.write("now.getHours(): " + now.getHours() + "<br>");
+	document.write("now.getMinutes(): " + now.getMinutes() + "<br>");
+	document.write("now.getSeconds(): " + now.getSeconds() + "<br>");
+	
+	now.setYear(2077);
+	now.setMonth(7);
+	now.setDate(29);
+	document.write("<h3>" + now + "</h3>");
+	document.write("<h3>" + now.toLocaleString() + "</h3>");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

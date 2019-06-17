@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>주말과제2</title>
+<style>
+input[type='text'] {
+	border: 2px solid red;
+	border-radius: 4px;
+	width: 50%;
+}
+</style>
+<script>
+	var strContent = "오늘은 금요일 어쩌구 저쩌구 고고고..".split("");
+	var index;
+	var txtDisplay;
+	function btnClicked() {
+		txtDisplay = document.getElementById("txtDisplay");
+		txtDisplay.value = "";
+		index = 0;
+		display();
+	}
+	function display() {
+		console.log(strContent[index]);
+
+		txtDisplay.value += strContent[index++];
+		console.log(index);
+		if (index < strContent.length) {
+			setTimeout("display()", 200);
+		}
+	}
+</script>
+</head>
+
+<body>
+	<h1>Text Element 접근</h1>
+	<input type="text" name="txtDisplay" id="txtDisplay">
+	<button onclick="btnClicked()">클릭</button>
+</body>
+
+</html>
