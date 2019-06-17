@@ -1,10 +1,28 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>주말과제4</title>
-</head>
-<body>
 
+<head>
+    <meta charset="UTF-8">
+    <title>주말과제4</title>
+    <script>
+        var repeater;
+        var count = 0;
+        function btnStartClicked() {
+            document.getElementById("txtDisplay").value = new Date().toLocaleTimeString();
+            count++;
+            repeater = setTimeout("btnStartClicked()", 1000);
+        }
+        function btnStopClicked() {
+            clearTimeout(repeater);
+            alert(count + "초 지났습니다.");
+        }
+    </script>
+</head>
+
+<body>
+    <input type="text" name="txtDisplay" id="txtDisplay">
+    <button onclick="btnStartClicked()">시작</button>
+    <button onclick="btnStopClicked()">중지</button>
 </body>
+
 </html>
