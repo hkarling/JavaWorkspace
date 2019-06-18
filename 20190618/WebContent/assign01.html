@@ -112,7 +112,7 @@
             if (th.value === "=") {
                 try {
                     // 식이 이상하면 에러 던져라
-                    if (!display.value.match(/^[0-9]+([+-/\*][0-9]+)*$/)) {
+                    if (!display.value.match(/^[0-9]*.?[0-9]+([+-/\*][0-9]*.?[0-9]+)*$/)) {
                         throw err;
                     }
                     var result = eval(display.value);
@@ -137,7 +137,6 @@
             } else {
                 display.value += th.value;
             }
-
         }
     </script>
 </head>
