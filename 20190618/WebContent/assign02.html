@@ -32,7 +32,7 @@
             var firstDay = new Date(today.getFullYear(), today.getMonth(), 1);
             var lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0);
             var rowSize = Math.ceil((firstDay.getDay() + lastDay.getDate()) / 7);
-            
+
             // 테이블 엘레멘트 생성
             var table = document.createElement("table"); // table 생성
             table.className = 'table';  // 클래스 이름은 table
@@ -69,7 +69,7 @@
                         col.innerHTML = "★";
                         start++;
 
-                    // 시작일부터는 숫자를 써넣는다.
+                        // 시작일부터는 숫자를 써넣는다.
                     } else if (date <= lastDay.getDate()) {
                         col.innerHTML = date;
 
@@ -80,7 +80,7 @@
                         }
                         date++;
 
-                    // 마지막일까지 다 채웠으면 남은 칸은 특수문자로 채운다.
+                        // 마지막일까지 다 채웠으면 남은 칸은 특수문자로 채운다.
                     } else {
                         col.innerHTML = "*";
                     } // td 선택 완료.
@@ -92,7 +92,7 @@
             // 일요일은 빨간날~
             var sundays = document.querySelectorAll('td:first-child');
             //console.log(sundays); // 제대로 들어갔는가?
-            for(var i=0; i<sundays.length; i++) {
+            for (var i = 0; i < sundays.length; i++) {
                 sundays[i].style.color = 'red';
             }
 
@@ -100,6 +100,7 @@
             timer();
         }
 
+        // 시간 돌리는 함수!
         function timer() {
             var displayTime = document.getElementById("todayTime");
             displayTime.innerHTML = (new Date()).toLocaleTimeString();

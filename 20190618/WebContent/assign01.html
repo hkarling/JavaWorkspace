@@ -22,7 +22,7 @@
         .td,
         .th {
             height: 60px;
-            width:25%;
+            width: 25%;
         }
 
         .button {
@@ -43,7 +43,9 @@
         }
     </style>
     <script>
+
         var equalPressed = true;
+
         function load() {
             var arrButton = ["7", "8", "9", "*", "4", "5", "6", "/", "1", "2", "3", "+", "0", "=", ".", "-", "지우기", "<--"];
 
@@ -58,26 +60,36 @@
             display.name = "txtDisplay";
             display.id = "txtDisplay";
 
+            // 텍스트박스를 붙일 tr td 만들어줌.
             var displayRow = table.insertRow(0).insertCell(0);
             displayRow.colSpan = 4;
             displayRow.appendChild(display);
 
-            //var display = table.insertRow(0).insertCell(0);
-
             // 버튼들 붙이기
             for (var i = 0; i < 5; i++) {
+
+                // tr하나 붙여줌. 위치는 i+1번째 (0번째 줄에는 출력용 textbox가 있다.)
                 var row = table.insertRow(i + 1);
 
                 // 각 행마다 4번씩 돌고 반복의 총 횟수가 arrButton의 사이즈만큼 돈다.
                 for (var j = 0; (j < 4) && (i * 4 + j < arrButton.length); j++) {
-                    console.log(arrButton[i*4 +j]);
+                    console.log(arrButton[i * 4 + j]);
+                    // td 하나 만들어줌.
                     var col = row.insertCell(j);
                     col.className = "td";
+
+                    // 버튼 하나만들어서
                     var button = document.createElement("button");
+
+                    // 속성주고..
                     button.value = arrButton[i * 4 + j];
                     button.className = "button";
                     button.innerText = arrButton[i * 4 + j];
+
+                    // 이벤트 붙여주고..
                     button.addEventListener('click', function () { btnPressed(this) });
+
+                    // td에 붙인다.
                     col.appendChild(button);
                 }
             }
@@ -89,8 +101,8 @@
         // 버튼 눌렀을때 호출되는 함수
         function btnPressed(th) {
             var display = document.getElementById("txtDisplay");
-            
-            // 직전에 =를 눌렀을경우 텍스트박스를 비워줌.
+
+            // 직전에 = 를 눌렀을경우 텍스트박스를 비워줌.
             if (equalPressed) {
                 display.value = "";
                 equalPressed = false;
@@ -100,7 +112,7 @@
             if (th.value === "=") {
                 try {
                     // 식이 이상하면 에러 던져라
-                    if(!display.value.match(/^[0-9]+([+-/\*][0-9]+)*$/)){
+                    if (!display.value.match(/^[0-9]+([+-/\*][0-9]+)*$/)) {
                         throw err;
                     }
                     var result = eval(display.value);
@@ -112,15 +124,15 @@
                     console.log(e)
                     alert("식을 좀 제대로 넣어라 -_-");
                 }
-            
-            // 지우기 버튼 클릭시
-            } else if(th.value === "지우기") {
+
+                // 지우기 버튼 클릭시
+            } else if (th.value === "지우기") {
                 display.value = "";
 
-            // 백스페이스 버튼 클릭시.
+                // 백스페이스 버튼 클릭시.
             } else if (th.value === "<--") {
-                display.value = display.value.slice(0,-1);
-                
+                display.value = display.value.slice(0, -1);
+
                 // 숫자나 기호는 넣어준다.
             } else {
                 display.value += th.value;
