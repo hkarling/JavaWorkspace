@@ -16,19 +16,20 @@
 		var index;
 		var txtDisplay;
 		function btnClicked() {
+			document.getElementById("btnSubmit").disabled = true;
+
 			txtDisplay = document.getElementById("txtDisplay");
 			txtDisplay.value = "";
 			index = 0;
 			display();
 		}
 		function display() {
-			console.log(strContent[index]);
-
 			txtDisplay.value += strContent[index++];
-			console.log(index);
-			if (index < strContent.length) {
-				setTimeout("display()", 200);
+			if (index == strContent.length) {
+				document.getElementById("btnSubmit").disabled = false;
+				return;
 			}
+			setTimeout("display()", 200);
 		}
 	</script>
 </head>
@@ -36,7 +37,7 @@
 <body>
 	<h1>Text Element 접근</h1>
 	<input type="text" name="txtDisplay" id="txtDisplay">
-	<button onclick="btnClicked()">클릭</button>
+	<button onclick="btnClicked()" id="btnSubmit">클릭</button>
 </body>
 
 </html>

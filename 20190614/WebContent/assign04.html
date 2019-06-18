@@ -8,7 +8,7 @@
         var repeater;
         var count = 0;
         function btnStartClicked() {
-            document.getElementById("txtDisplay").value = new Date().toLocaleTimeString();
+            document.getElementById("txtDisplay").value = new Date().toLocaleTimeString({hour:'2-digit', minute:'2-digit', second: '2-digit', hour12:true });
             count++;
             repeater = setTimeout("btnStartClicked()", 1000);
         }

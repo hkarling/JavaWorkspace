@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function IdCheck(th) {
+			// 영문만 가능하도록 체크
+			// if(!th.value.match(/^[a-zA-Z]+$/)) {
+			// 	console.log("아쫌 잘쫌..")
+			// } else {
+			// 	console.log("아이디 오케이");
+			// }
+
+			// 숫자도 가능?
+			// if(!th.value.match(/^[0-9a-zA-Z]+$/)) {
+			// 	console.log("아쫌 잘쫌..");
+			// } else {
+			// 	console.log("아이디 오케이");
+			// }
+
+			// 영문 + 특수문자 + 숫자 가능
+			var data = "qwertyuiopasdfghjklzxcvbnm1234567890$!@#";
+
+			for (var i = 0; i < th.value.length; i++) {
+
+				var ch = th.value.charAt(i);
+				if (data.indexOf(ch) == -1) {
+					console.log("아쫌 잘쫌..");
+					th.value = "";
+					th.focus();
+					return;
+				}
+			}
+
+		}
+		function ageCheck(th) {
+			// if(!th.value.match(/^[0-9]+$/)) {
+			// 	console.log("아쫌 잘쫌..");
+			// } else {
+			// 	console.log("아이디 오케이");
+			// }
+			var ageValue = th.value;
+
+			if (isNaN(th.value)) {
+				console.log(th.value);
+				console.log("아쫌 응?");
+				th.value = "";
+				th.focus();
+			} else {
+				console.log("이메일 오케이");
+			}
+		}
+		function emailCheck(th) {
+			var result = document.getElementById("emailResult");
+			// var reg = /^[0-9a-zA-Z]+@[0-9a-zA-Z]+.[a-zA-Z]{2,3}$/i;
+			// if(!reg.test(th.value)) {
+			// 	result.innerText = "아밍나러미나얼 쫌 -_-!";
+			// 	console.log("아밍나ㅓ림나얼 쫌 -_-!");
+			// } else {
+			// 	result.innerText = "이메일 오케이";
+			// 	console.log("이메일 오케이");
+			// }
+
+			if (th.value.indexOf("@") == -1) {
+				result.innerText = "아밍나러미나얼 쫌 -_-!";
+				th.value = "";
+				th.focus();
+			} else {
+				result.innerText = "이메일 오케이";
+			}
+		}
+
+		function juminCheck(th, fo) {
+			console.log(th.value)
+			if (!th.value.match(/^[0-9]{6,6}$/)) {
+				console.log("제대로 안넣을래?");
+			} else {
+				console.log("주민 첫자리 오케이");
+				fo.jumin2.focus();
+			}
+		}
+		function genderCheck(th, fo) {
+			// if (!th.value.match(/^[1-4][0-9]{6,6}$/)) {
+			// 	console.log("제대로 안넣을래?");
+			// } else {
+			// 	console.log("주민 둘째자리 오케이");
+			// 	if (th.value.charAt(0).match(/^[13]$/)) {
+			// 		fo.gender[0].checked = true;
+			// 	} else {
+			// 		fo.gender[1].checked = true;
+			// 	}
+			// }
+
+			var ch = th.value.charAt(0);
+			if(ch == 1 || ch == 3) {
+				fo.gender[0].checked = true;
+			} else {
+				fo.gender[1].checked = true;
+			}
+		}
+
+	</script>
+</head>
+
+<body>
+	<form name="form">
+		ID : <input type="text" name="id" onblur="IdCheck(this)"><br><br>
+		age : <input type="text" name="age" onblur="ageCheck(this)"><br><br>
+		email : <input type="text" name="email" onblur="emailCheck(this)"><span id="emailResult"></span><br><br>
+		<fieldset>
+			<legend>주민번호 </legend>
+			<input type="text" size="6" name="jumin1" onkeyup="juminCheck(this , form)"> -
+			<input type="text" size="7" name="jumin2" onblur="genderCheck(this, form)"><br>
+			성별 : <input type="radio" name="gender" value="남자">남자 <input type="radio" name="gender" value="여자">여자
+
+		</fieldset>
+	</form>
+</body>
+
+</html>

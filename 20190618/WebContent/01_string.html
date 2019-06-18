@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var data = "abcd abcd abcd";
+        document.write("<h3>");
+        document.write("문자열에 관한 함수 알아보기<br>");
+        document.write("data = " + data + "<br>");
+        document.write("data.length = " + data.length + "</h3>");
+
+        // charAt(index) : index에 해당하는 문자열 추출(index는 0부터 시작)
+        document.write("data.charAt(0) = " + data.charAt(0) + "<br>");
+        document.write("data.charAt(5) = " + data.charAt(5) + "<br>");
+        document.write("data.charAt(15) = " + data.charAt(15) + "<br>");
+        document.write("data.charAt(7) = " + data.charAt(7) + "<br>");
+        document.write("<hr>");
+
+        // indexOf(문자) : 주어진 문자의 위치(index)를 리턴한다. -- 왼쪽부터 검색.
+        // lastIndexOf(문자) : 주어진 문자의 위치(index)를 리턴한다. -- 오른쪽부터 검색.
+        // 찾는 문자가 없으면 둘다 -1을 리턴한다.
+        document.write("data.indexOf('b') = " + data.indexOf('b') + "<br>");
+        document.write("data.lastIndexOf('b') = " + data.lastIndexOf('b') + "<br>");
+        document.write("data.indexOf('g') = " + data.indexOf('g') + "<br>");
+        document.write("data.lastIndexOf('g') = " + data.lastIndexOf('g') + "<br>");
+        document.write("data.indexOf('abc') = " + data.indexOf('abc') + "<br>");
+        document.write("data.lastIndexOf('abc') = " + data.lastIndexOf('abc') + "<br>");
+        document.write("<hr>");
+ 
+        // slice(index1, index2) :
+        // substring(index1, index2)
+        // substr(index1, length)
+        // 만약 두번쩌 인수 생략시 끝까지 추출.
+        document.write("data.slice(0,3) = " + data.slice(0,3) + "<br>");
+        document.write("data.slice(2,3) = " + data.slice(2,3) + "<br>");
+        document.write("data.slice(3,3) = " + data.slice(3,3) + "<br>");
+        document.write("data.slice(5) = " + data.slice(5) + "<br>");
+        document.write("<hr>");
+        document.write("data.substring(0,3) = " + data.substring(0,3) + "<br>");
+        document.write("data.substring(2,3) = " + data.substring(2,3) + "<br>");
+        document.write("data.substring(3,3) = " + data.substring(3,3) + "<br>");
+        document.write("data.substring(5) = " + data.substring(5) + "<br>");
+        document.write("<hr>");
+        document.write("data.substr(0,3) = " + data.substr(0,3) + "<br>");
+        document.write("data.substr(2,3) = " + data.substr(2,3) + "<br>");
+        document.write("data.substr(3,3) = " + data.substr(3,3) + "<br>");
+        document.write("data.substr(5) = " + data.substr(5) + "<br>");
+        document.write("<hr>");
+
+        // split():
+        document.write("data.split(' ') = " + data.split(' ') + "<br>");
+        document.write("data.split('b') = " + data.split('b') + "<br>");
+        var result = data.split('c');
+        for(i=0; i< result.length ; i++)
+            document.write(result[i] + "<br>");
+        document.write("<hr>");
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
