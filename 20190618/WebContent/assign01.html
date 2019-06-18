@@ -13,40 +13,119 @@
             margin: auto;
             text-align: center;
         }
+
         .table {
             width: 100%;
-            text-align:center;
+            text-align: center;
         }
-        .td, .th {
+
+        .td,
+        .th {
             height: 60px;
+            width:25%;
         }
+
+        .button {
+            width: 100%;
+            height: 60px;
+            font-size: 20px;
+        }
+
         #txtDisplay {
             width: 100%;
-            height: 20px;
-            vertical-align: middle;
+            height: 40px;
+            margin: auto;
+            box-sizing: border-box;
             text-align: right;
-            box-sizing:border-box;
+            vertical-align: middle;
+            font-size: 30px;
+
         }
     </style>
     <script>
+        var equalPressed = true;
         function load() {
-            var arrButton = ["7", "8", "9", "*", "4", "5", "6", "/", "1", "2", "3", "+", "0", "=", ".", "-"];
+            var arrButton = ["7", "8", "9", "*", "4", "5", "6", "/", "1", "2", "3", "+", "0", "=", ".", "-", "지우기", "<--"];
 
             // 테이블 작성
             var table = document.createElement("table");
-            table.className="table";
+            table.className = "table";
             document.getElementsByTagName("div")[0].appendChild(table);
-            for(var i=0; i<4;i++) {
-                var row = table.insertRow(i);
-                for(var j=0; j<4; j++) {
+
+            // 출력용 텍스트박스
+            var display = document.createElement("input");
+            display.type = "text";
+            display.name = "txtDisplay";
+            display.id = "txtDisplay";
+
+            var displayRow = table.insertRow(0).insertCell(0);
+            displayRow.colSpan = 4;
+            displayRow.appendChild(display);
+
+            //var display = table.insertRow(0).insertCell(0);
+
+            // 버튼들 붙이기
+            for (var i = 0; i < 5; i++) {
+                var row = table.insertRow(i + 1);
+
+                // 각 행마다 4번씩 돌고 반복의 총 횟수가 arrButton의 사이즈만큼 돈다.
+                for (var j = 0; (j < 4) && (i * 4 + j < arrButton.length); j++) {
+                    console.log(arrButton[i*4 +j]);
                     var col = row.insertCell(j);
-                    col.className = 'td';
+                    col.className = "td";
                     var button = document.createElement("button");
-                    button.setAttribute('value',arrButton[i*4 +j]);
-                    button.innerText = arrButton[i*4+j];
+                    button.value = arrButton[i * 4 + j];
+                    button.className = "button";
+                    button.innerText = arrButton[i * 4 + j];
+                    button.addEventListener('click', function () { btnPressed(this) });
                     col.appendChild(button);
                 }
             }
+
+            // 지우기버튼 칸 3칸 차지하게 하기
+            document.querySelector('tr:last-child td').colSpan = 3;
+        }
+
+        // 버튼 눌렀을때 호출되는 함수
+        function btnPressed(th) {
+            var display = document.getElementById("txtDisplay");
+            
+            // 직전에 =를 눌렀을경우 텍스트박스를 비워줌.
+            if (equalPressed) {
+                display.value = "";
+                equalPressed = false;
+            }
+
+            // =를 누르면 계산
+            if (th.value === "=") {
+                try {
+                    // 식이 이상하면 에러 던져라
+                    if(!display.value.match(/^[0-9]+([+-/\*][0-9]+)*$/)){
+                        throw err;
+                    }
+                    var result = eval(display.value);
+                    display.value = "=" + result;
+                    equalPressed = true;
+
+                    // 에러처리
+                } catch (e) {
+                    console.log(e)
+                    alert("식을 좀 제대로 넣어라 -_-");
+                }
+            
+            // 지우기 버튼 클릭시
+            } else if(th.value === "지우기") {
+                display.value = "";
+
+            // 백스페이스 버튼 클릭시.
+            } else if (th.value === "<--") {
+                display.value = display.value.slice(0,-1);
+                
+                // 숫자나 기호는 넣어준다.
+            } else {
+                display.value += th.value;
+            }
+
         }
     </script>
 </head>
@@ -54,7 +133,7 @@
 <body onload="load()">
     <h1>계산기</h1>
     <div>
-        <input type="text" name="txtDisplay" id="txtDisplay">
+
     </div>
 
 </body>

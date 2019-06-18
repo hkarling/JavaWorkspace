@@ -12,6 +12,7 @@
             height: 60px;
             width: 14%;
             border: 1px solid black;
+            font-size: 20px;
         }
 
         .table {
@@ -62,9 +63,13 @@
                 for (var j = 0; j < 7; j++) {
                     var col = document.createElement("td");
                     col.className = 'td';
+
+                    // 시작일 전까지 별로 채우는 작업.
                     if (start < firstDay.getDay()) {
                         col.innerHTML = "★";
                         start++;
+
+                    // 시작일부터는 숫자를 써넣는다.
                     } else if (date <= lastDay.getDate()) {
                         col.innerHTML = date;
 
@@ -74,17 +79,19 @@
                             col.innerHTML += "<br><span id='todayTime'></span>"
                         }
                         date++;
+
+                    // 마지막일까지 다 채웠으면 남은 칸은 특수문자로 채운다.
                     } else {
                         col.innerHTML = "*";
-                    }
-                    row.appendChild(col);
+                    } // td 선택 완료.
+                    row.appendChild(col); // tr 밑에 만든 td를 붙인다.
                 }
                 table.appendChild(row);
             }
 
             // 일요일은 빨간날~
             var sundays = document.querySelectorAll('td:first-child');
-            console.log(sundays);
+            //console.log(sundays); // 제대로 들어갔는가?
             for(var i=0; i<sundays.length; i++) {
                 sundays[i].style.color = 'red';
             }
@@ -94,7 +101,10 @@
         }
 
         function timer() {
-            document.getElementById("todayTime").innerHTML = (new Date()).toLocaleTimeString();
+            var displayTime = document.getElementById("todayTime");
+            displayTime.innerHTML = (new Date()).toLocaleTimeString();
+            displayTime.style.fontSize = "12px";
+
             setTimeout("timer()", 1000);
         }
     </script>
