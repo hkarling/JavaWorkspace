@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>eval() 함수</title>
+	<script>
+		// eval(문자열): 인수로 전달된 문자열을 자바스크립트 코드로 변환
+		function calCheck(fr) { // fr로 객체를 전달.
+			console.log(fr.cal.value);
+			console.log(eval(fr.cal.value));
+			fr.result.value = eval(fr.cal.value);
+			fr.cal.vaule = "";
+			fr.cal.focus();
+		}
+
+		function text_Eval(fr) {
+			for (var i = 1; i <= 5; i++) {
+				var inputEle = eval("fr.t" + i);
+
+				console.log(inputEle);
+				console.log(inputEle.value);
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<form>
+		식 :<input type="text" name="cal">
+		결과 : <input type="text" name="result">
+		<input type="button" value="계산하기" onclick="calCheck(form)">
+
+		<hr>
+
+		<input type="text" name="t1">
+		<input type="text" name="t2">
+		<input type="text" name="t3">
+		<input type="text" name="t4">
+		<input type="text" name="t5">
+
+		<input type="button" value="text입력값 가져오기" onclick="text_Eval(form)">
+
+
+	</form>
+
+</body>
+
+</html>

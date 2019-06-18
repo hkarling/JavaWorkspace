@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Event 종류</title>
+	<script>
+		function jobCheck(th) {
+			// console.log(th.value);
+			// console.log("th.selectedIndex = " + th.selectedIndex)
+			var str = "th.value = " + th.value + "<br>";
+			str += "th.selectedIndex = " + th.selectedIndex + "<br>";
+			str += "th.length = " + th.length + "<hr>"
+
+			// selectBox의 모든 값 가져오기
+			for(var i = 1 ; i < th.length ; i++) {
+				str += th[i].value + ", ";
+			}
+
+			document.getElementById("result").innerHTML = str;
+
+			// 동적으로 항목 추가
+			th.options[th.length] = new Option("쉬고싶다", "쉬는시간");
+
+			// 동적으로 항목 삭제
+			th.options[th.selectedIndex] = null;
+		}
+	</script>
+</head>
+
+<body>
+	<h3>Event 종류 알아보기</h3>
+	<form name="f">
+		<input type="text" onfocus="this.style.border='2px red solid'; this.style.color='blue'" onblur="this.style.border='1px gray solid'" onmouseover="" onmouseout=""><br><br>
+		직업 : <select name="job" onchange="jobCheck(this)">
+			<option value="0">--선택--</option>
+			<option value="백수">백수</option>
+			<option value="백조">백조</option>
+			<option value="학생">학생</option>
+			<option value="날라리">날라리</option>
+		</select>
+	</form>
+	
+	<h3 id="result"></h3>
+</body>
+
+</html>

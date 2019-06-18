@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>달력!</title>
+    <style>
+        .td,
+        .th {
+            height: 60px;
+            width: 14%;
+            border: 1px solid black;
+        }
+
+        .table {
+            text-align: center;
+            vertical-align: middle;
+            width: 100%;
+            border: 20px outset purple;
+        }
+    </style>
+    <script>
+        function load() {
+
+            // table method안쓰고 createElement로만 만들어봄.
+
+            // 필요한 정보들을 저장.
+            var today = new Date();
+            var firstDay = new Date(today.getFullYear(), today.getMonth(), 1);
+            var lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+            var rowSize = Math.ceil((firstDay.getDay() + lastDay.getDate()) / 7);
+            
+            // 테이블 엘레멘트 생성
+            var table = document.createElement("table"); // table 생성
+            table.className = 'table';  // 클래스 이름은 table
+            document.getElementsByTagName("div")[0].appendChild(table); // 첫번째 만나는 div에 갖다 붙임~
+
+            // 테이블 헤더 (월 표시)
+            var header = document.createElement("th");  // th 객체 생성
+            header.setAttribute("colspan", "7");    // colspan 주고 7로 늘림~
+            header.className = 'th';    // 클래스 이름은 th
+            header.innerHTML = today.getFullYear() + "년 " + (today.getMonth() + 1) + "월";
+            table.appendChild(document.createElement("tr").appendChild(header)); // tr하나에 합쳐서 table에 붙임~
+
+            // 요일 표시
+            var days = ['일', '월', '화', '수', '목', '금', '토']
+            var colDays = document.createElement("tr"); // 요일표시 붙일 tr만들고
+            for (var i = 0; i < 7; i++) {
+                var day = document.createElement("td"); // 반복해서 td 만들어서..
+                day.className = 'td' // 클래스 이름주고~
+                day.innerHTML = days[i] + "요일"; // 안에 텍스트 넣고..
+                colDays.appendChild(day); // 붙인다.
+            }
+            table.appendChild(colDays); // td 다붙인거 테이블에 붙임
+
+            var date = 1 // 1부터 마지막일자까지 증가하면서 출력해줄 변수
+            var start = 0; //첫행의 시작점을 찾기위해 필요한 변수
+            for (var i = 0; i < rowSize; i++) {
+                var row = document.createElement("tr");
+                for (var j = 0; j < 7; j++) {
+                    var col = document.createElement("td");
+                    col.className = 'td';
+                    if (start < firstDay.getDay()) {
+                        col.innerHTML = "★";
+                        start++;
+                    } else if (date <= lastDay.getDate()) {
+                        col.innerHTML = date;
+
+                        // 오늘
+                        if (date == today.getDate()) {
+                            col.style.color = "red";
+                            col.innerHTML += "<br><span id='todayTime'></span>"
+                        }
+                        date++;
+                    } else {
+                        col.innerHTML = "*";
+                    }
+                    row.appendChild(col);
+                }
+                table.appendChild(row);
+            }
+
+            // 일요일은 빨간날~
+            var sundays = document.querySelectorAll('td:first-child');
+            console.log(sundays);
+            for(var i=0; i<sundays.length; i++) {
+                sundays[i].style.color = 'red';
+            }
+
+            // 시간 타이머 돌리기 
+            timer();
+        }
+
+        function timer() {
+            document.getElementById("todayTime").innerHTML = (new Date()).toLocaleTimeString();
+            setTimeout("timer()", 1000);
+        }
+    </script>
+</head>
+
+<body onload="load()">
+    <div></div>
+</body>
+
+</html>

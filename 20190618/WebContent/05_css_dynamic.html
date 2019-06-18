@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 400px;
+            height: 100px;
+            border: 1px solid red;
+        }
+
+        span {
+            background: pink;
+        }
+        .a {
+            border: 5px skyblue inset;
+            font-family: 궁서체;
+            text-decoration: underline;
+            color: red;
+        }
+        .b {
+            text-decoration: underline;
+            color: red;
+        }
+    </style>
+    <script>
+        function styleCheck(index) {
+            switch (index) {
+                case 1: // div 영역에 css 적용
+                    var selected = document.getElementById("div");
+                    // css 적용방법: 적용객체.style.속성 = 값;
+                    selected.style.background = "red";
+                    selected.style.fontFamily = "궁서체";
+                    selected.style.fontSize = "25px";
+                    break;
+                case 2: // span 영역에 css 적용
+                    var selected = document.getElementById("span");
+                    selected.className = "a b";
+                    break;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>동적으로 CSS 적용하기</h1>
+    <form action="#">
+        <input type="button" value="div영역" onclick="styleCheck(1)">
+        <input type="button" value="span영역" onclick="styleCheck(2)">
+        <hr>
+        <div id="div">div영역입니다.</div><br>
+        <span id="span">span영역입니다.</span>
+    </form>
+</body>
+
+</html>

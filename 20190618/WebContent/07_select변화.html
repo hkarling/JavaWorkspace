@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Select 변화</title>
+	<script>
+		// 각 매장별 서브메뉴 준비
+		var kfc = ["더블다운맥스", "징거버거", "비스켓", "타워버거"];
+		var lotte = ["라이스버거", "데리버거", "새우버거", "클래식치즈버거", "불고기버거", "아재버거"];
+		var king = ["치즈와퍼주니어", "몬스터와퍼", "콰트로치즈버거", "머쉬룸버거", "스테이크버거"];
+		var mac = ["1955버거", "빅맥세트", "상하이스파이시"];
+		
+		function subMenu(th) { // th에 this 전달.
+			var arrMenu = eval(th.value);
+			// 기존 서브메뉴삭제
+			// for(var i = document.f.menu.length ; i > 0; i--) {
+			// 	document.f.menu.remove(i);
+			// }
+			while(document.f.menu.length > 1){
+				document.f.menu.remove(1);
+			}
+
+			for(var i = 0; i < arrMenu.length; i++) {
+				document.f.menu.options[i+1] = new Option(arrMenu[i], arrMenu[i]);
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<h2>대 / 소 분류</h2>
+	<form name="f">
+		<select name="majang" onchange="subMenu(this)">
+			<option value="0">--매장 선택 --</option>
+			<option value="kfc">KFC</option>
+			<option value="lotte">롯데리아</option>
+			<option value="king">버거킹</option>
+			<option value="mac">맥도널드</option>
+		</select> <select name="menu">
+			<option value="0">--선택 --</option>
+		</select>
+	</form>
+
+</body>
+
+</html>
