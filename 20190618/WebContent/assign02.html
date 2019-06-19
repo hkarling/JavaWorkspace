@@ -76,15 +76,16 @@
                         // 오늘
                         if (date == today.getDate()) {
                             col.style.color = "red";
-                            col.innerHTML += "<br><span id='todayTime'></span>"
+                            col.innerHTML += "<br><span id='todayTime'></span>";
                         }
                         date++;
 
                         // 마지막일까지 다 채웠으면 남은 칸은 특수문자로 채운다.
                     } else {
-                        col.innerHTML = "*";
+                        col.innerHTML = "※";
                     } // td 선택 완료.
                     row.appendChild(col); // tr 밑에 만든 td를 붙인다.
+                    
                 }
                 table.appendChild(row);
             }
@@ -105,7 +106,6 @@
             var displayTime = document.getElementById("todayTime");
             displayTime.innerHTML = (new Date()).toLocaleTimeString();
             displayTime.style.fontSize = "12px";
-
             setTimeout("timer()", 1000);
         }
     </script>
