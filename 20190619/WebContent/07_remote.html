@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Remote</title>
+    <script>
+        function urlCheck(url) {
+            opener.location.href = 'http://www.' + url;
+        }
+    </script>
+</head>
+
+<body>
+    <a href="#" onclick="urlCheck('naver.com')">네이버</a><br>
+    <a href="#" onclick="urlCheck('daum.net')">다음</a><br>
+    <a href="#" onclick="urlCheck('nate.com')">네이트</a><br>
+</body>
+
+</html>

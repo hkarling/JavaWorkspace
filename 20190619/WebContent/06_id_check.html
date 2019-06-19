@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>New Web Project</title>
+	<!-- 넘어오는 id를 받기: html은 안되. ~.jsp 문서 or servlet 문서가 필요함. -->
+	<script>
+		function idResult() {
+			// textbox의 값을 읽어서 opener창에 넣고 현재창을 닫는다.
+			opener.document.member.id.value = document.f.id.value;
+
+			// 자기자신을 닫는다.
+			self.close();
+		}
+	</script>
+</head>
+
+<body>
+	<form name="f">
+		<table>
+			<tr>
+				<th colspan="2" bgcolor="yellow"> ID 중복 체크 </th>
+			</tr>
+			<tr>
+				<th>ID</th>
+				<td>
+					<input type="text" name="id" />
+					<input type="button" value="사용하기" onclick="idResult()" />
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>

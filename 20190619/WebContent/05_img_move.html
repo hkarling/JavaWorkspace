@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html onmousemove="mousePosition()">
+
+<head>
+  <title> New Document </title>
+  <style>
+    img {
+      position: absolute;
+      left: 100px;
+      top: 100px
+    }
+  </style>
+  <script>
+    function mousePosition() {
+      
+      // 마우스 좌표 가져오기
+      var x = event.clientX;
+      var y = event.clientY;
+
+      // img의 좌표 바꿔주기
+      document.getElementById('img').style.left = x + 'px';
+      document.getElementById('img').style.top = y + 'px';
+    }
+  </script>
+</head>
+
+<body>
+  <img src="img/cat.gif" id="img" />
+</body>
+
+</html>

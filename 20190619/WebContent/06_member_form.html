@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>New Web Project</title>
+	<style type="text/css">
+		tr th {
+			background-color: pink
+		}
+
+		td,
+		th {
+			padding: 3px
+		}
+	</style>
+	<script>
+		// 아이디 검색.
+		function idCkOpen() {
+			// id입력 상자에 값이 있는지 체크하고 있으면 값을 넘긴다.
+			var idValue = document.member.id.value;
+			if(idValue == '') {
+				alert('아이디를 입력해라.')
+				docment.member.id.focus();
+				return;
+			}
+
+			// get방식으로 아이디값을 전달 : http://url주소?name=value&name=value 
+			open('06_id_check.html?id='+idValue,'win1','width=300, height=300');
+		}
+		
+		// 우편번호 검색.
+		function zipCheck() {
+			// 창의 이름이 같으면 전에 뜬 창에서 새 페이지가 열린다.
+			open('06_zip_check.html','win2','width=200, height=300');
+		}
+	</script>
+</head>
+
+<body>
+	<h1>[ 회원 가입 ]</h1>
+	<form name="member">
+		<table>
+			<tr>
+				<th>ID</th>
+				<td>
+					<input type="text" name="id" />
+					<input type="button" value="IDCheck" onclick="idCkOpen()" />
+				</td>
+			</tr>
+			<tr>
+				<th>우편번호</th>
+				<td>
+					<input type="text" name="zip1" size="3" /> -
+					<input type="text" name="zip2" size="3" />
+					<input type="button" value="우편번호검색" onclick="zipCheck()" />
+				</td>
+			</tr>
+			<tr>
+				<th>주소</th>
+				<td><input type="text" size="30" name="addr" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>

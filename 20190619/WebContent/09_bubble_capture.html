@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> New Document </title>
+  <style>
+    div#a {
+      width: 200px;
+      height: 100px;
+      background-color: pink
+    }
+
+    div#b {
+      width: 100px;
+      height: 50px;
+      background-color: yellow
+    }
+
+    div#c {
+      width: 80px;
+      height: 30px;
+      background-color: blue;
+      position: absolute;
+      left: 30px;
+      top: 100px
+    }
+  </style>
+
+  <script type="text/javascript">
+    function innerTest() {
+      alert("inner DIV 클릭됨...");
+    }
+    function outerTest() {
+      alert("outer DVI 클릭됨...");
+    }
+
+    function divTest() {
+      alert("div 클릭..")
+    }
+
+    //이벤트등록
+    onload = function () {
+      if (window.addEventListener) { // IE8을 제외한 브라우저
+        document.getElementById("a").addEventListener("click", outerTest, false); //버블링
+        document.getElementById("b").addEventListener("click", innerTest, false); //버블링
+       
+        // document.getElementById("a").addEventListener("click", outerTest , true); //캡쳐링
+        // document.getElementById("b").addEventListener("click", innerTest , true); //캡쳐링
+      } else {
+        document.getElementById("a").attachEvent("onclick", outerTest); //버블링
+        document.getElementById("b").attachEvent("onclick", innerTest); //버블링
+      }
+    }
+
+  </script>
+</head>
+
+<body>
+  <h1>이벤트 처리 캡쳐링과 버블링 방식의 차이</h1>
+  <div id="a">
+    Outer id="a"
+    <div id="b">
+      Inner id="b"
+    </div>
+  </div>
+
+  <!-- <div id="c">
+    ddd
+  </div> -->
+</body>
+
+</html>

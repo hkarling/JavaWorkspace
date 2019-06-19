@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>과제1</title>
+    <script>
+        var repeater; // 반복작업을 저장해둘 변수
+        var movImg; // 이미지 저장해둘 변수
+        var movingOffset = 1; // 움직이는 값. +/- 로 방향을 바꿔준다.
+
+        // html이 로드가 끝나면 호출.
+        onload = function () {
+            // 버튼들을 찾아서 이벤트를 각각 등록해준다.
+            document.getElementsByTagName('button')[0].addEventListener('click', movStart, false);
+            document.getElementsByTagName('button')[1].addEventListener('click', movStop, false);
+
+            // 이미지를 찾아서 변수에 등록하고 속성을 준다.
+            movImg = document.images[0];
+            movImg.style.position = 'absolute';
+            movImg.style.top = '200px';
+            movImg.style.left = '10px';
+        }
+
+        // 시작버튼을 클릭시 호출
+        function movStart() {
+            console.log('button1 clicked');
+
+            // 인터벌이 동작중이 아니면 인터벌 실행하고 등록, 동작중이면 알림.
+            if (!repeater) {
+                repeater = setInterval('movingImage()', 10);
+            } else {
+                alert('동작중입니다.')
+            }
+        }
+
+        // 정지버튼 클릭시 호출
+        function movStop() {
+            console.log('button2 clicked');
+
+            // 인터벌이 동작중이면 정지시키고 변수를 클리어해줌, 정지중이면 알림.
+            if (repeater) {
+                clearInterval(repeater);
+                repeater = null;
+            } else {
+                alert('정지중입니다.')
+            }
+        }
+
+        // 이미지를 움직이는 함수.
+        function movingImage() {
+
+            // 이미지의 현재 X값을 int로 받아온다.
+            var currentX = parseInt(movImg.style.left.slice(0, -2));
+
+            // 위치가 300보다 크거나 같거나
+            if (currentX >= 300) {
+                movingOffset = -1; // 방향을 왼쪽으로 바꿔주고
+                movImg.src = 'img/tiger.gif'; // 이미지를 tiger로 교체
+            
+            // 위치가 10보다 작거나 같으면
+            } else if (currentX <= 10) {
+                movingOffset = 1; // 방향을 오른쪽으로 바꾸고
+                movImg.src = 'img/cat.gif'; // 이미지를 cat으로 교체
+            }
+
+            // x값에 offset을 더해 값을 넣는다.
+            movImg.style.left = (currentX + movingOffset) + 'px';
+        }
+
+    </script>
+</head>
+
+<body>
+    <button>레이어 움직이기</button>
+    <button>레이어 멈추기</button>
+    <img src="img/cat.gif" alt="moving image">
+</body>
+
+</html>

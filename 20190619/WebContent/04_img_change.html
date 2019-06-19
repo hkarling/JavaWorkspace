@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image Change</title>
+    <style>
+        span,
+        img {
+            margin-right: 40px;
+        }
+    </style>
+    <script>
+        function mouseOver(th) {
+            th.width = th.width * 2;
+            th.height = th.height * 2;
+            th.style.border = 'inset 10px blue';
+        }
+        function mouseOut(th) {
+            th.width = th.width / 2;
+            th.height = th.height / 2;
+            th.style.border = 'none';
+        }
+        function imgChange(anim) {
+            document.images[0].src = "img/" + anim + ".gif";
+        }
+    </script>
+</head>
+
+<body>
+    <img src="img/cat.gif"><br><br>
+
+    <span onclick="imgChange('monkey')">[ 원숭이 ]</span>
+    <span onclick="imgChange('tiger')">[ 호랑이 ]</span>
+    <span onclick="imgChange('cat')">[ 고양이 ]</span>
+    <span onclick="imgChange('dog')">[ 강아지 ]</span>
+
+    <hr color="red">
+
+    <img src="img/monkey.gif" width="70" height="60" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">
+    <img src="img/cat.gif" width="70" height="60" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">
+    <img src="img/dog.gif" width="70" height="60" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">
+    <img src="img/tiger.gif" width="70" height="60" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)">
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title> New Document </title>
+  <script>
+    function test1(th) {
+      alert("1. 고전적 이벤트 처리 방식 th = " + th);
+    }
+
+    function test2() {
+      //alert("event.target : " + event.target)
+      //alert("event.srcElement : " + event.srcElement)
+      //이벤트 발생시킨 주체 구하기 
+      var target = event.target ? event.target : event.srcElement;
+
+      alert("2. 자바스크립트 내에서 이벤트 처리방식 target : " + target);
+      target.style.border = "5px double red";
+    }
+
+
+    function test3() {
+      alert("3. Dom레벨 2 이벤트 처리방식");
+    }
+
+    onload = function () {
+
+      //2. 자바스크립트 내에서 이벤트 처리방식
+      //이벤트주체.on이벤트종류 = 함수이름;
+      document.getElementById("a").onclick = test2;
+      document.getElementById("a").onmouseover = function () {
+        alert("마우스 OVER")
+      }
+
+      //3. Dom레벨 2 이벤트 등록
+      if (window.addEventListener) {//IE8 아닌겨우
+        //alert("IE8를 제외한 기타 브라우져")
+        document.getElementById("b").addEventListener("click", test3, false);
+      } else { //IE 8인경우
+        //alert("IE8인 경우...")
+        document.getElementById("b").attachEvent("onclick", test3);
+      }
+    }
+
+  </script>
+</head>
+
+<body>
+  <h1> 이벤트 처리 방식 </h1>
+
+  <h3 onclick="test1(this)">1. 고전적 이벤트 처리 방식</h3>
+  <h3 id="a">2. 자바스크립트 내에서 이벤트 처리방식</h3>
+  <h3 id="b">3. Dom레벨 2 이벤트 처리방식</h3>
+
+</body>
+
+</html>
