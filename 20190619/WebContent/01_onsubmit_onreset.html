@@ -1,0 +1,58 @@
+<!DOCTYPE html">
+<html>
+
+<head>
+	<title>Event: onsubmit, onreset</title>
+	<script>
+		function check(th) {
+			if (th.name.value == '') {
+				alert('이름입력해랑');
+				th.name.focus();
+				return false; // 함수를 빠져나가라.
+			}
+		}
+
+		function resetCheck() {
+			console.log('모두 초기화됨.');
+		}
+
+		function subCheck(fr) {
+			/* 버튼을 클릭했을 때 유효성체크를 하고 맞으면 전송하기 */
+			if (fr.name.value == '') {
+				alert('이름이뭐냐?');
+				fr.name.focus();
+				return;
+			} else {
+				fr.submit();
+			}
+		}
+
+		function check2() {
+			alert('a태그 눌렸다.');
+
+			// 리다이렉트 페이지
+			location.href = 'http://www.google.com';
+		}
+	</script>
+</head>
+
+<body>
+	<h2> onsubmit, onreset 이벤트 </h2>
+	<!-- onsubmit에서 return false를 받으면 action이 동작 안한다. -->
+	<form name="f" action="http://www.daum.net" onsubmit="return check(this)" onreset="resetCheck()">
+		이름 : <input type="text" name="name"> <br>
+		아이디 : <input type="text" name="id"> <br>
+		비번 : <input type="text" name="pwd"> <br>
+
+		<input type="submit" value="전송">
+		<input type="reset" value="취소">
+		<input type="button" value="전송하기" onclick="subCheck(form)">
+	</form>
+	<hr>
+	<a href="http://www.naver.com">링크</a><br>
+	<a href="#" onclick="check2()">링크2</a><br>
+	<a href="javascript:check2()">링크3</a><br>
+
+</body>
+
+</html>

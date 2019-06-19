@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Image Change</title>
+    <script>
+        var imgName = ['dog', 'monkey','tiger','cat'];
+        var index = 0;
+        var repeat;
+
+        // 0.5초마다 이미지를 변경
+        function imgChange() {
+            // console.log(1);
+            document.img.src = "./img/"+imgName[index++] + ".gif";
+            if(index == imgName.length){
+                index = 0;
+            }
+        }
+
+        function imgCall() {
+            repeat = setInterval('imgChange()', 500);
+        }
+    </script>
+</head>
+<body onload="imgCall()">
+    <img src="img/cat.gif" alt="cat" name="img" onmouseover="clearInterval(repeat)" onmouseout="imgCall()">
+</body>
+</html>
