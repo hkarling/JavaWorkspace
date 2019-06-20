@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            width: 600px;
+            margin: auto;
+            text-align:center;
+        }
+        table {
+            width: 100%;
+            border: 2px solid black;
+        }
+        th {
+            width:40%;
+            border: 1px solid black;
+        }
+
+        .innerEle {
+            width: 100%;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+    </style>
+    <script>
+        let tblMain; // 테이블 저장해놓을 변수
+        let index = 0;
+
+        /* 인서트 버튼 클릭 */
+        function btnInsert() {
+            let newRow = tblMain.insertRow(tblMain.length);
+            
+            /* 첫번째 셀 */
+            let ele = document.createElement('input');
+            ele.className = 'innerEle';
+            ele.value = '이름이름이름';
+
+            let col = newRow.insertCell(0);
+            col.appendChild(ele);            
+
+            /* 두번째 셀 */
+            ele = document.createElement('input');
+            ele.className = 'innerEle'
+            ele.value = index++;
+
+            col = newRow.insertCell(1);
+            col.appendChild(ele);
+            
+            /* 세번째 셀 */
+            ele = document.createElement('input');
+            ele.type = 'button';
+            ele.className = 'innerEle';
+            ele.value = '삭제';
+            ele.addEventListener('click', btnDelete);
+
+            col = newRow.insertCell(2);
+            col.appendChild(ele);
+        }
+
+        function btnDelete() {
+            let curRow = 0;
+            let valueToCompare = event.target.parentNode.previousSibling.firstChild.value;
+
+            /* 
+                이벤트가 발생한 장소가 몇번째 row인지를 구한다.
+                이벤트가 발생한 버튼이 속한 줄 두번째 칸 텍스트박스 값 = event.target.parentNode.previousSibling.firstChild.value
+                curRow번째 줄 두번째 칸 텍스트박스 값 = tblMain.rows[curRow].cells[1].firstChild.value
+            */
+            while(event.target.parentNode.previousSibling.firstChild.value !== tblMain.rows[curRow].cells[1].firstChild.value) {
+                curRow++;
+            }
+            tblMain.deleteRow(curRow);
+        }
+
+        onload = function () {
+            tblMain = document.getElementsByTagName('table')[0];
+            document.getElementsByTagName('button')[0].addEventListener('click', btnInsert);
+        }
+    </script>
+</head>
+<body>
+    <h1>테이블 동적 생성</h1>
+    <button>Row 만들기</button>
+    <table>
+        <tr>
+            <th> 이름 </th>
+            <th> 나이 </th>
+            <th> 삭제 </th>
+        </tr>
+    </table>
+</body>
+</html>

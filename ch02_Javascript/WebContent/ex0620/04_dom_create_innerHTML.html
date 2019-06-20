@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Insert title here</title>
+
+	<style type="text/css">
+		div {
+			background: pink;
+			width: 400px;
+			height: 300px
+		}
+	</style>
+	<script type="text/javascript">
+		var index = 0;
+		function createEle() {
+			// console.log('생성');
+			/* <h3>밥먹으러 고고..</h3> */
+			var divEle = document.getElementById('result');
+			var str = '<img src="img/cat.gif"><h3 id = "a'+ index+ '"> 밥먹으러 고고.. index = '+ index++ + '</3>';
+			divEle.innerHTML += str;
+		}
+		function deleteEle() {
+			//console.log('삭제');
+			var divEle = document.getElementById('result');
+			
+			/* h3태그 삭제 */
+			try {
+				divEle.removeChild(divEle.firstChild);
+			} catch(err) {
+				console.log('지울게 없어.')
+			}
+		}
+		/* 이벤트 등록 */
+		onload = function () {
+			if (addEventListener) { // IE8 제외 나머지
+				document.getElementById('create').addEventListener('click', createEle);
+				document.getElementById('delete').addEventListener('click', deleteEle);
+			} else {
+				document.getElementById('create').attachEvent('onclick', createEle);
+				document.getElementById('delete').attachEvent('onclick', deleteEle);
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<h1>Dom 생성 및 삭제</h1>
+	<form>
+		<input type="button" value="생성하기" id="create" />
+		<input type="button" value="삭제하기" id="delete" />
+	</form>
+	<div id="result"></div>
+</body>
+
+</html>

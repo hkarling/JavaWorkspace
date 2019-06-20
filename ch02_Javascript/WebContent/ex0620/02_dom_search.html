@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> New Document </title>
+
+	<script type="text/javascript">
+
+		function nameCheck() {
+			var name = prompt("찾을 name은?");
+			var text = prompt("입력 내용은?");
+
+			//name으로 Element찾기
+			var nameList = document.getElementsByName(name);
+			alert("nameList.length : " + nameList.length)
+
+			for (i = 0; i < nameList.length; i++) {
+				nameList[i].value = text;
+				nameList[i].style.border = "double red 5px";
+
+			}
+		}
+
+		function tagCheck() {
+			var name = prompt("찾을 태그이름은?");
+			var text = prompt("입력 내용은?");
+
+			//name으로 Element찾기
+			var nameList = document.getElementsByTagName(name);
+			alert("nameList.length : " + nameList.length)
+
+			for (i = 0; i < nameList.length; i++) {
+				nameList[i].value = text;
+				nameList[i].style.border = "double orange 5px";
+			}
+		}
+		function idCheck() {
+			var id = prompt("찾을 아이디이름은?");
+			var text = prompt("입력 내용은?");
+
+			//name으로 Element찾기
+			var idEle = document.getElementById(id);
+			idEle.value = text;
+			idEle.style.border = "double skyblue 5px";
+		}
+
+		//이벤트 등록
+		onload = function () {
+			document.getElementById("nameSearch").onclick = nameCheck
+			document.getElementById("tagSearch").onclick = tagCheck
+			document.getElementById("idSearch").onclick = idCheck
+		}
+	</script>
+
+</head>
+
+<body>
+	<h1> Dom 접근 방식 실습 </h1>
+
+	<form>
+		ID : <Input type="text" name="id" id="id"> <br>
+		name : <Input type="text" name="name" id="name"><br>
+		age : <Input type="text" name="age" id="age"><br>
+		addr1 : <Input type="text" name="addr" id="addr" value="dd"><br>
+		addr2 : <Input type="text" name="addr" id="addr"><br>
+
+		<Input type="button" value="name 찾기" id="nameSearch">
+		<Input type="button" value="tag 찾기" id="tagSearch">
+		<Input type="button" value="id 찾기" id="idSearch">
+	</form>
+
+</body>
+
+</html>
