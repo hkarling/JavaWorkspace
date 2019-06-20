@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Selector/title>
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			// jQuery 문법 : $(selector).속성 or $(selector).함수명()
+			// $('*').css('color', 'blue');
+			// $('li,h3').css('font-family', 'New Times Roman'); // font-family, fontFamily 둘 다 된다.
+			// $('li#tag').css('color', 'red').css('textDecoration', 'underline').css('fontFamily','aharoni');
+
+			/* 한번에 여러개 css 등록하기: ~.css({name:value,name:value,...}) */
+			$('.div').css({ color: 'red', border: '5px double pink', background: 'skyblue' });
+		});
+	</script>
+
+</head>
+
+<body>
+
+	<h3>jQuery 기본 selector</h3>
+	<h4>웹 프로그래밍</h4>
+	<div class="div">
+		<ol>
+			<li>jsp</li>
+			<li id="tag">javaScript</li>
+			<li>jQuery</li>
+			<li>Ajax</li>
+		</ol>
+	</div>
+
+
+</body>
+
+</html>

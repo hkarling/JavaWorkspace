@@ -59,18 +59,13 @@
         }
 
         function btnDelete() {
-            let curRow = 0;
-            let valueToCompare = event.target.parentNode.previousSibling.firstChild.value;
+            /*  이벤트가 발생한 버튼에서 역추적해서 tbody와 해당 tr을 찾아 저장한다.
+                테이블에서부터 내려오면 이상한 text가 잡힐때가 있다. */
+            var tbody = event.target.parentNode.parentNode.parentNode;
+            var tr = event.target.parentNode.parentNode;
 
-            /* 
-                이벤트가 발생한 장소가 몇번째 row인지를 구한다.
-                이벤트가 발생한 버튼이 속한 줄 두번째 칸 텍스트박스 값 = event.target.parentNode.previousSibling.firstChild.value
-                curRow번째 줄 두번째 칸 텍스트박스 값 = tblMain.rows[curRow].cells[1].firstChild.value
-            */
-            while(event.target.parentNode.previousSibling.firstChild.value !== tblMain.rows[curRow].cells[1].firstChild.value) {
-                curRow++;
-            }
-            tblMain.deleteRow(curRow);
+            /* 삭제 */
+            tbody.removeChild(tr);
         }
 
         onload = function () {

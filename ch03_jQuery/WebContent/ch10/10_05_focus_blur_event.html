@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Focus and Blur</title>
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script>
+		$(function () {
+			/* 이벤트 등록 */
+			$('input[name=name]')
+				.focus(function () {
+					$(this).css({ border: '3px doubld red', background: 'pink' });
+				})
+				.blur(function () {
+					$(this).css({ border: '1px solid gray' })
+
+					/*
+						$(this) 는 jquery문법으로 사용해야 하고
+						this 는 javascript문법으로 사용해야 한다.
+					*/
+					console.log(this);
+					console.log($(this));
+					console.log(this.value);
+					console.log($(this).val());
+
+					/* 박스 지우기 */
+					// this.value = '';
+					$(this).val('');
+				});
+		});
+	</script>
+</head>
+
+<body>
+	<h1>focus 와 blur 이벤트</h1>
+	<form>
+		이름 : <input type="text" name="name">
+	</form>
+</body>
+
+</html>
