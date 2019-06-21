@@ -1,0 +1,54 @@
+<!DOCTYPE html">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Append Prepend</title>
+    <style>
+        img {
+            width: 50px;
+            height: 40px
+        }
+    </style>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function () {
+            /* h3 태그에 모두 다른 색상으로 바탕색 추가. */
+            let color = ['orange', 'lightgreen', 'yellow', 'cyan'];
+            $('h3').each(function (index, item) {
+                $(this).css({ background: color[index] });
+                // $(this).css("background", color[index]);
+            });
+
+            let img = '<img src="img/jquery.jpg">';
+            /* 이벤트 등록 */
+            $('#pre').click(function() {
+                $('.a').prepend(img);
+            });
+            $('#app').click(function() {
+                $('.b').append(img);
+            });
+            $('#before').click(function() {
+                $('.c').before(img);
+            });
+            $('#after').click(function() {
+                $('.d').after(img);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <input type="button" id="pre" value="prepend">
+    <input type="button" id="app" value="append">
+
+    <input type="button" id="before" value="before">
+    <input type="button" id="after" value="after">
+
+    <h3 class="a">prepend 영역</h3>
+    <h3 class="b">append 영역</h3>
+    <h3 class="c">prependTo 영역</h3>
+    <h3 class="d">appendTo 영역</h3>
+</body>
+
+</html>

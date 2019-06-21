@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Remove Empty</title>
+    <style>
+        div {
+            background-color: pink;
+        }
+    </style>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function() {
+            $('#removeId').click(function() {
+                $('div').remove(); // div요소를 삭제.
+                $('div').append('<h3>div에추가</h3>'); // 안됨 -_-..
+            });
+            $('#emptyId').click(function() {
+                $('div').empty(); // div요소 내부를 비움.
+                $('div').append('<h3>div에추가</h3>');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>remove() 와 empty()</h1>
+    <div>
+        <p>JavaScript</p>
+        <p>NodeJs</p>
+    </div>
+
+    <input type="button" id="removeId" value="remove" />
+    <input type="button" id="emptyId" value="empty" />
+
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>DOM attribute</title>
+    <style>
+        div#bigImage {
+            border: 1px solid red;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function () {
+            $('img').mouseover(function () {
+                $('#bigImage').empty().append($(this).clone().attr({ width: 400, height: 500 }));
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="product">
+        <img src="img/android.jpg">
+        <img src="img/spring.jpg">
+        <img src="img/unity.jpg">
+
+        <div id="bigImage"> </div>
+    </div>
+</body>
+
+</html>
