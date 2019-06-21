@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>on CheckboxAll event</title>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            /*
+                on함수: 정적요소 or 동적요소에 이벤트를 적용할 수 있다.
+                    정적요소:
+                        $(selector).on('이벤트종류', function(){});
+                    동적요소:
+                        $(부모selector).on('이벤트종류', '이벤트를 발생시키는 주체',)
+                    하나의 selector가 여러개의 이벤트 등록
+                        $(selector).on().on().on()....; // 메소드체인
+                        $(selector).on({
+                            이벤트종류: function() {},
+                            이벤트종류: function() {},
+                            ...,
+                            이벤트종류: function() {}
+                        })
+            */
+
+            /* 이벤트등록 */
+            // $('#chkAll').click(function() {});
+            $('#chkAll').on('click', function () {
+                console.log(1);
+                $(':checkbox').prop('checked', this.checked);
+                // .prop() : 속성
+
+                /* span의 글씨 변경 */
+                if(this.checked) {
+                    $('span').text('전체해지');
+                } else {
+                    $('span').text('전체선택');
+                }
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <h1>on 이벤트 </h1>
+    <h4>checkbox를 이용한 전체 선택</h4>
+    <form>
+        <input type="checkbox" id="chkAll"><span>전체선택</span><br>
+        <div id="subCheck">
+            <input type="checkbox" checked="checked">C#
+            <input type="checkbox">HTML5
+            <input type="checkbox">Java
+            <input type="checkbox">JQuery
+        </div>
+    </form>
+</body>
+
+</html>

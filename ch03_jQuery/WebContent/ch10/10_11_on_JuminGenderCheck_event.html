@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>주민번호 성별 체크</title>
+
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $('#jumin1').on('keyup', function () {
+                let text = $(this).val();
+                /* 숫자유무 체크: isNaN(): true일 경우 숫자가 아니다. */
+                if (isNaN(text)) {
+                    /* 잘못된 숫자 지우기 */
+                    $(this).val(text.slice(0, -1));
+                    return;
+                }
+
+                /* 6자리가 되면 */
+                if (text.length == 6) {
+                    $('#jumin2').focus();
+                }
+            });
+
+            /* 두번째 텍스트박스에 blur와 keydown 이벤트 두개 적용 */
+            // $('#jumin2').blur().keydown();
+            // $('#jumin2').on('blur', function(){}).on('keydown', function() {});
+            $('#jumin2').on({
+                blur: function () {
+                    /* 첫 글자를 읽어와서 성별 체크 */
+                    var ch = $(this).val().charAt(0);
+                    if(ch == 1 || ch == 3) {
+                        $('#man').prop('checked', true);
+                    } else if (ch == 2 || ch == 4) {
+                        $('#woman').prop('checked', true);
+                    }
+                },
+                keydown: function () {
+                    console.log('event.keyCode = ' + event.keyCode);
+
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>on 이벤트 </h1>
+    <h4>주민번호를 이용한 성별 체크</h4>
+    <form>
+        주민번호 :
+        <input type="text" id="jumin1" size="6" /> - <input type="text" id="jumin2" size="7" />
+        <br><br>
+        성별 :
+        <input type="radio" value="남자" id="man" disabled name="gender" checked="checked"> 남자
+        <input type="radio" value="여자" id="woman" disabled name="gender"> 여자
+
+    </form>
+</body>
+
+</html>

@@ -248,3 +248,6 @@ DbProperty.java
 !ojdbc6.jar
 dbInfo.properties
 Servers/
+
+*.iml
+*.xml
