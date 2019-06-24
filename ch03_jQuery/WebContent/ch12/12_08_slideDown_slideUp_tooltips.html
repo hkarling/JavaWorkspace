@@ -1,25 +1,44 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<style>
-	a{text-decoration:none;color:red}
-	#tooltip{
-		opacity:0.7; position:absolute;
-		display:none; border-radius:10px;
-		background-color:yellow; padding:5px;
-	}
-
-</style>
-<script src="../lib/jquery-1.9.1.min.js"></script>
-
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: red
+        }
+        #tooltip {
+            opacity: 0.7;
+            position: absolute;
+            display: none;
+            border-radius: 10px;
+            background-color: yellow;
+            padding: 5px;
+        }
+    </style>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function() {
+            $('h2').hover(function(){
+                    $('#tooltip').slideDown(0);
+                }, function() {
+                    $('#tooltip').slideUp(0);
+                })
+            .mousemove(
+                function() {
+                    $('#tooltip').css({ top:event.clientY, left:event.clientX  });
+                }
+            );
+        });
+    </script>
 </head>
-<body>
 
-<h4>slideDown() , slideUp()을 이용한 tooltip</h4>
-   <h2><a href="#">jQuery란</a> 무엇 인가?</h2>
-	<span id="tooltip">javaScript 라이브러입니다.</span>
+<body>
+    <h4>slideDown(), slideUp()을 이용한 tooltip</h4>
+    <h2><a href="#">jQuery란</a> 무엇 인가?</h2>
+    <span id="tooltip">javaScript 라이브러리입니다.</span>
 </body>
 
 </html>

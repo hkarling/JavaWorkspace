@@ -1,26 +1,46 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<style>
-	a{text-decoration:none}
-</style>
- <script src="../lib/jquery-1.11.1.min.js"></script>
-<script>
-  
-</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Basic 효과</title>
+    <style>
+        a {
+            text-decoration: none
+        }
+
+        body {
+            text-align: center;
+        }
+    </style>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function () {
+            $('#show').click(function () {
+                // $('img').show(); // 열린다
+                // $('img').show(1000); // 1초에 걸쳐서 열린다.
+                $('img').show(1000, function () { // 완료 후 동작.
+                    $(this).attr('src', 'img/jquery.jpg').css({ opacity: '0.5', borderRadius: 50 });
+                });
+            });
+            $('#hide').click(function () {
+                $('img').hide();
+            });
+            $('#toggle').click(function () {
+                $('img').toggle();
+            });
+        });
+    </script>
 </head>
+
 <body>
-<center>
-<h1>Basic 효과 </h1>
-	<a href="#" id="show">show</a>&nbsp;&nbsp;&nbsp;
-	<a href="#" id="hide">hide</a>&nbsp;&nbsp;&nbsp;
-	<a href="#" id="toggle">toggle</a>
-	
-	<hr/>
-	<img src="img/jpup_id.jpg"/>
-</center>
+    <h1>Basic 효과 </h1>
+    <a href="#" id="show">show</a>&nbsp;&nbsp;&nbsp;
+    <a href="#" id="hide">hide</a>&nbsp;&nbsp;&nbsp;
+    <a href="#" id="toggle">toggle</a>
+
+    <hr />
+    <img src="img/jpup_id.jpg" />
 </body>
 
 

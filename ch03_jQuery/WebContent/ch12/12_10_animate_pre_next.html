@@ -1,35 +1,72 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<style>
-	#prev, #mainPage, #next{float:left}
-	#mainPage{width:100px; overflow:hidden; }
-	#page{width:500px}
-	img{ width:100px ; height:100px;}
-	a{text-decoration:none ; }
-</style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>animate 효과</title>
+    <style>
+        #prev,
+        #mainPage,
+        #next {
+            float: left
+        }
 
+        #mainPage {
+            width: 100px;
+            overflow: hidden;
+        }
 
+        #page {
+            width: 500px
+        }
 
-<script src="../lib/jquery-1.9.1.min.js"></script>
-<script>
-	
-</script>
+        img {
+            width: 100px;
+            height: 100px;
+        }
+
+        a {
+            text-decoration: none;
+            margin: 30px 20px;
+        }
+    </style>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function () {
+            let index = 0;
+            $('#prev').click(function () {
+                if (index > 0) {
+                    $('#page').animate({ marginLeft: '+=100' });
+                    index--;
+                } else {
+                    alert('이전 이미지 없음.');
+                }
+            });
+            $('#next').click(function () {
+                if (index < 4) {
+                    $('#page').animate({ marginLeft: '-=100' });
+                    index++
+                } else {
+                    alert('다음 이미지 없음.')
+                }
+            });
+        });
+    </script>
 </head>
+
 <body>
 
-<h1>animate 효과</h1>
-   <div id="allPage">
-	 <a href="#" id="prev">이전&nbsp;&nbsp;&nbsp;</a>
-	<div id="mainPage">
-		<div id="page">
-		 <img src="img/a.jpg"/><img src="img/b.jpg"/><img src="img/c.jpg"/><img src="img/d.jpg"/><img src="img/e.jpg"/>
-	    </div>
-	</div>
-	<a href="#" id="next">&nbsp;&nbsp;&nbsp;다음</a>
-  </div>
+    <h1>animate 효과</h1>
+    <div id="allPage">
+        <a href="#" id="prev">이전</a>
+        <div id="mainPage">
+            <div id="page">
+                <img src="img/a.jpg"><img src="img/b.jpg"><img src="img/c.jpg"><img src="img/d.jpg"><img
+                    src="img/e.jpg">
+            </div>
+        </div>
+        <a href="#" id="next">다음</a>
+    </div>
 </body>
 
 

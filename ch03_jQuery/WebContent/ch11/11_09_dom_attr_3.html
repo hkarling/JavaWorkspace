@@ -14,9 +14,14 @@
     <script src="../js/jquery-3.4.1.min.js"></script>
     <script>
         $(function () {
-            $('img').mouseover(function () {
-                $('#bigImage').empty().append($(this).clone().attr({ width: 400, height: 500 }));
-            });
+            $('img')
+                .attr({ width: 100, height: 100 })
+                .mouseover(function () {
+                    
+                    $('#bigImage').empty().append($(document.createElement('img')).attr({src:this.src, width:400, height: 500}));
+                    
+                    // $('#bigImage').empty().append($(this).clone().attr({ width: 400, height: 500 }));
+                });
         });
     </script>
 </head>

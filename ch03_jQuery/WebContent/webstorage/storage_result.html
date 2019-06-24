@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WebStorage</title>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(function () {
+            // sessionStorage에 저장된 정보 div영역에 넣기
+            var str = '';
+            for (i = 0; i < sessionStorage.length; i++) {
+                var key = sessionStorage.key(i);
+                var value = sessionStorage[key];
+                str += key + ' : ' + value + '<br>';
+            }
+            $('#session').html(str);
+
+            str = '';
+            
+            for (i = 0; i < localStorage.length; i++) {
+                var key = localStorage.key(i);
+                var value = localStorage[key];
+                str += key + ' : ' + value + '<br>';
+            }
+            $('#local').html(str);
+        });
+    </script>
+</head>
+
+<body>
+    <h1>sessionStorage</h1>
+    <div id="session"></div>
+    <hr>
+    <h1>localStorage</h1>
+    <div id="local"></div>
+</body>
+
+</html>

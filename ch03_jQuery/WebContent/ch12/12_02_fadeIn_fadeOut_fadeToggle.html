@@ -1,28 +1,56 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-<style>
-	h2{width:300px; height:40px;padding:10px;
-	   background-color:red;color:yellow;display:none}
-	a{text-decoration:none}
-</style>
- <script src="../lib/jquery-1.11.1.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Fading 효과</title>
+    <style>
+        body {
+            text-align:center;
+        }
+        h2 {
+            width: 300px;
+            height: 40px;
+            padding: 10px;
+            background-color: red;
+            color: yellow;
+            display: none;
+            text-align:center;
+        }
 
+        a {
+            text-decoration: none;
+            margin-right: 20px;
+        }
+    </style>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
 
-
+        // visible에 따라 블록이 사라져서 하위 요소들이 자리를 차지하게 된다.
+        $(function () {
+            $('#fadeIn').click(function () {
+                $('h2').fadeIn(2000,function() {
+                    $(this).css({border:'inset 10px skyblue'})
+                });
+            });
+            $('#fadeOut').click(function () {
+                $('h2').fadeOut(2000);
+            });
+            $('#fadeToggle').click(function () {
+                $('h2').fadeToggle();
+            });
+        });
+    </script>
 </head>
+
 <body>
-<center>
-<h1>Fading 효과 </h1>
-	<a href="#" id="fadeIn">fadeIn</a>&nbsp;&nbsp;&nbsp;
-	<a href="#" id="fadeOut">fadeOut</a>&nbsp;&nbsp;&nbsp;
-	<a href="#" id="fadeToggle">fadeToggle</a>
-	<hr/>
-	<h2>Have a Nice Good Day!</h2>
-	<h3>난 어디에 놓일까?</h3>
-</center>
+    <h1>Fading 효과 </h1>
+    <a href="#" id="fadeIn">fadeIn</a>
+    <a href="#" id="fadeOut">fadeOut</a>
+    <a href="#" id="fadeToggle">fadeToggle</a>
+    <hr />
+    <h2>Have a Nice Good Day!</h2>
+    <h3>난 어디에 놓일까?</h3>
 </body>
 
 

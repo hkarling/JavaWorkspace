@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>localStorage Test</title>
+    <style>
+        div {
+            width: 300px;
+            height: 100px;
+            border: 1px red solid;
+        }
+    </style>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#btnSave').click(function () {
+
+                /* key 와 value 를 가져오서 localStorage 저장한다. */
+                let name = $('#s_key').val();
+                let value = $('#s_value').val();
+
+                localStorage.setItem(name, value);
+
+                $('#s_key').val('').focus();
+                $('#s_value').val('');
+                getInfo();
+            });
+
+            /* localStorage 비운다. */
+            $('#btnClear').click(function () {
+                localStorage.clear();
+                getInfo();
+            });
+
+            /*  session 정보 가져오기 */
+            function getInfo() {
+                var str = '저장갯수 = ' + localStorage.length + '<br>';
+                for (i = 0; i < localStorage.length; i++) {
+                    var key = localStorage.key(i);
+                    // var value = localStorage[key];
+                    var value = localStorage.getItem(key);
+                    str += key + ' : ' + value + '<br>';
+                }
+                $('#result').html(str);
+            }
+
+            getInfo();
+        })   
+    </script>
+
+</head>
+
+<body>
+    <h1> localStorage Test </h1>
+    <form>
+        key : <input type="text" name="s_key" id="s_key" />
+        value : <input type="text" name="s_value" id="s_value" />
+
+        <input type="button" value="저장하기" id="btnSave" />
+        <button type="button" id="btnClear">정보 지우기 </button>
+        <hr>
+        <div id="result"></div>
+    </form>
+    <a href="storage_result.html">결과보러가기</a>
+</body>
+
+</html>
