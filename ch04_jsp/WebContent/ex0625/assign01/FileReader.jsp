@@ -14,9 +14,9 @@
 <h3>File 목록</h3>
 <ul>
 <%
-    File[] filelist = new File(path).listFiles();
-    for(File file: filelist) {
-        out.println("<li>" + file.getName()+"</li>");
+    String[] fileList = new File(path).list();
+    for(String file: fileList) {
+        out.println("<li>" + file+"</li>");
     }
 %>
 </ul><br>

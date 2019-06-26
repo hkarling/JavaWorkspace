@@ -21,9 +21,10 @@
     long time = System.currentTimeMillis();
 
     // 저장위치를 선정한다.
-    String path = request.getRealPath("/")+ "save/";
+    String path = application.getRealPath("/ex0625/assign01/save/");
 
     File file = new File(path, name + "_" + time + ".txt");
+
     if(!file.exists()) {
         file.getParentFile().mkdir();
     }
@@ -36,7 +37,9 @@
     bw.close();
 
     application.setAttribute("path", path);
-    response.sendRedirect("FileReader.jsp");
+    out.println("<script>alert('" + file.getName() + "파일이 생성되었습니다.'); location.href='FileReader.jsp'</script>");
+//    response.sendRedirect("FileReader.jsp");
 %>
+
 </body>
 </html>
