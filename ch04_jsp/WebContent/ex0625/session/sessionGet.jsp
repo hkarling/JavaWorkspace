@@ -15,5 +15,12 @@
             out.println(str+" ");
     }
 %><br>
+
+<hr style="background-color:red">
+
+<h3>application 정보 확인하기</h3>
+주소: <%=application.getAttribute("addr")%><br>
+메시지: <%=application.getAttribute("message")%><br>
+
 </body>
 </html>
