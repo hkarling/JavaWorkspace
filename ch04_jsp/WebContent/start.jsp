@@ -14,7 +14,7 @@
 <%
 	// Java코드 영역
 	String name = "이름이다";
-	int age = 20;
+	int age = 23;
 	
 	// 콘솔 출력
 	System.out.println("이름: " + name);
