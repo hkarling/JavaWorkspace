@@ -243,11 +243,13 @@ $RECYCLE.BIN/
 
 # End of https://www.gitignore.io/api/osx,java,windows,eclipse,intellij,visualstudiocode
 
-# User defined files
+# User defined files - ignore
 DbProperty.java
-!ojdbc6.jar
 dbInfo.properties
 Servers/
-
 *.iml
 *.xml
+
+# User defined files - don't ignore
+!ojdbc6.jar
+!web.xml
