@@ -12,10 +12,20 @@
     <servlet>
         <servlet-name>LoginPro</servlet-name>
         <servlet-class>assign02.LoginServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginPro</servlet-name>
-        <url-pattern>/assign02/LoginPro</url-pattern>
+        <url-pattern>/LoginPro</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>LogoutPro</servlet-name>
+        <servlet-class>assign02.LogoutServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutPro</servlet-name>
+        <url-pattern>/LogoutPro</url-pattern>
     </servlet-mapping>
 
 </web-app>

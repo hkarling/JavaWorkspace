@@ -13,6 +13,6 @@
     <title>Title</title>
 </head>
 <body>
-<h2><%=addr%></h2>
+<h2></h2>
 </body>
 </html>

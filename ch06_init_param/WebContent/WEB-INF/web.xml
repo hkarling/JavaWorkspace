@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>ch06_init_param</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>init</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>message</param-name>
+    <param-value>오늘 점심뭐냐</param-value>
+  </context-param>
+  <context-param>
+    <param-name>addr</param-name>
+    <param-value>경기도 성남시 분당구</param-value>
+  </context-param>
+  <servlet>
+    <servlet-name>initServlet</servlet-name>
+    <servlet-class>ex0627.servlet.InitParamServlet</servlet-class>
+    <init-param>
+      <param-name>dbId</param-name>
+      <param-value>jang</param-value>
+    </init-param>
+    <init-param>
+      <param-name>pwd</param-name>
+      <param-value>1234</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>initServlet</servlet-name>
+    <url-pattern>/init</url-pattern>
+  </servlet-mapping>
+</web-app>
