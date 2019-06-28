@@ -17,4 +17,15 @@
 	<listener>
 		<listener-class>ex0627.listener.AppListener</listener-class>
 	</listener>
+    <listener>
+        <listener-class>ex0627.listener.SessionListenerTest</listener-class>
+    </listener>
+	<listener>
+		<listener-class>ex0627.listener.UserCounterListener</listener-class>
+	</listener>
+
+	<!-- session 유효기간 설정-->
+	<session-config>
+		<session-timeout>1</session-timeout>
+	</session-config>
 </web-app>
