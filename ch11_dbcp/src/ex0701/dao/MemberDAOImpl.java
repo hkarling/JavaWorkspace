@@ -20,7 +20,7 @@ public class MemberDAOImpl implements MemberDAO {
 
         try {
             conn = DbUtil.getConnection();
-            ps = conn.prepareStatement("select * from member order by id");
+            ps = conn.prepareStatement("select * from member");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -49,21 +49,101 @@ public class MemberDAOImpl implements MemberDAO {
 
     @Override
     public int insert(MemberDTO memberDTO) {
-        return 0;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        int result = 0;
+
+        try {
+            conn = DbUtil.getConnection();
+            ps = conn.prepareStatement("insert into member values(?,?,?,?,?,?,sysdate)");
+            ps.setString(1, memberDTO.getId());
+            ps.setString(2, memberDTO.getPwd());
+            ps.setString(3, memberDTO.getName());
+            ps.setInt(4, memberDTO.getAge());
+            ps.setString(5, memberDTO.getPhone());
+            ps.setString(6, memberDTO.getAddr());
+
+            result = ps.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DbUtil.dbClose(ps, conn);
+        }
+
+        return result;
     }
 
     @Override
     public boolean idCheck(String id) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            conn= DbUtil.getConnection();
+            ps = conn.prepareStatement("SELECT ID FROM MEMBER WHERE ID = ?");
+            ps.setString(1, id);
+            rs = ps.executeQuery();
+
+            if(rs.next()) {
+                return true;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DbUtil.dbClose(rs, ps, conn);
+        }
+
         return false;
     }
 
     @Override
     public MemberDTO selectById(String id) {
-        return null;
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        MemberDTO memberDTO = null;
+
+        try {
+            conn= DbUtil.getConnection();
+            ps = conn.prepareStatement("SELECT ID FROM MEMBER WHERE ID = ?");
+            ps.setString(1, id);
+            rs = ps.executeQuery();
+
+            if(rs.next()) {
+                memberDTO = new MemberDTO(rs.getString("id"), rs.getString("pwd"),
+                        rs.getString("name"), rs.getInt("age"), rs.getString("phone"),
+                        rs.getString("addr"), rs.getString("join_date"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DbUtil.dbClose(rs, ps, conn);
+        }
+
+        return memberDTO;
     }
 
     @Override
     public int delete(String id) {
-        return 0;
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        int result = 0;
+
+        try {
+            conn = DbUtil.getConnection();
+            ps = conn.prepareStatement("delete from member where id = ?");
+            ps.setString(1,id);
+            result = ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DbUtil.dbClose(ps, conn);
+        }
+        return result;
     }
 }

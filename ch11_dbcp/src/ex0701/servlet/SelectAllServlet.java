@@ -22,9 +22,8 @@ public class SelectAllServlet extends HttpServlet {
         MemberDAO memberDAO = new MemberDAOImpl();
         List<MemberDTO> list = memberDAO.selectAll();
 
-        // 뷰쪽에 전달될 데이터를 scope영역에 저장.
+        // 뷰쪽에 전달될 데이터를 scope 영역에 저장.
         req.setAttribute("list", list);
-
         req.getRequestDispatcher("memberSelect.jsp").forward(req, resp);
     }
 }

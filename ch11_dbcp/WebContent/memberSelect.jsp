@@ -11,13 +11,11 @@
             width: 100%;
             border: 5px double red
         }
-
         th, td {
             padding: 5px;
             border: 1px solid pink;
             text-align: center
         }
-
         a {
             text-decoration: none
         }
@@ -42,7 +40,7 @@
         <tr>
             <th colspan="9" style="text-align:right">
                 <a href="memberForm.html">[ 회원가입 ]</a>&nbsp;&nbsp;&nbsp;
-                <a href="#">[ 새로고침 ]</a>&nbsp;&nbsp;&nbsp;
+                <a href="selectAll">[ 새로고침 ]</a>&nbsp;&nbsp;&nbsp;
             </th>
         </tr>
         <tr bgColor="pink">
@@ -66,7 +64,7 @@
                 <td>${member.addr}</td>
                 <td>${member.phone}</td>
                 <td>${member.joinDate}</td>
-                <td><input type="button" value="삭제"></td>
+                <td><input type="button" value="삭제" onclick="location.href='delete?id=${member.id}'"></td>
             </tr>
         </c:forEach>
     </table>
@@ -79,8 +77,8 @@
             <option value="name">이름</option>
             <option value="addr">주소</option>
         </select>
-        <input type="text" name="keyWord"/>
-        <input type="button" value="검색"/>
+        <input type="text" name="keyWord">
+        <input type="button" value="검색">
     </form>
 </center>
 </body>
