@@ -61,4 +61,9 @@ public class MemberDAOImpl implements MemberDAO {
     public MemberDTO selectById(String id) {
         return null;
     }
+
+    @Override
+    public int delete(String id) {
+        return 0;
+    }
 }

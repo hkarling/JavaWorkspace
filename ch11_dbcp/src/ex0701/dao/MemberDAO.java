@@ -41,4 +41,11 @@ public interface MemberDAO {
      * select * from member where id = ?
      */
     MemberDTO selectById(String id);
+
+
+    /**
+     * 6.삭제
+     * delete from member where id = ?
+     */
+    int delete(String id);
 }

@@ -254,5 +254,5 @@ Servers/
 !ojdbc6.jar
 !jstl.jar
 !standard.jar
-!context.xml
 !web.xml
+ch11_dbcp/WebContent/META-INF/context.xml

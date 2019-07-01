@@ -5,6 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <style>
         table {
             width: 100%;
@@ -21,6 +22,17 @@
             text-decoration: none
         }
     </style>
+    <script>
+        $(function() {
+            // alert('jQuery Start');
+
+            $('input[value=삭제]').click(function() {
+                // 현재 버튼을 기준으로 ID찾기
+                // var id = ?;
+                //location.href="delete?id=id";
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -54,7 +66,7 @@
                 <td>${member.addr}</td>
                 <td>${member.phone}</td>
                 <td>${member.joinDate}</td>
-                <td><input type="button" value="삭제" onclick=""></td>
+                <td><input type="button" value="삭제"></td>
             </tr>
         </c:forEach>
     </table>
