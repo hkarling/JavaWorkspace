@@ -252,4 +252,7 @@ Servers/
 
 # User defined files - don't ignore
 !ojdbc6.jar
+!jstl.jar
+!standard.jar
+!context.xml
 !web.xml
