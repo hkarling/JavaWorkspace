@@ -57,7 +57,7 @@
         <c:forEach items="${list}" var="member" varStatus="status">
             <tr>
                 <td>${status.count}</td>
-                <td>${member.id}</td>
+                <td><a href="selectById?id=${member.id}">${member.id}</a></td>
                 <td>${member.pwd}</td>
                 <td>${member.name}</td>
                 <td>${member.age}</td>

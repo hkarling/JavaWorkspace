@@ -10,32 +10,32 @@
     <title>Detail page</title>
 </head>
 <body>
-<h1>~~ 님 어서옵셔</h1>
+
 <table cellspacing="0" align="center">
-    <caption><h2> 회원가입 Form</h2></caption>
+    <caption><h1>${member.name} 님 어서옵셔</h1></caption>
     <tr>
         <td width="100px">ID</td>
-        <td width="400px"><input type="text" name="id"></td>
+        <td width="400px">${member.id}</td>
     </tr>
     <tr>
         <td>PWD</td>
-        <td><input type="password" name="pwd"></td>
+        <td>${member.pwd}</td>
     </tr>
     <tr>
         <td>NAME</td>
-        <td><input type="text" name="name"></td>
+        <td>${member.name}</td>
     </tr>
     <tr>
         <td>age</td>
-        <td><input type="text" name="age"></td>
+        <td>${member.age}</td>
     </tr>
     <tr>
         <td>Phone</td>
-        <td><input type="text" name="phone"></td>
+        <td>${member.phone}</td>
     </tr>
     <tr>
         <td>Addr</td>
-        <td><input type="text" name="addr" size="50"></td>
+        <td>${member.addr}</td>
     </tr>
     <tr>
         <td colspan="2" style="text-align: center;background-color: pink">

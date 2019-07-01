@@ -2,6 +2,7 @@ package ex0701.servlet;
 
 import ex0701.dao.MemberDAO;
 import ex0701.dao.MemberDAOImpl;
+import ex0701.dto.MemberDTO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,13 +18,12 @@ public class SelectByIdServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         MemberDAO memberDAO = new MemberDAOImpl();
-
-        //memberDAO.selectById(id);
+        MemberDTO member = memberDAO.selectById(req.getParameter("id"));
 
         // 저장
+        req.setAttribute("member", member);
 
         // 이동 - read.jsp
-
-
+        req.getRequestDispatcher("read.jsp").forward(req, resp);
     }
 }

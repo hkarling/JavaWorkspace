@@ -104,12 +104,12 @@ public class MemberDAOImpl implements MemberDAO {
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-
+        System.out.println(id);
         MemberDTO memberDTO = null;
 
         try {
             conn= DbUtil.getConnection();
-            ps = conn.prepareStatement("SELECT ID FROM MEMBER WHERE ID = ?");
+            ps = conn.prepareStatement("SELECT * FROM MEMBER WHERE ID = ?");
             ps.setString(1, id);
             rs = ps.executeQuery();
 
