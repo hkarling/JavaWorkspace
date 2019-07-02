@@ -29,6 +29,19 @@
                 // var id = ?;
                 //location.href="delete?id=id";
             });
+
+            $('input[value=검색]').click(function(){
+                if($("[name=keyField]").val() == "0"){
+                    alert('검색필드를 선택해주세요.');
+                    return;
+                }
+                if($('[name=keyWord]').val().trim() == ""){
+                    alert('검색단어를 입력해주세요.');
+                    $('[name=KeyWord]').focus();
+                    return;
+                }
+                $('[name=search]').submit();
+            });
         });
     </script>
 </head>
@@ -68,9 +81,8 @@
             </tr>
         </c:forEach>
     </table>
-    <p>
-
-    <form name="search" action="" method="post">
+    <br>
+    <form name="search" action="selectBySearch" method="post">
         <select name="keyField">
             <option value="0">--선택--</option>
             <option value="id">아이디</option>

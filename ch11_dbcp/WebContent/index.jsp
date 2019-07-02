@@ -10,6 +10,6 @@
     <title>Title</title>
 </head>
 <body>
-<jsp:forward page="selectAll" />
+<jsp:forward page="selectAll"/>
 </body>
 </html>

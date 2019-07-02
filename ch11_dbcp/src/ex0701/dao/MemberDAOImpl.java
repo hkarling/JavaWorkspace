@@ -20,8 +20,9 @@ public class MemberDAOImpl implements MemberDAO {
 
         try {
             conn = DbUtil.getConnection();
-            ps = conn.prepareStatement("select * from member");
-            rs = ps.executeQuery();
+            ps = conn.prepareStatement("SELECT * FROM MEMBER ORDER BY JOIN_DATE");
+            makeList(ps,list);
+/*            rs = ps.executeQuery();
 
             while (rs.next()) {
                 String id = rs.getString(1);
@@ -33,7 +34,7 @@ public class MemberDAOImpl implements MemberDAO {
                 String joinDate = rs.getString(7);
 
                 list.add(new MemberDTO(id, pwd, name, age, phone, addr, joinDate));
-            }
+            }*/
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -44,9 +45,67 @@ public class MemberDAOImpl implements MemberDAO {
 
     @Override
     public List<MemberDTO> selectByKey(String keyField, String keyword) {
-        return null;
+
+
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        String sql = "";
+        List<MemberDTO> list = new ArrayList<>();
+
+        if(keyField.equals("id")) {
+            sql = "SELECT * FROM MEMBER WHERE ID LIKE ? ORDER BY JOIN_DATE";
+        } else if(keyField.equals("name")) {
+            sql = "SELECT * FROM MEMBER WHERE NAME LIKE ? ORDER BY JOIN_DATE";
+        } else if(keyField.equals("addr")) {
+            sql = "SELECT * FROM MEMBER WHERE ADDR LIKE ? ORDER BY JOIN_DATE";
+        }
+
+        try {
+            conn = DbUtil.getConnection();
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, "%"+keyword+"%");
+            makeList(ps, list);
+ /*           rs = ps.executeQuery();
+
+            while (rs.next()) {
+                String id = rs.getString(1);
+                String pwd = rs.getString(2);
+                String name = rs.getString(3);
+                int age = rs.getInt(4);
+                String phone = rs.getString(5);
+                String addr = rs.getString(6);
+                String joinDate = rs.getString(7);
+
+                list.add(new MemberDTO(id, pwd, name, age, phone, addr, joinDate));
+            }*/
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            DbUtil.dbClose(rs, ps, conn);
+        }
+        return list;
+
     }
 
+    private void makeList(PreparedStatement ps, List<MemberDTO> list) throws SQLException {
+
+        ResultSet rs = null;
+        rs = ps.executeQuery();
+
+        while (rs.next()) {
+            String id = rs.getString(1);
+            String pwd = rs.getString(2);
+            String name = rs.getString(3);
+            int age = rs.getInt(4);
+            String phone = rs.getString(5);
+            String addr = rs.getString(6);
+            String joinDate = rs.getString(7);
+
+            list.add(new MemberDTO(id, pwd, name, age, phone, addr, joinDate));
+        }
+    }
     @Override
     public int insert(MemberDTO memberDTO) {
 
@@ -56,7 +115,7 @@ public class MemberDAOImpl implements MemberDAO {
 
         try {
             conn = DbUtil.getConnection();
-            ps = conn.prepareStatement("insert into member values(?,?,?,?,?,?,sysdate)");
+            ps = conn.prepareStatement("INSERT INTO MEMBER VALUES(?,?,?,?,?,?,SYSDATE)");
             ps.setString(1, memberDTO.getId());
             ps.setString(2, memberDTO.getPwd());
             ps.setString(3, memberDTO.getName());
@@ -104,7 +163,6 @@ public class MemberDAOImpl implements MemberDAO {
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
-        System.out.println(id);
         MemberDTO memberDTO = null;
 
         try {
@@ -136,8 +194,8 @@ public class MemberDAOImpl implements MemberDAO {
 
         try {
             conn = DbUtil.getConnection();
-            ps = conn.prepareStatement("delete from member where id = ?");
-            ps.setString(1,id);
+            ps = conn.prepareStatement("DELETE FROM MEMBER WHERE ID = ?");
+            ps.setString(1,id.trim());
             result = ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

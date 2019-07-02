@@ -16,13 +16,13 @@ public class DeleteServlet extends HttpServlet {
 
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("text/html;charset=UTF-8");
         // 넘어오는 아이디 받기
         String id = req.getParameter("id");
+
         // dao 에 삭제 호출..
         MemberDAO memberDAO = new MemberDAOImpl();
         int result = memberDAO.delete(id);
-
-        System.out.println(id);
         if(result > 0){
             // 결과가 성공이면 index 로 이동 redirect
             resp.sendRedirect("index.jsp");

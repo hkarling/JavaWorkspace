@@ -31,11 +31,14 @@ public class InsertServlet extends HttpServlet {
 
         MemberDTO memberDTO = new MemberDTO(id,pwd,name,Integer.parseInt(age),phone,addr, "");
 
+        // 유효성 체크
+
         // id에 해당하는 중복 체크 한다.
         // 있으면 - 뒤로가기
         // 없으면 - insert 호출
         // selectAll로 이동 : response.sendRedirect("selectAll");
         if(memberDAO.idCheck(id)){
+            resp.setContentType("text/html;charset=UTF-8");
             PrintWriter out = resp.getWriter();
             out.println("<script>");
             out.println("alert('id duplicated')");
