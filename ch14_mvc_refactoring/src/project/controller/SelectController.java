@@ -5,17 +5,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class UpdateController implements Controller {
+public class SelectController implements Controller {
 
     @Override
     public ModelAndView handleRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        System.out.println("UpdateController calls..");
+        System.out.println("SelectController calls..");
 
-        // 수정에 해당하는 service -> dao 호출 그 결과를 어딘가 저장.
+        // 검색에 해당하는 service -> dao 호출 그 결과를 어딘가 저장.
 
-        req.setAttribute("message", "수정완료.");
+        req.setAttribute("message", "검색된 결과입니다.");
 
-        return new ModelAndView("updateResult.jsp");
+        return new ModelAndView("selectResult.jsp");
     }
 }
