@@ -15,7 +15,7 @@ public class MemberDAOImpl implements MemberDAO {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        ResultSet rs = null;
+        //ResultSet rs = null;
         List<MemberDTO> list = new ArrayList<>();
 
         try {
@@ -38,7 +38,7 @@ public class MemberDAOImpl implements MemberDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            DbUtil.dbClose(rs, ps, conn);
+            DbUtil.dbClose(null, ps, conn);
         }
         return list;
     }
@@ -49,7 +49,7 @@ public class MemberDAOImpl implements MemberDAO {
 
         Connection conn = null;
         PreparedStatement ps = null;
-        ResultSet rs = null;
+        //ResultSet rs = null;
 
         String sql = "";
         List<MemberDTO> list = new ArrayList<>();
@@ -83,7 +83,7 @@ public class MemberDAOImpl implements MemberDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            DbUtil.dbClose(rs, ps, conn);
+            DbUtil.dbClose(null, ps, conn);
         }
         return list;
 

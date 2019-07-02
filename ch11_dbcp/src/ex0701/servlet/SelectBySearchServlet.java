@@ -20,7 +20,11 @@ public class SelectBySearchServlet extends HttpServlet {
 
         String keyword = req.getParameter("keyWord");
         String keyField = req.getParameter("keyField");
-        
+
+        if(keyword.equals("id") || keyword.equals("name") || keyword.equals("addr")) {
+
+        }
+
         MemberDAO memberDAO = new MemberDAOImpl();
         List<MemberDTO> list = memberDAO.selectByKey(keyField, keyword);
 
