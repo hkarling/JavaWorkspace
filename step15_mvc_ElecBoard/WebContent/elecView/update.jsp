@@ -1,9 +1,9 @@
 <%@ page info="게시판 수정하기" contentType="text/html;charset=UTF-8" %>
-<HTML>
-<HEAD>
+<html>
+<head>
     <link rel="stylesheet" href="css/style.css">
 
-    <SCRIPT>
+    <script>
         function checkValid() {
             var f = window.document.updateForm;
             if (f.model_name.value == "") {
@@ -26,17 +26,11 @@
                 f.password.focus();
                 return false;
             }
-
-
         }
+    </script>
+</head>
 
-    </SCRIPT>
-
-</HEAD>
-
-<BODY>
-
-
+<body>
 <form name=updateForm method=post action="elec" onSubmit="return checkValid()">
     <input type="hidden" name="command" value="update">
     <input type='hidden' name='modelNum' value="${elec.modelNum}">
@@ -74,8 +68,10 @@
             <td width="150" height="20">
                 <p align="right"><b><span style="font-size:9pt;">비밀번호</span></b></p>
             </td>
-            <td width="450" height="20"><b><span style="font-size:9pt;"><input type=password name="password" size="12">
-            (비밀번호가 맞아야 수정이 가능합니다.)</span></b></td>
+            <td width="450" height="20"><b><span style="font-size:9pt;">
+                <input type=password name="password" size="12">
+                (비밀번호가 맞아야 수정이 가능합니다.)</span></b>
+            </td>
         </tr>
         <tr>
             <td width="450" height="20" colspan="2" align="center"><b><span style="font-size:9pt;">
@@ -85,8 +81,8 @@
 </form>
 <hr>
 <div align=right><span style="font-size:9pt;">&lt;<a href="${path}/elec">리스트로 돌아가기</a>&gt;</span></div>
-</BODY>
-</HTML>
+</body>
+</html>
 
 
 

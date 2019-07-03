@@ -63,6 +63,23 @@ public class ElectronicsDAOImpl implements ElectronicsDAO {
     }
 
     @Override
+    public int increamentByReadnum(String modelNum) throws SQLException {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        int result = 0;
+
+        try {
+            conn = DbUtil.getConnection();
+            ps = conn.prepareStatement("UPDATE ELECTRONICS SET READNUM = READNUM + 1 WHERE MODEL_NUM = ?");
+            ps.setString(1, modelNum);
+            result = ps.executeUpdate();
+        } finally {
+            DbUtil.dbClose(ps, conn);
+        }
+        return result;
+    }
+
+    @Override
     public int insert(Electronics electronics) throws SQLException {
         Connection conn = null;
         PreparedStatement ps = null;
@@ -105,6 +122,21 @@ public class ElectronicsDAOImpl implements ElectronicsDAO {
 
     @Override
     public int update(Electronics electronics) throws SQLException {
-        return 0;
+        Connection conn = null;
+        PreparedStatement ps = null;
+        int result = 0;
+
+        try {
+            conn = DbUtil.getConnection();
+            ps = conn.prepareStatement("UPDATE ELECTRONICS SET MODEL_NAME=?, PRICE=?, DESCRIPTION=? WHERE MODEL_NUM = ?");
+            ps.setString(1, electronics.getModelName());
+            ps.setInt(2, electronics.getPrice());
+            ps.setString(3, electronics.getDescription());
+            ps.setString(4, electronics.getModelNum());
+            result = ps.executeUpdate();
+        } finally {
+            DbUtil.dbClose(ps, conn);
+        }
+        return result;
     }
 }
