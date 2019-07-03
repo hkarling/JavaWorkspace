@@ -30,7 +30,7 @@ public class ElectronicsService {
      * ElectronicsDAOImpl의 레코드 삽입하는 메소드 호출
      */
     public static int insert(Electronics electronics) throws SQLException {
-        System.out.println(electronics);
+
         return dao.insert(electronics);
     }
     /**
@@ -45,12 +45,14 @@ public class ElectronicsService {
      * ElectronicsDAOImpl의 모델번호에 해당하는 레코드 삭제 메소드 호출
      */
     public static int delete(String modelNum, String password) throws SQLException {
+
         return dao.delete(modelNum, password);
     }
     /**
      * ElectronicsDAOImpl의 모델번호에 해당하는 레코드 수정  메소드 호출
      */
     public static int update(Electronics electronics) throws SQLException {
+
         return dao.update(electronics);
     }
 }

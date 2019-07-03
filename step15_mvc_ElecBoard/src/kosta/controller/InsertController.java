@@ -50,7 +50,7 @@ public class InsertController implements Controller {
             mav.setRedirect(true);
         } catch (SQLException e) {
             e.printStackTrace();
-            req.setAttribute("errMessage", e.getMessage());
+            req.setAttribute("errorMsg", e.getMessage());
         }
         return mav;
     }

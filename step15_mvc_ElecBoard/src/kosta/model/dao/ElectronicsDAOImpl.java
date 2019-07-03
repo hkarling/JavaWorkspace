@@ -20,7 +20,7 @@ public class ElectronicsDAOImpl implements ElectronicsDAO {
 
         try {
             conn = DbUtil.getConnection();
-            ps = conn.prepareStatement("SELECT * FROM ELECTRONICS");
+            ps = conn.prepareStatement("SELECT * FROM ELECTRONICS ORDER BY WRITEDAY DESC");
             rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -46,6 +46,7 @@ public class ElectronicsDAOImpl implements ElectronicsDAO {
         try {
             conn = DbUtil.getConnection();
             ps = conn.prepareStatement("SELECT * FROM ELECTRONICS WHERE MODEL_NUM = ?");
+            ps.setString(1, modelNum);
             rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -75,8 +76,8 @@ public class ElectronicsDAOImpl implements ElectronicsDAO {
             ps.setInt(3, electronics.getPrice());
             ps.setString(4, electronics.getDescription());
             ps.setString(5, electronics.getPassword());
-            ps.setString(6,electronics.getFname());
-            ps.setInt(7,electronics.getFsize());
+            ps.setString(6, electronics.getFname());
+            ps.setInt(7, electronics.getFsize());
             result = ps.executeUpdate();
         } finally {
             DbUtil.dbClose(ps, conn);
@@ -86,9 +87,20 @@ public class ElectronicsDAOImpl implements ElectronicsDAO {
 
     @Override
     public int delete(String modelNum, String password) throws SQLException {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        int result = 0;
 
-        
-        return 0;
+        try {
+            conn = DbUtil.getConnection();
+            ps = conn.prepareStatement("DELETE ELECTRONICS WHERE MODEL_NUM = ? AND PASSWORD = ?");
+            ps.setString(1, modelNum);
+            ps.setString(2, password);
+            result = ps.executeUpdate();
+        } finally {
+            DbUtil.dbClose(ps, conn);
+        }
+        return result;
     }
 
     @Override
