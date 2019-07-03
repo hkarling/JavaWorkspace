@@ -24,6 +24,7 @@ public class DeleteElecController implements Controller {
             e.printStackTrace();
             req.setAttribute("errorMsg", e.getMessage());
             mav.setPath("errorView/error.jsp");
+            mav.setRedirect(false);
         }
         return mav;
     }

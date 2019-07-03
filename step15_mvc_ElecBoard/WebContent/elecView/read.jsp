@@ -75,7 +75,7 @@
             <td width="450" height="20" colspan="3">
         	<span style="font-size:9pt;"><b>
         	<a href='downLoad?fname=${elec.fname}'>
-                    ${elec.fName}
+                    ${elec.fname}
             </a>
       		  ( <fmt:formatNumber value="${elec.fsize}"/> byte)
         </b></span>

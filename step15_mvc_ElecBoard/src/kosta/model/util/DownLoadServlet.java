@@ -19,14 +19,15 @@ public class DownLoadServlet extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 		//1. 넘어오는 파일의 이름을 받기
-		String fName = request.getParameter("fName");
+		String fname = request.getParameter("fname");
+
 		//2. 저장폴더의 실제 경로를 얻어오기
 		String saveDir=request.getServletContext().getRealPath("/save");
-		File file = new File(saveDir, fName);
+		File file = new File(saveDir, fname);
 		
-		//부가적인 옵션!!!
-		//요청된 파일의 mimeType을 설정한다(문서의 형태설정)
+		//부가적인 옵션: 요청된 파일의 mimeType을 설정한다(문서의 형태설정)
 		String mimeType = getServletContext().getMimeType(file.toString());
 		
 		if(mimeType==null){
@@ -36,17 +37,16 @@ public class DownLoadServlet extends HttpServlet {
 		//브라우져 별 파일이름에대한 한글인코딩설정
 		if (request.getHeader("user-agent").indexOf("Trident") == -1) {// IE가 아닌경우
 			System.out.println(1);
-			fName = new String(file.getName().getBytes("UTF-8"), "8859_1");
+			fname = new String(file.getName().getBytes("UTF-8"), "8859_1");
 		} else {
 			System.out.println(2);
-			fName = new String(file.getName().getBytes("euc-kr"), "8859_1");
+			fname = new String(file.getName().getBytes("euc-kr"), "8859_1");
 		}
 		
 		//브라우져가 해석할수 있는 파일을 해석하지 않고 다운로드!!!
-		response.setHeader("Content-Disposition", "attachment;filename=\""+ fName + "\";");
+		response.setHeader("Content-Disposition", "attachment;filename=\""+ fname + "\";");
 				
-		//3. 폴더에서 파일이름에 해당하는 파일을 읽어서 
-		//클라이언트 브라우져에서 다운로드(출력=쓰기)
+		//3. 폴더에서 파일이름에 해당하는 파일을 읽어서 클라이언트 브라우져에서 다운로드(출력=쓰기)
 
 		FileInputStream  fi = new FileInputStream(file);
 		ServletOutputStream so = response.getOutputStream();
