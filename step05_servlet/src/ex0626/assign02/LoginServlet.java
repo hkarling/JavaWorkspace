@@ -1,4 +1,4 @@
-package assign02;
+package ex0626.assign02;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

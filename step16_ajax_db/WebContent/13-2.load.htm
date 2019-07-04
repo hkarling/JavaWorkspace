@@ -15,7 +15,9 @@
     <script>
         $(function() {
             $('#btn').click(function() {
-                var params='name='+$('#name').val() + '&message=Ajax재미있다.';
+                /* var params='name='+$('#name').val() + '&message=Ajax재미있다.'; */
+                var params = {	'name': $('#name').val(),
+                				message: 'Ajax재미있다.' }
                 $('#display').load("13-2.serverPage.jsp", params, function() {
                 	alert('서버요청이 완료되었슴다.');
                 });
