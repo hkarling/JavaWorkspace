@@ -1,4 +1,6 @@
+<%@ page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,11 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>초기화면입니다!!</h1>
-<nav>
-</nav>
-<div>
-	<%-- <jsp:include file="list.jsp" /> --%>
-</div>
+<h3>${param.name}님 반가워요.<br>
+메시지 = <%= request.getParameter("message") %><br>
+접속시간 : <%= new Date().toLocaleString() %>
+</h3>
 </body>
 </html>
