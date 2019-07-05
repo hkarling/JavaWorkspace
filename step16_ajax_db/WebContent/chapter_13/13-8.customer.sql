@@ -1,21 +1,23 @@
-INSERT INTO customer " +
-			"VALUES(CUSTOMER_SEQ.NEXTVAL,?,?,?,?)
+INSERT INTO customer
+VALUES (CUSTOMER_SEQ.NEXTVAL, ?, ?, ?, ?);
+
+drop table customer;
+
+CREATE TABLE customer2
+(
+    id   varchar2(20) primary key, --ê³ ê°ì•„ì´ë””
+    NAME VARCHAR2(20),             --ê³ ê°ì´ë¦„
+    age  NUMBER(3),                --ê³ ê°ë‚˜ì´
+    tel  VARCHAR2(30),             --ê³ ê°ì—°ë½ì²˜
+    addr VARCHAR2(50)--ê³ ê°ì£¼ì†Œ
+);
 
 
-CREATE TABLE customer2(
-    id varchar2(20) primary key, --°í°´¾ÆÀÌµğ
-    NAME VARCHAR2(20), --°í°´ÀÌ¸§
-    age NUMBER(3), --°í°´³ªÀÌ
-    tel VARCHAR2(30), --°í°´¿¬¶ôÃ³
-    addr VARCHAR2(50)--°í°´ÁÖ¼Ò
-)
-
-drop table customer
-
-insert into customer2 values('jang','ÀåÈñÁ¤',20,'02-222-8282','¼­¿ï½Ã °­³²±¸')
+insert into customer2
+values ('jang', 'ì¥í¬ì •', 20, '02-222-8282', 'ì„œìš¸ì‹œ ê°•ë‚¨êµ¬');
 commit;
 
 
 
-
-select * from customer2
+select *
+from customer2

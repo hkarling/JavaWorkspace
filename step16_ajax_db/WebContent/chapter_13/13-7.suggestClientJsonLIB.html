@@ -19,25 +19,17 @@
 
                 $.ajax({
                     type: "post",
-                    url: "../SuggestServlet",
-                    dataType: "text",
+                    url: "../SuggestJsonLibServlet",
+                    dataType: "json",
                     data: "keyWord=" + $(this).val(),
                     success: function (result) {//text, html, xml,json
-                        //console.log(result); //개수|단어,단어,단어,....
-                        var re = result.split("|");
-                        if (parseInt(re[0]) > 0) {
-                            var wordList = re[1].split(",");
-                            var str = "";
-                            $.each(wordList, function (index, item) {
-                                //console.log(item)
-                                str += "<a href='#'>" + item + "</a><br>";
-                            });
-
-                            $("#suggest").html(str);
-                            $("#suggest").show();
-                        } else {
-                            $("#suggest").hide();
-                        }
+                        //console.log(result);
+                        var str = "";
+                        $.each(result, function (index, item) {
+                            str += "<a href='#'>" + item + "</a><br>";
+                        });
+                        $("#suggest").html(str);
+                        $("#suggest").show();
 
                     },
                     error: function (err) {
