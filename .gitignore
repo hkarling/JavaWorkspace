@@ -211,3 +211,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.gitignore.io/api/macos,windows,eclipse,intellij,java-web
+
+
+### User defined files
+/Servers/

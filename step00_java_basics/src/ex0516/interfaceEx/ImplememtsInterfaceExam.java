@@ -38,13 +38,11 @@ class SubClassExam01 extends SuperClassExam /*, InterfaceExam01 */ implements In
 
 	@Override
 	public void interfaceExam00() {
-		// TODO Auto-generated method stub
 
 	}
 
 	@Override
 	public void interfaceExam01(int i, int k) {
-		// TODO Auto-generated method stub
 
 	}
 

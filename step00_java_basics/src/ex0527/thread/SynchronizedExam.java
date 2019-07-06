@@ -41,7 +41,6 @@ class Bank {
 					System.out.println("생산자 대기중입니다...");
 					wait();
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -57,7 +56,6 @@ class Bank {
 					System.out.println("소비자 대기중입니다...");
 					wait();
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}

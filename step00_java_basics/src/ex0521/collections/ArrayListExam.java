@@ -1,6 +1,7 @@
 package ex0521.collections;
 import java.util.ArrayList;
 
+@SuppressWarnings("rawtypes")
 class ArrayListExam extends ArrayList {
 
 	// 전역 Variable Object 타입1개, int 타입 1개;
@@ -19,6 +20,7 @@ class ArrayListExam extends ArrayList {
 	/* 
 	 * 이름: addInt, 리턴타입: 없음, 인수: int 1개, 하는일: 인수로 받은 정수를 객체로 만들어 list에 추가.
 	 */
+	@SuppressWarnings("unchecked")
 	void addInt(int i) {
 		this.add(new Integer(i));
 	}

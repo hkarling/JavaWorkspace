@@ -21,6 +21,7 @@ public class ObjectLoadAutoCloseExam {
 
 			Student st1 = (Student) ois.readObject();
 			Student st2 = (Student) ois.readObject();
+			@SuppressWarnings("unchecked")
 			List<Student> list = (List<Student>) ois.readObject();
 
 			System.out.println("st1 = " + st1);

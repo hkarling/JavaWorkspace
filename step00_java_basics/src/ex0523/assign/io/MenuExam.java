@@ -128,13 +128,11 @@ public class MenuExam extends JFrame {
 					bw.flush();
 
 				} catch (IOException e1) {
-					// TODO Auto-generated catch block
 					e1.printStackTrace();
 				} finally {
 					try {
 						bw.close();
 					} catch (IOException e1) {
-						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
 				}

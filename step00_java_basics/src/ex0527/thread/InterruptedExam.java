@@ -24,7 +24,6 @@ public class InterruptedExam {
 //		try { // 5초가 지나면 
 //			Thread.sleep(5000);
 //		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
 //		thread.interrupt();
@@ -45,7 +44,6 @@ public class InterruptedExam {
 		try { // 5초가 지나면
 			Thread.sleep(5000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

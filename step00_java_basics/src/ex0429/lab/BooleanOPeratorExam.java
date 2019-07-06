@@ -1,6 +1,7 @@
 package ex0429.lab;
 
 class BooleanOPeratorExam{
+	@SuppressWarnings("unused")
 	public static void main(String args[]){
 		boolean t=true ;
 		boolean f=false;

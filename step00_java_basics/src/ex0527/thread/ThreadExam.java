@@ -56,7 +56,6 @@ class NumberThread extends Thread {
 //			try {
 //				Thread.sleep(100);// 0.1초 동안 대기상태
 //			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
 //				e.printStackTrace();
 //			}
 			Thread.yield(); // 양보상태가 
@@ -80,7 +79,6 @@ class AlphaThread implements Runnable {
 //			try {
 //				Thread.sleep(10);// 0.1초 동안 대기상태
 //			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
 //				e.printStackTrace();
 //			} 
 			Thread.yield();

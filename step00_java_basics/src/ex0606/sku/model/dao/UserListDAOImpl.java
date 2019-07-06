@@ -53,19 +53,16 @@ public class UserListDAOImpl implements UserListDAO {
 
 	@Override
 	public int userListInsert(UserListDTO userListDTO) throws SQLException {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public int userListUpdate(UserListDTO userListDTO) throws SQLException {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
 	public int userListDelete(String id) throws SQLException {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
