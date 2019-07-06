@@ -1,4 +1,4 @@
-package objstream;
+package ex0524.objstream;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package sku.model.dao;
+package ex0606.sku.model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-import sku.model.dto.UserListDTO;
-import project.model.util.DbUtil;
+import ex0606.sku.model.dto.UserListDTO;
+import ex0606.project.model.util.DbUtil;
 
 public class UserListDAOImpl implements UserListDAO {
 

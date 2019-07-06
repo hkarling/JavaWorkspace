@@ -1,4 +1,4 @@
-package thread;
+package ex0527.thread;
 
 /**
  * DaemonThread란 메인스레드가 종료되면 함께 종료되는 스레드

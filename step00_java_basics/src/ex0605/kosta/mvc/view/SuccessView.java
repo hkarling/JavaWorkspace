@@ -1,8 +1,8 @@
-package kosta.mvc.view;
+package ex0605.kosta.mvc.view;
 
 import java.util.List;
 
-import kosta.mvc.model.dto.BoardDTO;
+import ex0605.kosta.mvc.model.dto.BoardDTO;
 
 public class SuccessView {
 	

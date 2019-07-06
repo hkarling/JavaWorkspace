@@ -1,4 +1,4 @@
-package network.chat;
+package ex0528.network.chat;
 
 import java.io.BufferedReader;
 import java.io.IOException;

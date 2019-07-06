@@ -1,4 +1,4 @@
-package kosta.mvc.model.dao;
+package ex0605.kosta.mvc.model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
-import kosta.mvc.model.dto.BoardDTO;
-import kosta.mvc.model.util.DbUtil;
+import ex0605.kosta.mvc.model.dto.BoardDTO;
+import ex0605.kosta.mvc.model.util.DbUtil;
 
 public class BoardDAOImpl implements BoardDAO {
 	

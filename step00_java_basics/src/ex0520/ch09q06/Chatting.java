@@ -1,4 +1,4 @@
-package ch09q06;
+package ex0520.ch09q06;
 
 public class Chatting {
 

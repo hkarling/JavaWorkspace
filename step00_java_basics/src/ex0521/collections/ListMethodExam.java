@@ -1,4 +1,4 @@
-package collections;
+package ex0521.collections;
 
 import java.util.ArrayList;
 import java.util.List;

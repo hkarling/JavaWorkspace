@@ -1,4 +1,4 @@
-package set;
+package ex0522.set;
 
 public class Member {
 	private String id;

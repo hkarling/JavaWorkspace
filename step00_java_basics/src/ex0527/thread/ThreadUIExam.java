@@ -1,4 +1,4 @@
-package thread;
+package ex0527.thread;
 
 import java.awt.Container;
 import java.awt.FlowLayout;

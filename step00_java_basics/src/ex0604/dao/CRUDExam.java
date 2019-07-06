@@ -1,8 +1,8 @@
-package dao;
+package ex0604.dao;
 
 import java.sql.*;
 
-import util.DbUtil;
+import ex0604.util.DbUtil;
 
 public class CRUDExam {
 

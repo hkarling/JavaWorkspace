@@ -1,9 +1,9 @@
-package kosta.mvc.view;
+package ex0605.kosta.mvc.view;
 
 import java.util.Scanner;
 
-import kosta.mvc.controller.BoardController;
-import kosta.mvc.model.dto.BoardDTO;
+import ex0605.kosta.mvc.controller.BoardController;
+import ex0605.kosta.mvc.model.dto.BoardDTO;
 
 public class MenuView {
 	static Scanner sc = new Scanner(System.in);

@@ -1,11 +1,11 @@
-package project.model.service;
+package ex0610.project.model.service;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import project.model.dao.ShopDAOImpl;
-import project.model.dao.ShopDAO;
-import project.model.dto.ProductDTO;
+import ex0610.project.model.dao.ShopDAOImpl;
+import ex0610.project.model.dao.ShopDAO;
+import ex0610.project.model.dto.ProductDTO;
 
 public class ShopServiceImpl implements ShopService {
 

@@ -1,9 +1,9 @@
-package kosta.mvc.model.service;
+package ex0605.kosta.mvc.model.service;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import kosta.mvc.model.dto.BoardDTO;
+import ex0605.kosta.mvc.model.dto.BoardDTO;
 
 public interface BoardService {
 	/**

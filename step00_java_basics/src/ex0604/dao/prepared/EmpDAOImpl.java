@@ -1,4 +1,4 @@
-package dao.prepared;
+package ex0604.dao.prepared;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +8,7 @@ import java.sql.Savepoint;
 import java.util.ArrayList;
 import java.util.List;
 
-import util.DbUtil;
+import ex0604.util.DbUtil;
 
 public class EmpDAOImpl implements EmpDAO {
 

@@ -1,4 +1,4 @@
-package kosta.mvc.model.dto;
+package ex0605.kosta.mvc.model.dto;
 
 public class BoardDTO {
 

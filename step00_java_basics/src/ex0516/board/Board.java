@@ -1,4 +1,4 @@
-package board;
+package ex0516.board;
 
 /**
  * 게시판의 속성을 관리하는 객체

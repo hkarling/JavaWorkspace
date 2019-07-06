@@ -1,8 +1,8 @@
-package project.view;
+package ex0610.project.view;
 
 import java.util.List;
 
-import project.model.dto.ProductDTO;
+import ex0610.project.model.dto.ProductDTO;
 
 public class ResultView {
 

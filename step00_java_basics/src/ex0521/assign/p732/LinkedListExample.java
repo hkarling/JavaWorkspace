@@ -1,4 +1,4 @@
-package assign.p732;
+package ex0521.assign.p732;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

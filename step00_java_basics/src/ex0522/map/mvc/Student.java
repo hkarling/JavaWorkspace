@@ -1,4 +1,4 @@
-package map.mvc;
+package ex0522.map.mvc;
 
 public class Student extends Person {
 

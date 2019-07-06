@@ -1,4 +1,4 @@
-package ch09q04;
+package ex0520.ch09q04;
 
 public class NestedClassExample {
 

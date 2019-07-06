@@ -1,4 +1,4 @@
-package iostream;
+package ex0523.iostream;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;

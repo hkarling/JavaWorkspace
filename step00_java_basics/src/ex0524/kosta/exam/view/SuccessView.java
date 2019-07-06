@@ -1,4 +1,4 @@
-package kosta.exam.view;
+package ex0524.kosta.exam.view;
 
 import java.util.Iterator;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 
-import kosta.exam.model.dto.*;
+import ex0524.kosta.exam.model.dto.*;
 
 public class SuccessView {
 

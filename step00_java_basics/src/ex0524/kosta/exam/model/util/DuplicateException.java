@@ -1,4 +1,4 @@
-package kosta.exam.model.util;
+package ex0524.kosta.exam.model.util;
 
 @SuppressWarnings("serial")
 public class DuplicateException extends Exception {

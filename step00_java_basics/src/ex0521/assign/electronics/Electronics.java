@@ -1,4 +1,4 @@
-package assign.electronics;
+package ex0521.assign.electronics;
 
 /**
  * 주제: Electronics 클래스

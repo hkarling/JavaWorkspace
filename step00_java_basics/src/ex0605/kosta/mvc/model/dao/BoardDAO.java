@@ -1,9 +1,9 @@
-package kosta.mvc.model.dao;
+package ex0605.kosta.mvc.model.dao;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import kosta.mvc.model.dto.BoardDTO;
+import ex0605.kosta.mvc.model.dto.BoardDTO;
 
 public interface BoardDAO {
 	/**

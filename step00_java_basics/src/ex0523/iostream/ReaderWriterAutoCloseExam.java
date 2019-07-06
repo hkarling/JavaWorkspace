@@ -1,4 +1,4 @@
-package iostream;
+package ex0523.iostream;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -13,8 +13,8 @@ public class ReaderWriterAutoCloseExam {
 
 		/** 바로 문자단위로 파일 읽기 */
 		
-		try(BufferedReader br = new BufferedReader(new FileReader("src/iostream/read.txt"));
-			BufferedWriter bw = new BufferedWriter(new FileWriter("src/iostream/write.txt"));) {
+		try(BufferedReader br = new BufferedReader(new FileReader("src/ex0523/iostream/read.txt"));
+			BufferedWriter bw = new BufferedWriter(new FileWriter("src/ex0523/iostream/write.txt"));) {
 
 			/** Buffered를 이용하여 읽기 */
 			String str = null;

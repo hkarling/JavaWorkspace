@@ -1,12 +1,12 @@
-package project.controller;
+package ex0610.project.controller;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import project.model.dto.ProductDTO;
-import project.model.service.ShopService;
-import project.model.service.ShopServiceImpl;
-import project.view.ResultView;
+import ex0610.project.model.dto.ProductDTO;
+import ex0610.project.model.service.ShopService;
+import ex0610.project.model.service.ShopServiceImpl;
+import ex0610.project.view.ResultView;
 
 public class ShopController {
 

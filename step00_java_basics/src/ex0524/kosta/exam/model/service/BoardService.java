@@ -1,4 +1,4 @@
-package kosta.exam.model.service;
+package ex0524.kosta.exam.model.service;
 /**
  * 모든 게시판이 공통으로 사용하게 될 Service
  * (Business Logic)
@@ -6,9 +6,9 @@ package kosta.exam.model.service;
 
 import java.util.Map;
 
-import kosta.exam.model.dto.Board;
-import kosta.exam.model.util.DuplicateException;
-import kosta.exam.model.util.InexistentException;
+import ex0524.kosta.exam.model.dto.Board;
+import ex0524.kosta.exam.model.util.DuplicateException;
+import ex0524.kosta.exam.model.util.InexistentException;
 
 public interface BoardService {
 	/**

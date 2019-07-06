@@ -1,10 +1,10 @@
-package sku.model.bl;
+package ex0606.sku.model.bl;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Vector;
 
-import sku.model.dto.UserListDTO;
+import ex0606.sku.model.dto.UserListDTO;
 
 public interface UserListService {
 	/**

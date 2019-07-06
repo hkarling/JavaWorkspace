@@ -1,4 +1,4 @@
-package assign.electronics;
+package ex0521.assign.electronics;
 
 import java.util.Scanner;
 

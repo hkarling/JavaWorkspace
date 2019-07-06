@@ -1,14 +1,14 @@
-package sku.controller;
+package ex0606.sku.controller;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Vector;
 
-import sku.model.bl.UserListService;
-import sku.model.bl.UserListServiceImpl;
-import sku.model.dto.UserListDTO;
-import sku.view.FailView;
-import sku.view.SuccessView;
+import ex0606.sku.model.bl.UserListService;
+import ex0606.sku.model.bl.UserListServiceImpl;
+import ex0606.sku.model.dto.UserListDTO;
+import ex0606.sku.view.FailView;
+import ex0606.sku.view.SuccessView;
 
 public class UserListController {
 

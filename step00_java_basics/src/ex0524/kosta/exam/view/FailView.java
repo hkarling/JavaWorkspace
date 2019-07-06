@@ -1,4 +1,4 @@
-package kosta.exam.view;
+package ex0524.kosta.exam.view;
 
 public class FailView {
 

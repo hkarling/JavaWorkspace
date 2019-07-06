@@ -1,4 +1,4 @@
-package sku.view;
+package ex0606.sku.view;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -19,7 +19,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
-import sku.controller.UserListController;
+import ex0606.sku.controller.UserListController;
 
 @SuppressWarnings("serial")
 public class UserJTableView extends JFrame implements ActionListener {

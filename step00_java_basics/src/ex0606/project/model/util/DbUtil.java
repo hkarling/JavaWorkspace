@@ -1,4 +1,4 @@
-package project.model.util;
+package ex0606.project.model.util;
 
 import java.sql.*;
 

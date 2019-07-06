@@ -1,4 +1,4 @@
-package test.exam;
+package ex0516.test.exam;
 
 public class Elec {
 

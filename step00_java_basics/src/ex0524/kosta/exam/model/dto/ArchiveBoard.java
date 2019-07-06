@@ -1,4 +1,4 @@
-package kosta.exam.model.dto;
+package ex0524.kosta.exam.model.dto;
 
 public class ArchiveBoard extends Board {
 

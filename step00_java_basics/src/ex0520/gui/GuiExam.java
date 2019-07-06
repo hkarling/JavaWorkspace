@@ -1,4 +1,4 @@
-package gui;
+package ex0520.gui;
 
 import java.awt.Container;
 import java.awt.FlowLayout;

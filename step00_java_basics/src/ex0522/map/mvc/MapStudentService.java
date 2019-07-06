@@ -1,4 +1,4 @@
-package map.mvc;
+package ex0522.map.mvc;
 
 import java.util.HashMap;
 import java.util.Map;

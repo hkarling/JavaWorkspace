@@ -1,4 +1,4 @@
-package assign.weight;
+package ex0524.assign.weight;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;

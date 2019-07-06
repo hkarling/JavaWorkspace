@@ -1,4 +1,4 @@
-package lab;
+package ex0523.lab;
 
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;

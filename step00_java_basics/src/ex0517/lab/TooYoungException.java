@@ -1,4 +1,4 @@
-package lab;
+package ex0517.lab;
 /**
  * 사용자 예외처리 클래스
  */

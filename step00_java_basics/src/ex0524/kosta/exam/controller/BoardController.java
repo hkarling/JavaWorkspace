@@ -1,11 +1,11 @@
-package kosta.exam.controller;
+package ex0524.kosta.exam.controller;
 
 import java.util.Map;
 
-import kosta.exam.model.dto.*;
-import kosta.exam.model.service.*;
-import kosta.exam.model.util.*;
-import kosta.exam.view.*;
+import ex0524.kosta.exam.model.dto.*;
+import ex0524.kosta.exam.model.service.*;
+import ex0524.kosta.exam.model.util.*;
+import ex0524.kosta.exam.view.*;
 
 public class BoardController {
 

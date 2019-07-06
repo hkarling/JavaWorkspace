@@ -1,4 +1,4 @@
-package sku.view;
+package ex0606.sku.view;
 
 public class MainApp {
 

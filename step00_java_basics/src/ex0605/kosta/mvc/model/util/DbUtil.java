@@ -1,4 +1,4 @@
-package kosta.mvc.model.util;
+package ex0605.kosta.mvc.model.util;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.util.Properties;
 
-import kosta.mvc.view.FailView;
+import ex0605.kosta.mvc.view.FailView;
 
 /**
  * DB연동을 위한 로드, 연결, 닫기 및 쿼리 구문들.
@@ -17,8 +17,8 @@ public class DbUtil {
 	
 	/** 로드 */
 	static {
-		try(FileInputStream fis = new FileInputStream("properties/dbInfo.properties");
-			FileInputStream fis2 = new FileInputStream("properties/board.properties");) {
+		try(FileInputStream fis = new FileInputStream("ex0605/properties/dbInfo.properties");
+			FileInputStream fis2 = new FileInputStream("ex0605/properties/board.properties");) {
 			
 			proFile.load(fis);
 			proFile.load(fis2);

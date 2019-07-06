@@ -1,4 +1,4 @@
-package board;
+package ex0516.board;
 
 /**
  * Free, QA, Upload 게시판이 공통으로 가지는 기능 선택

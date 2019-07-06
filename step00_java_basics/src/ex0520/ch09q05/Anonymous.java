@@ -1,4 +1,4 @@
-package ch09q05;
+package ex0520.ch09q05;
 
 public class Anonymous {
 	

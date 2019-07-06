@@ -1,9 +1,9 @@
-package project.model.service;
+package ex0610.project.model.service;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import project.model.dto.ProductDTO;
+import ex0610.project.model.dto.ProductDTO;
 
 public interface ShopService {
 

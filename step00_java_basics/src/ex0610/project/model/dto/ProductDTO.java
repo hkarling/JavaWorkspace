@@ -1,4 +1,4 @@
-package project.model.dto;
+package ex0610.project.model.dto;
 
 public class ProductDTO {
 

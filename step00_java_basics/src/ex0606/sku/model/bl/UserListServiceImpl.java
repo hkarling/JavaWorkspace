@@ -1,12 +1,12 @@
-package sku.model.bl;
+package ex0606.sku.model.bl;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Vector;
 
-import sku.model.dao.UserListDAO;
-import sku.model.dao.UserListDAOImpl;
-import sku.model.dto.UserListDTO;
+import ex0606.sku.model.dao.UserListDAO;
+import ex0606.sku.model.dao.UserListDAOImpl;
+import ex0606.sku.model.dto.UserListDTO;
 
 public class UserListServiceImpl implements UserListService{
 

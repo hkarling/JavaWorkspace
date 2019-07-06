@@ -1,4 +1,4 @@
-package exceptionEx;
+package ex0517.exceptionEx;
 
 class Student {
 	private int age; // age의 값은 음수 안됨.

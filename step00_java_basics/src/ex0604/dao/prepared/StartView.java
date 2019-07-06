@@ -1,4 +1,4 @@
-package dao.prepared;
+package ex0604.dao.prepared;
 
 /**
  * 

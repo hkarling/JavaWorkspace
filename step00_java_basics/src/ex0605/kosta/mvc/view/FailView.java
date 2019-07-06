@@ -1,4 +1,4 @@
-package kosta.mvc.view;
+package ex0605.kosta.mvc.view;
 
 public class FailView {
 	

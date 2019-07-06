@@ -1,6 +1,6 @@
 package ex0515.packageEx.test;
 
-import packageEx.exam.MessageBean;
+import ex0515.packageEx.exam.MessageBean;
 
 public class AccessModifierTest {
 

@@ -1,4 +1,4 @@
-package stdtManager;
+package ex0521.stdtManager;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;

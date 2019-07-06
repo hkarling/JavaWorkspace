@@ -1,10 +1,10 @@
-package project.service;
+package ex0610.project.service;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Vector;
 
-import project.model.dto.ProductDTO;
+import ex0610.project.model.dto.ProductDTO;
 
 public interface ShopService {
 

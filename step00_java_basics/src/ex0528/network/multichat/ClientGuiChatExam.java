@@ -1,4 +1,4 @@
-package network.multichat;
+package ex0528.network.multichat;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

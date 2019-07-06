@@ -1,4 +1,4 @@
-package map.mvc;
+package ex0522.map.mvc;
 
 import java.util.Iterator;
 import java.util.Map;

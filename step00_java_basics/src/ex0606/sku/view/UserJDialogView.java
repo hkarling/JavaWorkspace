@@ -1,4 +1,4 @@
-package sku.view;
+package ex0606.sku.view;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -11,8 +11,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import sku.controller.UserListController;
-import sku.model.dto.UserListDTO;
+import ex0606.sku.controller.UserListController;
+import ex0606.sku.model.dto.UserListDTO;
 
 @SuppressWarnings("serial")
 public class UserJDialogView extends JDialog implements ActionListener {

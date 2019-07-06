@@ -1,4 +1,4 @@
-package assign.weight;
+package ex0524.assign.weight;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -31,7 +31,7 @@ public class WeightService {
 	 * @throws IOException
 	 */
 	public void insert(Person person) throws IOException {
-		File file = new File("weights/" + person.getName() + ".txt");
+		File file = new File("ex0524/weight/" + person.getName() + ".txt");
 		if (file.exists())
 			throw new FileAlreadyExistsException(file.getName());
 		bw = new BufferedWriter(new FileWriter(file));
@@ -48,7 +48,7 @@ public class WeightService {
 	 * @throws IOException, NumberFormatException
 	 */
 	public void selectPerson(Person person) throws IOException, NumberFormatException {
-		br = new BufferedReader(new FileReader("weights/" + person.getName() + ".txt"));
+		br = new BufferedReader(new FileReader("ex0524/weight/" + person.getName() + ".txt"));
 		String inputStr = br.readLine();
 		String data[] = inputStr.split(" : ");
 		if (!person.getPassword().equals(data[1]))
@@ -62,7 +62,7 @@ public class WeightService {
 	 * 3. 정보 변경
 	 */
 	public void updatePerson(Person person) throws IOException {
-		File file = new File("weights/" + person.getName() + ".txt");
+		File file = new File("ex0524/weight/" + person.getName() + ".txt");
 		bw = new BufferedWriter(new FileWriter(file));
 		bw.write(person.getWeight() + " : " + person.getPassword());
 		bw.flush();

@@ -1,4 +1,4 @@
-package util;
+package ex0604.util;
 
 import java.sql.*;
 

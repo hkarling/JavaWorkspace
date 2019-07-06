@@ -1,4 +1,4 @@
-package assign.ch10q07;
+package ex0517.assign.ch10q07;
 
 public class WrongPasswordException extends Exception {
 	

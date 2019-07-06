@@ -1,15 +1,15 @@
-package kosta.exam.model.service;
+package ex0524.kosta.exam.model.service;
 
 import java.util.Iterator;
 import java.util.Map;
 import java.util.ResourceBundle;
 import java.util.TreeMap;
 
-import kosta.exam.model.dto.ArchiveBoard;
-import kosta.exam.model.dto.Board;
-import kosta.exam.model.dto.PhotoBoard;
-import kosta.exam.model.util.DuplicateException;
-import kosta.exam.model.util.InexistentException;
+import ex0524.kosta.exam.model.dto.ArchiveBoard;
+import ex0524.kosta.exam.model.dto.Board;
+import ex0524.kosta.exam.model.dto.PhotoBoard;
+import ex0524.kosta.exam.model.util.DuplicateException;
+import ex0524.kosta.exam.model.util.InexistentException;
 
 public class BoardServiceImpl implements BoardService {
 	Map<String, Map<String, Board>> allBoardList = new TreeMap<String, Map<String, Board>>();;
@@ -21,7 +21,7 @@ public class BoardServiceImpl implements BoardService {
 		Map<String, Board> archiveMap = new TreeMap<>();
 
 		// 데이터 초기화 작업
-		String filepath = "kosta/exam/model/service/photoInfo";
+		String filepath = "ex0524/kosta/exam/model/service/photoInfo";
 
 		/** 1. ~.properties 파일을 읽어서 key와 value를 분리 */
 		ResourceBundle rb = ResourceBundle.getBundle(filepath);
@@ -40,7 +40,7 @@ public class BoardServiceImpl implements BoardService {
 			photoMap.put(key, board);
 		}
 
-		filepath = "kosta/exam/model/service/archiveInfo";
+		filepath = "ex0524/kosta/exam/model/service/archiveInfo";
 		rb = ResourceBundle.getBundle(filepath);
 		keys = rb.keySet().iterator();
 		while (keys.hasNext()) {

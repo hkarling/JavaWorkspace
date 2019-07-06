@@ -1,4 +1,4 @@
-package project.model.dao;
+package ex0610.project.model.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import project.model.dto.ProductDTO;
-import util.DbUtil;
+import ex0610.project.model.dto.ProductDTO;
+import ex0610.util.DbUtil;
 
 public class ShopDAOImpl implements ShopDAO {
 

@@ -1,4 +1,4 @@
-package iostream;
+package ex0523.iostream;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -18,7 +18,7 @@ public class FileInputOutputExam {
 
 			///////////////////////////////////////////////////////////
 			/** byte 단위로 파일을 읽기 */
-			fis = new FileInputStream("src/iostream/read.txt");
+			fis = new FileInputStream("src/ex0523/iostream/read.txt");
 
 //			while (true) {
 //				int i = fis.read();
@@ -40,7 +40,7 @@ public class FileInputOutputExam {
 			
 			///////////////////////////////////////////////////////////
 			/** 파일에 저장하기 */
-			fos = new FileOutputStream("src/iostream/write.txt", true);
+			fos = new FileOutputStream("src/ex0523/iostream/write.txt", true);
 
 //			fos.write(65);
 //			fos.write(66);

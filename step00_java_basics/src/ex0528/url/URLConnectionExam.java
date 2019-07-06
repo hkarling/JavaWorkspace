@@ -14,7 +14,7 @@ public class URLConnectionExam {
 //			URL url = new URL("https://www.daum.net/");
 			URL url = new URL("http://192.168.0.128/Edu/Book1.xlsx");
 			BufferedInputStream bis = new BufferedInputStream(url.openStream());
-			BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("src/url/book1.xlsx"));
+			BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream("src/ex0528/url/book1.xlsx"));
 			
 //			byte b[] = new byte[bis.available()];
 //			bis.read(b);

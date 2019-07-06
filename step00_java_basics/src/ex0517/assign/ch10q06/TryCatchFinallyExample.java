@@ -1,4 +1,4 @@
-package assign.ch10q06;
+package ex0517.assign.ch10q06;
 
 public class TryCatchFinallyExample {
 

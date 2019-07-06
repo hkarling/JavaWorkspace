@@ -1,9 +1,9 @@
-package project.view;
+package ex0610.project.view;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import project.controller.ShopController;
+import ex0610.project.controller.ShopController;
 
 public class MainView {
 

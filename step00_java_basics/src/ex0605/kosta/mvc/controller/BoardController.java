@@ -1,13 +1,13 @@
-package kosta.mvc.controller;
+package ex0605.kosta.mvc.controller;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import kosta.mvc.model.dto.BoardDTO;
-import kosta.mvc.model.service.BoardService;
-import kosta.mvc.model.service.BoardServiceImpl;
-import kosta.mvc.view.FailView;
-import kosta.mvc.view.SuccessView;
+import ex0605.kosta.mvc.model.dto.BoardDTO;
+import ex0605.kosta.mvc.model.service.BoardService;
+import ex0605.kosta.mvc.model.service.BoardServiceImpl;
+import ex0605.kosta.mvc.view.FailView;
+import ex0605.kosta.mvc.view.SuccessView;
 
 public class BoardController {
 

@@ -1,4 +1,4 @@
-package set;
+package ex0522.set;
 
 import java.util.Random;
 import java.util.Set;

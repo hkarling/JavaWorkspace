@@ -1,11 +1,11 @@
-package transaction;
+package ex0610.transaction;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import util.DbUtil;
+import ex0610.util.DbUtil;
 
 public class TransactionDAO {
 	/**

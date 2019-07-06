@@ -1,4 +1,4 @@
-package network.chat;
+package ex0528.network.chat;
 
 import java.io.IOException;
 import java.io.OutputStreamWriter;

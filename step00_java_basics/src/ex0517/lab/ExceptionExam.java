@@ -1,4 +1,4 @@
-package lab;
+package ex0517.lab;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package iostream;
+package ex0523.iostream;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -19,7 +19,7 @@ public class ReaderWriterExam {
 		
 		try {
 			/** 문자단위 파일 읽기 */
-			fr = new FileReader("src/iostream/read.txt");
+			fr = new FileReader("src/ex0523/iostream/read.txt");
 //			int i = 0;
 //			while ((i = fr.read()) != -1) {
 //				System.out.println(i + " = " + (char) i);
@@ -33,7 +33,7 @@ public class ReaderWriterExam {
 			}
 			
 			/** Buffered를 이용하여 쓰기 */
-			bw = new BufferedWriter(new FileWriter("src/iostream/write.txt"));
+			bw = new BufferedWriter(new FileWriter("src/ex0523/iostream/write.txt"));
 			bw.write("졸지말아라.");
 			bw.newLine();
 			bw.write("안녕!!\n");

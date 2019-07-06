@@ -1,4 +1,4 @@
-package map.mvc;
+package ex0522.map.mvc;
 /**
  * Person 클래스
  * @author hkarling

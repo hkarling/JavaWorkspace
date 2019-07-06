@@ -1,4 +1,4 @@
-package exceptionEx;
+package ex0517.exceptionEx;
 
 class Test {
 	

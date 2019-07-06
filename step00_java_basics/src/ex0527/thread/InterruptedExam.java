@@ -1,4 +1,4 @@
-package thread;
+package ex0527.thread;
 
 public class InterruptedExam {
 

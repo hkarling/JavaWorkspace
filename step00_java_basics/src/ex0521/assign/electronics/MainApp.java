@@ -1,4 +1,4 @@
-package assign.electronics;
+package ex0521.assign.electronics;
 
 /**
  * MainApp : 어플리케이션의 시작.

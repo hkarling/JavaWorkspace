@@ -1,4 +1,4 @@
-package assign.ch08q03;
+package ex0516.assign.ch08q03;
 
 public class Dog implements Soundable {
 

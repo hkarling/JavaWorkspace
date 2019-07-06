@@ -1,4 +1,4 @@
-package assign.lottery;
+package ex0521.assign.lottery;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package sku.model.dto;
+package ex0606.sku.model.dto;
 
 public class UserListDTO {
 

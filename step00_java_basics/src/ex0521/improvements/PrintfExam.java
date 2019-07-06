@@ -1,4 +1,4 @@
-package improvements;
+package ex0521.improvements;
 import java.util.*;
 
 class PrintfExam {

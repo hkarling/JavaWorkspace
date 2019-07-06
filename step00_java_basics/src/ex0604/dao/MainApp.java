@@ -1,4 +1,4 @@
-package dao;
+package ex0604.dao;
 
 public class MainApp {
 

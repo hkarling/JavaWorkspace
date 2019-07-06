@@ -1,4 +1,4 @@
-package ch09_5_2;
+package ex0520.ch09_5_2;
 
 public class AnonymousExample {
 

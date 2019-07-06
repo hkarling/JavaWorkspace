@@ -1,9 +1,9 @@
-package kosta.exam.view;
+package ex0524.kosta.exam.view;
 
-import kosta.exam.controller.BoardController;
-import kosta.exam.model.dto.ArchiveBoard;
-import kosta.exam.model.dto.PhotoBoard;
-import kosta.exam.model.service.BoardServiceImpl;
+import ex0524.kosta.exam.controller.BoardController;
+import ex0524.kosta.exam.model.dto.ArchiveBoard;
+import ex0524.kosta.exam.model.dto.PhotoBoard;
+import ex0524.kosta.exam.model.service.BoardServiceImpl;
 
 public class MainView {
 

@@ -1,4 +1,4 @@
-package dao.prepared;
+package ex0604.dao.prepared;
 
 /**
  * 사원의 정보를 관리할 객체 = DTO = VO = Domain

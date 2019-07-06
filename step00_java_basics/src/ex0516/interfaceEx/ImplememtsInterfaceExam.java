@@ -1,4 +1,4 @@
-package interfaceEx;
+package ex0516.interfaceEx;
 
 //이 소스를 컴파일이 되도록 수정/추가/주석처리 하세요.
 /**

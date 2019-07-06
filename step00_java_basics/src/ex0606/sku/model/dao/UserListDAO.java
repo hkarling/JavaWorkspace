@@ -1,10 +1,10 @@
-package sku.model.dao;
+package ex0606.sku.model.dao;
 
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Vector;
 
-import sku.model.dto.UserListDTO;
+import ex0606.sku.model.dto.UserListDTO;
 
 public interface UserListDAO {
 	/**

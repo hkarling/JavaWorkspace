@@ -1,4 +1,4 @@
-package lab;
+package ex0517.lab;
 /**
  * 쇼핑몰 클래스
  */

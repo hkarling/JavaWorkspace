@@ -1,8 +1,8 @@
-package kosta.mvc.view;
+package ex0605.kosta.mvc.view;
 
-import kosta.mvc.controller.BoardController;
-import kosta.mvc.model.dao.BoardDAOImpl;
-import kosta.mvc.model.dto.BoardDTO;
+import ex0605.kosta.mvc.controller.BoardController;
+import ex0605.kosta.mvc.model.dao.BoardDAOImpl;
+import ex0605.kosta.mvc.model.dto.BoardDTO;
 
 public class MainView {
 

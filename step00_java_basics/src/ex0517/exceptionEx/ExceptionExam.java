@@ -1,4 +1,4 @@
-package exceptionEx;
+package ex0517.exceptionEx;
 
 /**
  * Exception이란: 예기치 못한 예외가 발생하여 프로그램이 강제 종료되는것을 미리 예측하여 예방하는 것.

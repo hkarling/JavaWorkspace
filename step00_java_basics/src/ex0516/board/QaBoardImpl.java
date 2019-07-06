@@ -1,4 +1,4 @@
-package board;
+package ex0516.board;
 
 public class QaBoardImpl implements BoardInterface {
 
